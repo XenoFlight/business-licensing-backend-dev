@@ -24,7 +24,8 @@ COPY package*.json ./
 
 # Install dependencies.
 # Skip Puppeteer's browser download and use system Chromium.
-ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
+ENV PUPPETEER_SKIP_DOWNLOAD=true \
+  PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
   PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
 
 RUN npm install --omit=dev

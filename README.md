@@ -104,6 +104,60 @@ Health check endpoint:
 GET /
 ```
 
+## Online Testing with GitHub Codespaces
+
+Use this when you want to test online without Render.
+
+### 1) Push repository to GitHub
+
+Make sure latest changes are pushed to your GitHub branch.
+
+### 2) Open in Codespaces
+
+In GitHub repository page:
+- Click `Code`
+- Open `Codespaces` tab
+- Click `Create codespace on <branch>`
+
+This repo includes a ready-to-use devcontainer in `.devcontainer/`.
+
+### 3) Configure environment variables in Codespaces
+
+Inside the Codespace terminal:
+
+```bash
+cp .env.example .env
+```
+
+Then edit `.env` and set at minimum:
+- `DATABASE_URL`
+- `JWT_SECRET`
+
+Optional:
+- `GEMINI_API_KEY`
+- `DEFAULT_ICAL_URL`
+
+### 4) Start app in Codespaces
+
+```bash
+npm run dev
+```
+
+When port `8080` is forwarded, open the generated public URL.
+
+### 5) Verify app online
+
+- Open `/login.html`
+- Login with seeded/admin user
+- Open dashboard and business pages
+- Create/edit a report and verify PDF output
+
+### Notes
+
+- Do not commit your `.env` file.
+- You can use GitHub Codespaces Secrets for sensitive values and write them into `.env` during setup.
+- Chromium dependencies are preinstalled in the devcontainer for Puppeteer PDF generation.
+
 ## API Routes
 
 All routes are mounted in `app.js`.

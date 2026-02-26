@@ -1,6 +1,7 @@
 import { requireAuth, renderUserName } from '../../core/auth.js';
 import { apiFetch } from '../../core/api.js';
 import { bindLogout, renderAdminLink } from '../../core/nav.js';
+import { initThemeToggle } from '../../core/theme.js';
 
 // ===== Business Map Page =====
 // Displays businesses with saved coordinates on an interactive map.
@@ -59,6 +60,7 @@ async function initPage() {
   requireAuth();
 
   const user = renderUserName('user-name');
+  initThemeToggle(user);
   renderAdminLink(user, 'admin-link-placeholder');
   bindLogout('logout-button');
 

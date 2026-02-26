@@ -2,6 +2,7 @@ import { requireAuth, renderUserName } from '../../core/auth.js';
 import { apiFetch } from '../../core/api.js';
 import { bindLogout, renderAdminLink } from '../../core/nav.js';
 import { getStatusLabel, normalizeStatus } from '../../core/status.js';
+import { initThemeToggle } from '../../core/theme.js';
 
 // ===== Businesses List Helpers =====
 function getAddressText(business) {
@@ -181,6 +182,7 @@ function initBusinessesPage() {
   requireAuth();
 
   const user = renderUserName('user-name');
+  initThemeToggle(user);
   renderAdminLink(user, 'admin-link-placeholder');
   bindLogout('logout-button');
 

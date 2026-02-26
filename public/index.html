@@ -8,6 +8,20 @@
         // Redirect to login page
         window.location.href = 'login.html';
     </script>
+        <link rel="stylesheet" href="theme.css">
+        <script>
+            (function () {
+                try {
+                    var savedTheme = localStorage.getItem('theme:last') || 'light';
+                    document.documentElement.setAttribute('data-theme', savedTheme);
+                    if (savedTheme === 'dark') {
+                        document.documentElement.classList.add('dark');
+                    }
+                } catch (error) {
+                    console.error('Theme preload failed:', error);
+                }
+            })();
+        </script>
 </head>
 <body>
 </body>
