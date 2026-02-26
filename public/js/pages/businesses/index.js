@@ -4,98 +4,80 @@ import { bindLogout, renderAdminLink } from '../../core/nav.js';
 import { getStatusLabel, normalizeStatus } from '../../core/status.js';
 import { initThemeToggle } from '../../core/theme.js';
 
-// ===== Businesses List Helpers =====
-function getAddressText(business) {
-  return business.address
-    || `${business.street || ''} ${business.houseNumber || ''}, ${business.businessArea || ''}`.replace(/^ , /, '').replace(/, $/, '')
-    || '-';
+let allBusinesses = [];
+let currentUser = null;
+
+function trashCareOwnerLabel(value) {
+  const map = {
+    municipality: 'המועצה',
+    business: 'בעל העסק',
+    shared: 'משותף',
+    unknown: 'לא צוין',
+  };
+
+  return map[value] || 'לא צוין';
 }
 
-function isFullyClosed(statusesArray) {
-  if (!Array.isArray(statusesArray) || statusesArray.length === 0) {
-    return false;
-  }
-
-  return statusesArray.every((status) => normalizeStatus(status) === 'closed');
-}
-
-// ===== Row Rendering =====
-function createBusinessRow(group) {
+function createBusinessRow(business) {
   const row = document.createElement('tr');
   row.className = 'hover:bg-slate-50 transition-colors';
   row.dataset.row = 'true';
 
-  const itemsDisplay = Array.from(group.items).join(', ');
-  const statusesArray = Array.from(group.statuses)
-    .map((status) => normalizeStatus(status))
-    .filter(Boolean);
+  const normalizedStatus = normalizeStatus(business.status) || 'application_submitted';
+  row.dataset.status = normalizedStatus;
+  row.dataset.closed = String(normalizedStatus === 'closed');
+  row.dataset.hasTrash = business.hasTrashCans === true ? 'with' : business.hasTrashCans === false ? 'without' : 'unknown';
+  row.dataset.trashCareOwner = business.trashCareOwner || 'unknown';
 
-  row.dataset.statuses = JSON.stringify(statusesArray);
-  row.dataset.area = group.area;
-  row.dataset.closed = String(isFullyClosed(statusesArray));
+  const localContacts = [
+    business.localManagerName ? `מנהל: ${business.localManagerName}${business.localManagerPhone ? ` (${business.localManagerPhone})` : ''}` : null,
+    business.localContactName ? `איש קשר: ${business.localContactName}${business.localContactPhone ? ` (${business.localContactPhone})` : ''}` : null,
+  ].filter(Boolean).join('<br>') || '-';
+
+  const trashSummary = business.hasTrashCans === true
+    ? `${business.trashCanType || 'לא צוין סוג'}${Number.isFinite(business.trashCanCount) ? ` (${business.trashCanCount})` : ''}<br><span class="text-xs">טיפול: ${trashCareOwnerLabel(business.trashCareOwner || 'unknown')}</span>${business.wastePickupSchedule ? `<br><span class="text-xs">פינוי: ${business.wastePickupSchedule}</span>` : ''}`
+    : business.hasTrashCans === false
+      ? 'אין פחים'
+      : 'לא צוין';
 
   row.innerHTML = `
-    <td class="px-6 py-4 font-medium text-slate-900">${group.name}</td>
-    <td class="px-6 py-4 text-slate-600">${group.address}</td>
-    <td class="px-6 py-4 text-slate-600">${group.owner}</td>
-    <td class="px-6 py-4 text-slate-600">${itemsDisplay}</td>
+    <td class="px-6 py-4 text-slate-600">#${business.id}</td>
+    <td class="px-6 py-4 font-medium text-slate-900">
+      <a href="business-edit.html?id=${business.id}" class="text-brand-700 hover:text-brand-600 hover:underline">${business.businessName || '-'}</a>
+    </td>
+    <td class="px-6 py-4 text-slate-600">${business.address || '-'}</td>
+    <td class="px-6 py-4 text-slate-600">${business.ownerName || '-'}</td>
+    <td class="px-6 py-4 text-slate-600 leading-6">${localContacts}</td>
+    <td class="px-6 py-4 text-slate-600">${Number.isFinite(business.localStaffCount) ? business.localStaffCount : '-'}</td>
+    <td class="px-6 py-4 text-slate-600 leading-6">${trashSummary}</td>
+    <td class="px-6 py-4 text-slate-600">${getStatusLabel(normalizedStatus)}</td>
     <td class="px-6 py-4 flex gap-2">
-      <a class="text-xs bg-brand-50 text-brand-700 hover:bg-brand-100 px-3 py-1.5 rounded-md transition-colors font-medium" href="business-details.html?id=${group.mainId}">פרטים</a>
-      <a class="text-xs bg-green-50 text-green-700 hover:bg-green-100 px-3 py-1.5 rounded-md transition-colors font-medium" href="inspection.html?businessId=${group.mainId}">ביקורת</a>
-      <a class="text-xs bg-slate-100 text-slate-700 hover:bg-slate-200 px-3 py-1.5 rounded-md transition-colors font-medium" href="reports-history.html?businessId=${group.mainId}">היסטוריה</a>
+      <a class="text-xs bg-brand-50 text-brand-700 hover:bg-brand-100 px-3 py-1.5 rounded-md transition-colors font-medium" href="business-edit.html?id=${business.id}">עריכת תיק עסק</a>
+      <a class="text-xs bg-green-50 text-green-700 hover:bg-green-100 px-3 py-1.5 rounded-md transition-colors font-medium" href="inspection.html?businessId=${business.id}">ביקורת</a>
+      <a class="text-xs bg-slate-100 text-slate-700 hover:bg-slate-200 px-3 py-1.5 rounded-md transition-colors font-medium" href="reports-history.html?businessId=${business.id}">היסטוריה</a>
     </td>
   `;
 
   return row;
 }
 
-// ===== Grouping and Filter Data =====
-function groupBusinesses(businesses) {
-  const groupedBusinesses = {};
+function getFilterData(businesses) {
   const allStatuses = new Set();
-  const allAreas = new Set();
 
   businesses.forEach((business) => {
-    const name = business.businessName || 'ללא שם';
-
-    if (!groupedBusinesses[name]) {
-      groupedBusinesses[name] = {
-        name,
-        address: getAddressText(business),
-        owner: business.ownerName || business.businessOwner || '',
-        items: new Set(),
-        mainId: business.id,
-        statuses: new Set(),
-        area: business.businessArea || '',
-      };
-    }
-
-    const item = (business.LicensingItem && business.LicensingItem.name)
-      ? business.LicensingItem.name
-      : (business.occupationItem || '-');
-    groupedBusinesses[name].items.add(item);
-
     const normalizedStatus = normalizeStatus(business.status);
     if (normalizedStatus) {
-      groupedBusinesses[name].statuses.add(normalizedStatus);
       allStatuses.add(normalizedStatus);
-    }
-
-    if (business.businessArea) {
-      allAreas.add(business.businessArea);
     }
   });
 
-  return { groupedBusinesses, allStatuses, allAreas };
+  return { allStatuses };
 }
 
-// ===== Filter UI =====
-function populateFilters(allStatuses, allAreas) {
+function populateFilters(allStatuses) {
   const statusSelect = document.getElementById('status-filter');
-  const areaSelect = document.getElementById('area-filter');
 
   statusSelect.innerHTML = '<option value="">כל הסטטוסים</option>';
-  areaSelect.innerHTML = '<option value="">כל האזורים</option>';
 
   Array.from(allStatuses).sort().forEach((status) => {
     const option = document.createElement('option');
@@ -103,19 +85,13 @@ function populateFilters(allStatuses, allAreas) {
     option.textContent = getStatusLabel(status);
     statusSelect.appendChild(option);
   });
-
-  Array.from(allAreas).sort().forEach((area) => {
-    const option = document.createElement('option');
-    option.value = area;
-    option.textContent = area;
-    areaSelect.appendChild(option);
-  });
 }
 
 function applyFilters() {
   const searchText = document.getElementById('search-input').value.toLowerCase();
   const statusFilter = document.getElementById('status-filter').value;
-  const areaFilter = document.getElementById('area-filter').value;
+  const trashFilter = document.getElementById('trash-filter').value;
+  const trashCareFilter = document.getElementById('trash-care-filter').value;
   const showClosed = document.getElementById('show-closed-checkbox').checked;
 
   const rows = document.querySelectorAll('#business-table tbody tr[data-row="true"]');
@@ -123,29 +99,34 @@ function applyFilters() {
   rows.forEach((row) => {
     const text = row.textContent.toLowerCase();
     const matchesText = text.includes(searchText);
-
-    const rowStatuses = JSON.parse(row.dataset.statuses || '[]');
-    const matchesStatus = !statusFilter || rowStatuses.includes(statusFilter);
-
-    const rowArea = row.dataset.area;
-    const matchesArea = !areaFilter || rowArea === areaFilter;
+    const rowStatus = row.dataset.status;
+    const matchesStatus = !statusFilter || rowStatus === statusFilter;
+    const matchesTrash = !trashFilter || row.dataset.hasTrash === trashFilter;
+    const matchesTrashCare = !trashCareFilter || row.dataset.trashCareOwner === trashCareFilter;
 
     const isClosed = row.dataset.closed === 'true';
     const matchesClosed = showClosed || !isClosed;
 
-    row.style.display = (matchesText && matchesStatus && matchesArea && matchesClosed) ? '' : 'none';
+    row.style.display = (matchesText && matchesStatus && matchesTrash && matchesTrashCare && matchesClosed) ? '' : 'none';
   });
 }
 
-// ===== Filter Event Binding =====
 function bindFilters() {
   document.getElementById('search-input').addEventListener('input', applyFilters);
   document.getElementById('status-filter').addEventListener('change', applyFilters);
-  document.getElementById('area-filter').addEventListener('change', applyFilters);
+  document.getElementById('trash-filter').addEventListener('change', applyFilters);
+  document.getElementById('trash-care-filter').addEventListener('change', applyFilters);
   document.getElementById('show-closed-checkbox').addEventListener('change', applyFilters);
 }
 
-// ===== Data Loading =====
+function bindCreateAction() {
+  const addButton = document.getElementById('add-business-btn');
+
+  addButton?.addEventListener('click', () => {
+    window.location.href = 'business-create.html';
+  });
+}
+
 async function fetchBusinesses() {
   const tbody = document.querySelector('#business-table tbody');
 
@@ -157,36 +138,39 @@ async function fetchBusinesses() {
     }
 
     const businesses = await response.json();
+    allBusinesses = Array.isArray(businesses) ? businesses : [];
 
     tbody.innerHTML = '';
 
-    if (!Array.isArray(businesses) || businesses.length === 0) {
-      tbody.innerHTML = '<tr><td colspan="5" class="px-6 py-8 text-center text-slate-500">לא נמצאו עסקים במערכת</td></tr>';
+    if (allBusinesses.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="9" class="px-6 py-8 text-center text-slate-500">לא נמצאו תיקי עסקים במערכת</td></tr>';
       return;
     }
 
-    const { groupedBusinesses, allStatuses, allAreas } = groupBusinesses(businesses);
-    populateFilters(allStatuses, allAreas);
+    const { allStatuses } = getFilterData(allBusinesses);
+    populateFilters(allStatuses);
 
-    Object.values(groupedBusinesses).forEach((group) => {
-      tbody.appendChild(createBusinessRow(group));
+    allBusinesses.forEach((business) => {
+      tbody.appendChild(createBusinessRow(business));
     });
+
+    applyFilters();
   } catch (error) {
     console.error('Error fetching businesses:', error);
-    tbody.innerHTML = '<tr><td colspan="5" class="px-6 py-8 text-center text-red-500">שגיאה בטעינת נתונים</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="9" class="px-6 py-8 text-center text-red-500">שגיאה בטעינת נתונים</td></tr>';
   }
 }
 
-// ===== Page Bootstrap =====
 function initBusinessesPage() {
   requireAuth();
 
-  const user = renderUserName('user-name');
-  initThemeToggle(user);
-  renderAdminLink(user, 'admin-link-placeholder');
+  currentUser = renderUserName('user-name');
+  initThemeToggle(currentUser);
+  renderAdminLink(currentUser, 'admin-link-placeholder');
   bindLogout('logout-button');
 
   bindFilters();
+  bindCreateAction();
   fetchBusinesses();
 }
 

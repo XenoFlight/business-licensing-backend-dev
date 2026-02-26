@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>עריכת תיק עסק | מערכת רישוי עסקים</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="theme.css">
+    <script>
+        (function () {
+            try {
+                var savedTheme = localStorage.getItem('theme:last') || 'light';
+                document.documentElement.setAttribute('data-theme', savedTheme);
+                if (savedTheme === 'dark') {
+                    document.documentElement.classList.add('dark');
+                }
+            } catch (error) {
+                console.error('Theme preload failed:', error);
+            }
+        })();
+    </script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            900: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen antialiased">
+    <header class="bg-white shadow-sm border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center gap-3">
+                    <div class="bg-brand-100 text-brand-700 p-2 rounded-lg">
+                        <i class="fa-solid fa-building-shield text-xl"></i>
+                    </div>
+                    <div>
+                        <a href="dashboard.html" class="text-lg font-bold text-slate-900 tracking-tight">מערכת רישוי עסקים</a>
+                        <div class="text-xs text-slate-500 font-medium">מועצה אזורית יואב</div>
+                    </div>
+                </div>
+
+                <nav class="hidden md:flex space-x-reverse space-x-2">
+                    <a href="dashboard.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors flex items-center gap-2"><i class="fa-solid fa-chart-pie"></i> לוח בקרה</a>
+                    <a href="businesses.html" class="px-3 py-2 rounded-lg text-sm font-medium bg-brand-50 text-brand-700 transition-colors flex items-center gap-2"><i class="fa-solid fa-store"></i> ניהול תיקי עסקים</a>
+                    <a href="inspections.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors flex items-center gap-2"><i class="fa-solid fa-clipboard-check"></i> ניהול ביקורות</a>
+                    <a href="map.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors flex items-center gap-2"><i class="fa-solid fa-map-location-dot"></i> מפת עסקים</a>
+                    <a href="calendar.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors flex items-center gap-2"><i class="fa-solid fa-calendar-days"></i> יומן</a>
+                    <span id="admin-link-placeholder"></span>
+                </nav>
+
+                <div class="flex items-center gap-4">
+                    <div class="flex items-center gap-2 border-r border-slate-200 pr-4">
+                        <div class="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center text-slate-600 font-bold text-sm">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <span id="user-name" class="text-sm font-medium text-slate-700">שלום, משתמש</span>
+                    </div>
+                    <button id="logout-button" class="text-sm font-medium text-red-600 hover:text-red-700 hover:bg-red-50 px-3 py-2 rounded-lg transition-colors flex items-center gap-2">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i> יציאה
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+        <div class="flex items-center justify-between mb-4">
+            <h1 class="text-2xl font-bold text-slate-900">עריכת תיק עסק</h1>
+            <a href="businesses.html" class="text-sm text-slate-500 hover:text-slate-800 flex items-center gap-2"><i class="fa-solid fa-arrow-right"></i> חזרה לניהול תיקי עסקים</a>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
+            <p id="edit-feedback" class="text-sm text-slate-500 mb-4">טוען נתוני תיק...</p>
+
+            <form id="business-edit-form" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label for="business-name" class="block mb-1 text-sm font-medium text-slate-700">שם העסק *</label>
+                    <input id="business-name" required class="w-full px-3 py-2 border border-slate-300 rounded-lg">
+                </div>
+                <div>
+                    <label for="business-owner" class="block mb-1 text-sm font-medium text-slate-700">בעלים</label>
+                    <input id="business-owner" class="w-full px-3 py-2 border border-slate-300 rounded-lg">
+                </div>
+                <div>
+                    <label for="business-owner-id" class="block mb-1 text-sm font-medium text-slate-700">ת.ז. / ח.פ בעלים</label>
+                    <input id="business-owner-id" class="w-full px-3 py-2 border border-slate-300 rounded-lg">
+                </div>
+                <div class="md:col-span-2">
+                    <label for="business-address" class="block mb-1 text-sm font-medium text-slate-700">כתובת</label>
+                    <input id="business-address" class="w-full px-3 py-2 border border-slate-300 rounded-lg">
+                </div>
+                <div>
+                    <label for="business-phone" class="block mb-1 text-sm font-medium text-slate-700">טלפון ראשי</label>
+                    <input id="business-phone" class="w-full px-3 py-2 border border-slate-300 rounded-lg">
+                </div>
+                <div>
+                    <label for="business-email" class="block mb-1 text-sm font-medium text-slate-700">אימייל</label>
+                    <input id="business-email" type="email" class="w-full px-3 py-2 border border-slate-300 rounded-lg">
+                </div>
+                <div>
+                    <label for="business-license-number" class="block mb-1 text-sm font-medium text-slate-700">מספר רישיון</label>
+                    <input id="business-license-number" class="w-full px-3 py-2 border border-slate-300 rounded-lg">
+                </div>
+                <div>
+                    <label for="business-status" class="block mb-1 text-sm font-medium text-slate-700">סטטוס</label>
+                    <select id="business-status" class="w-full px-3 py-2 border border-slate-300 rounded-lg"></select>
+                </div>
+                <div>
+                    <label for="local-staff-count" class="block mb-1 text-sm font-medium text-slate-700">כמות צוות מקומי</label>
+                    <input id="local-staff-count" type="number" min="0" class="w-full px-3 py-2 border border-slate-300 rounded-lg">
+                </div>
+                <div>
+                    <label for="local-manager-name" class="block mb-1 text-sm font-medium text-slate-700">שם מנהל מקומי</label>
+                    <input id="local-manager-name" class="w-full px-3 py-2 border border-slate-300 rounded-lg">
+                </div>
+                <div>
+                    <label for="local-manager-phone" class="block mb-1 text-sm font-medium text-slate-700">טלפון מנהל מקומי</label>
+                    <input id="local-manager-phone" class="w-full px-3 py-2 border border-slate-300 rounded-lg">
+                </div>
+                <div>
+                    <label for="local-contact-name" class="block mb-1 text-sm font-medium text-slate-700">איש קשר מקומי</label>
+                    <input id="local-contact-name" class="w-full px-3 py-2 border border-slate-300 rounded-lg">
+                </div>
+                <div>
+                    <label for="local-contact-phone" class="block mb-1 text-sm font-medium text-slate-700">טלפון איש קשר מקומי</label>
+                    <input id="local-contact-phone" class="w-full px-3 py-2 border border-slate-300 rounded-lg">
+                </div>
+                <div>
+                    <label for="emergency-contact-name" class="block mb-1 text-sm font-medium text-slate-700">איש קשר חירום</label>
+                    <input id="emergency-contact-name" class="w-full px-3 py-2 border border-slate-300 rounded-lg">
+                </div>
+                <div>
+                    <label for="emergency-contact-phone" class="block mb-1 text-sm font-medium text-slate-700">טלפון חירום</label>
+                    <input id="emergency-contact-phone" class="w-full px-3 py-2 border border-slate-300 rounded-lg">
+                </div>
+                <div>
+                    <label for="has-trash-cans" class="block mb-1 text-sm font-medium text-slate-700">האם קיימים פחי אשפה?</label>
+                    <select id="has-trash-cans" class="w-full px-3 py-2 border border-slate-300 rounded-lg">
+                        <option value="">לא צוין</option>
+                        <option value="true">כן</option>
+                        <option value="false">לא</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="trash-can-type" class="block mb-1 text-sm font-medium text-slate-700">סוג פחים</label>
+                    <input id="trash-can-type" class="w-full px-3 py-2 border border-slate-300 rounded-lg">
+                </div>
+                <div>
+                    <label for="trash-can-count" class="block mb-1 text-sm font-medium text-slate-700">כמות פחים</label>
+                    <input id="trash-can-count" type="number" min="0" class="w-full px-3 py-2 border border-slate-300 rounded-lg">
+                </div>
+                <div>
+                    <label for="trash-care-owner" class="block mb-1 text-sm font-medium text-slate-700">מי מטפל בפחים?</label>
+                    <select id="trash-care-owner" class="w-full px-3 py-2 border border-slate-300 rounded-lg">
+                        <option value="unknown">לא צוין</option>
+                        <option value="municipality">המועצה</option>
+                        <option value="business">בעל העסק</option>
+                        <option value="shared">משותף</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="waste-pickup-schedule" class="block mb-1 text-sm font-medium text-slate-700">תדירות פינוי</label>
+                    <input id="waste-pickup-schedule" class="w-full px-3 py-2 border border-slate-300 rounded-lg">
+                </div>
+                <div class="md:col-span-2">
+                    <label for="local-staff-notes" class="block mb-1 text-sm font-medium text-slate-700">הערות צוות מקומי</label>
+                    <textarea id="local-staff-notes" rows="3" class="w-full px-3 py-2 border border-slate-300 rounded-lg"></textarea>
+                </div>
+
+                <div class="md:col-span-2 mt-2">
+                    <label class="block mb-1 text-sm font-medium text-slate-700">פריטי רישוי:</label>
+                    <div class="flex gap-2 mb-2">
+                        <select id="licensing-category" class="flex-1 px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500" onchange="filterLicensingItems()">
+                            <option value="">בחר קטגוריה...</option>
+                        </select>
+                        <select id="licensing-item-select" class="flex-1 px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500" disabled>
+                            <option value="">בחר פריט רישוי...</option>
+                        </select>
+                        <button type="button" id="add-item-btn" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors" onclick="addLicensingItem()">הוסף</button>
+                    </div>
+                    <p class="text-xs text-slate-500 mb-2">ניתן לבחור כמה פריטים להצגה. בשמירה יישמר פריט ראשי אחד לתיק העסק.</p>
+
+                    <div id="selected-items-container" class="border border-slate-200 rounded-lg p-3 bg-slate-50" style="display: none;">
+                        <h5 class="font-bold text-slate-800 mb-2">פריטי רישוי שנבחרו</h5>
+                        <div id="selected-items-list" class="space-y-2"></div>
+                    </div>
+                </div>
+
+                <div id="regulators-section" class="md:col-span-2" style="display: none;"></div>
+                <div class="md:col-span-2 flex items-center justify-end gap-3 pt-2">
+                    <a href="businesses.html" class="px-4 py-2 rounded-lg border border-slate-300 text-slate-700 hover:bg-slate-50">ביטול</a>
+                    <button type="submit" id="save-btn" class="px-4 py-2 rounded-lg bg-brand-600 text-white hover:bg-brand-700">שמירת שינויים</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 py-6 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center justify-center gap-2">
+            <div class="text-sm text-slate-500 font-medium">&copy; 2026 מערכת רישוי עסקים - מועצה אזורית יואב. כל הזכויות שמורות.</div>
+            <div class="text-xs text-slate-400">פותח עבור מחלקת רישוי עסקים על ידי פבל רזודלוב</div>
+        </div>
+    </footer>
+
+    <script type="module" src="js/pages/business-edit/index.js"></script>
+</body>
+</html>

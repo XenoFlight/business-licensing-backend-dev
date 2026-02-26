@@ -62,6 +62,10 @@ exports.login = async (req, res) => {
 
     // Validate password against stored hash.
     if (user && (await user.matchPassword(password))) {
+      if (!user.isActive) {
+        return res.status(403).json({ message: 'החשבון שלך הושבת. יש לפנות למנהל המערכת.' });
+      }
+
       // Require explicit admin approval before granting access.
       if (!user.isApproved) {
         return res.status(403).json({ message: 'החשבון שלך ממתין לאישור מנהל המערכת.' });

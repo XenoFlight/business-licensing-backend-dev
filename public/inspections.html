@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ניהול ביקורות | מערכת רישוי עסקים</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="theme.css">
+    <script>
+        (function () {
+            try {
+                var savedTheme = localStorage.getItem('theme:last') || 'light';
+                document.documentElement.setAttribute('data-theme', savedTheme);
+                if (savedTheme === 'dark') {
+                    document.documentElement.classList.add('dark');
+                }
+            } catch (error) {
+                console.error('Theme preload failed:', error);
+            }
+        })();
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen antialiased">
+    <header class="bg-white shadow-sm border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center gap-3">
+                    <div class="bg-brand-100 text-brand-700 p-2 rounded-lg"><i class="fa-solid fa-building-shield text-xl"></i></div>
+                    <div>
+                        <a href="dashboard.html" class="text-lg font-bold text-slate-900 tracking-tight">מערכת רישוי עסקים</a>
+                        <div class="text-xs text-slate-500 font-medium">מועצה אזורית יואב</div>
+                    </div>
+                </div>
+
+                <nav class="hidden md:flex space-x-reverse space-x-2">
+                    <a href="dashboard.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors flex items-center gap-2"><i class="fa-solid fa-chart-pie"></i> לוח בקרה</a>
+                    <a href="businesses.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors flex items-center gap-2"><i class="fa-solid fa-store"></i> ניהול תיקי עסקים</a>
+                    <a href="inspections.html" class="px-3 py-2 rounded-lg text-sm font-medium bg-brand-50 text-brand-700 transition-colors flex items-center gap-2"><i class="fa-solid fa-clipboard-check"></i> ניהול ביקורות</a>
+                    <a href="map.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors flex items-center gap-2"><i class="fa-solid fa-map-location-dot"></i> מפת עסקים</a>
+                    <a href="calendar.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors flex items-center gap-2"><i class="fa-solid fa-calendar-days"></i> יומן</a>
+                    <span id="admin-link-placeholder"></span>
+                </nav>
+
+                <div class="flex items-center gap-4">
+                    <div class="flex items-center gap-2 border-r border-slate-200 pr-4">
+                        <div class="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center text-slate-600 font-bold text-sm"><i class="fa-solid fa-user"></i></div>
+                        <span id="user-name" class="text-sm font-medium text-slate-700">שלום, משתמש</span>
+                    </div>
+                    <button id="logout-button" class="text-sm font-medium text-red-600 hover:text-red-700 hover:bg-red-50 px-3 py-2 rounded-lg transition-colors flex items-center gap-2"><i class="fa-solid fa-arrow-right-from-bracket"></i> יציאה</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+        <div class="mb-8">
+            <h1 class="text-2xl font-bold text-slate-900">ניהול ביקורות</h1>
+            <p class="text-slate-500 text-sm mt-1">מרכז גישה לכל פעולות הביקורת: חדשות, מתוכננות, ארכיון ומעקב.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-5">
+            <a href="inspection.html" class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 hover:border-brand-300 hover:bg-brand-50/40 transition-colors">
+                <div class="w-10 h-10 rounded-lg bg-brand-100 text-brand-700 flex items-center justify-center mb-3"><i class="fa-solid fa-plus"></i></div>
+                <h2 class="font-bold text-slate-900">ביקורת חדשה</h2>
+                <p class="text-sm text-slate-600 mt-1">פתיחת ביקורת חדשה לעסק קיים או חדש.</p>
+            </a>
+
+            <a href="upcoming-inspections.html" class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 hover:border-amber-300 hover:bg-amber-50/40 transition-colors">
+                <div class="w-10 h-10 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center mb-3"><i class="fa-solid fa-clock"></i></div>
+                <h2 class="font-bold text-slate-900">ביקורות קרובות</h2>
+                <p class="text-sm text-slate-600 mt-1">רשימת ביקורות שמתוכננות ל־7 הימים הקרובים או עד 30 ימים.</p>
+            </a>
+
+            <a href="inspection-archive.html" class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 hover:border-slate-300 hover:bg-slate-50 transition-colors">
+                <div class="w-10 h-10 rounded-lg bg-slate-100 text-slate-700 flex items-center justify-center mb-3"><i class="fa-solid fa-box-archive"></i></div>
+                <h2 class="font-bold text-slate-900">ארכיון ביקורות</h2>
+                <p class="text-sm text-slate-600 mt-1">תצוגה רוחבית של כל דו"חות הביקורת במערכת.</p>
+            </a>
+
+            <a href="calendar.html?filter=redo" class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 hover:border-purple-300 hover:bg-purple-50/40 transition-colors">
+                <div class="w-10 h-10 rounded-lg bg-purple-100 text-purple-700 flex items-center justify-center mb-3"><i class="fa-solid fa-rotate-right"></i></div>
+                <h2 class="font-bold text-slate-900">ביקורות חוזרות</h2>
+                <p class="text-sm text-slate-600 mt-1">מעבר ליומן מסונן לאירועי ביקורת חוזרת בלבד.</p>
+            </a>
+
+            <a href="calendar.html" class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 hover:border-emerald-300 hover:bg-emerald-50/40 transition-colors">
+                <div class="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center mb-3"><i class="fa-solid fa-calendar-check"></i></div>
+                <h2 class="font-bold text-slate-900">יומן ביקורות</h2>
+                <p class="text-sm text-slate-600 mt-1">תיאום, אירועים מקומיים וניהול תזכורות ביקורת.</p>
+            </a>
+        </div>
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 py-6 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center justify-center gap-2">
+            <div class="text-sm text-slate-500 font-medium">&copy; 2026 מערכת רישוי עסקים - מועצה אזורית יואב. כל הזכויות שמורות.</div>
+            <div class="text-xs text-slate-400">פותח עבור מחלקת רישוי עסקים על ידי פבל רזודלוב</div>
+        </div>
+    </footer>
+
+    <script type="module" src="js/pages/inspections/index.js"></script>
+</body>
+</html>

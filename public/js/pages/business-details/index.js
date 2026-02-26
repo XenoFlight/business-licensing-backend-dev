@@ -9,6 +9,19 @@ let activeBusinessId = null;
 let locationMap = null;
 let locationMarker = null;
 let selectedLocation = null;
+let currentUser = null;
+
+function parseBooleanInput(value) {
+  if (value === 'true') {
+    return true;
+  }
+
+  if (value === 'false') {
+    return false;
+  }
+
+  return null;
+}
 
 // ===== Display Helpers =====
 function getAddressText(business) {
@@ -153,6 +166,34 @@ async function saveBusinessLocation() {
   }
 }
 
+async function deleteBusinessFromDetails() {
+  if (!activeBusinessId) {
+    alert('לא ניתן למחוק: מזהה עסק חסר.');
+    return;
+  }
+
+  if (!confirm('האם למחוק את תיק העסק? פעולה זו אינה הפיכה.')) {
+    return;
+  }
+
+  try {
+    const response = await apiFetch(`/api/businesses/${activeBusinessId}`, {
+      method: 'DELETE',
+    });
+
+    const payload = await response.json().catch(() => ({}));
+    if (!response.ok) {
+      throw new Error(payload.message || 'מחיקת תיק נכשלה');
+    }
+
+    alert('תיק העסק נמחק בהצלחה');
+    window.location.href = 'businesses.html';
+  } catch (error) {
+    console.error('Error deleting business:', error);
+    alert(error.message || 'שגיאה במחיקת העסק');
+  }
+}
+
 // ===== Status Updates =====
 async function updateBusinessStatus(id, newStatus) {
   if (!confirm('האם אתה בטוח שברצונך לשנות את סטטוס העסק?')) {
@@ -249,7 +290,103 @@ function renderBusinessHeader(record) {
     reportsHistoryButton.classList.remove('hidden');
   }
 
+  const deleteButton = document.getElementById('delete-business-btn');
+  if (deleteButton && currentUser?.role === 'admin') {
+    deleteButton.classList.remove('hidden');
+  }
+
+  document.getElementById('ops-local-staff-count').value = Number.isFinite(record.localStaffCount) ? record.localStaffCount : '';
+  document.getElementById('ops-local-manager-name').value = record.localManagerName || '';
+  document.getElementById('ops-local-manager-phone').value = record.localManagerPhone || '';
+  document.getElementById('ops-local-contact-name').value = record.localContactName || '';
+  document.getElementById('ops-local-contact-phone').value = record.localContactPhone || '';
+  document.getElementById('ops-emergency-contact-name').value = record.emergencyContactName || '';
+  document.getElementById('ops-emergency-contact-phone').value = record.emergencyContactPhone || '';
+  document.getElementById('ops-has-trash-cans').value = record.hasTrashCans === true ? 'true' : record.hasTrashCans === false ? 'false' : '';
+  document.getElementById('ops-trash-can-type').value = record.trashCanType || '';
+  document.getElementById('ops-trash-can-count').value = Number.isFinite(record.trashCanCount) ? record.trashCanCount : '';
+  document.getElementById('ops-trash-care-owner').value = record.trashCareOwner || 'unknown';
+  document.getElementById('ops-waste-pickup-schedule').value = record.wastePickupSchedule || '';
+  document.getElementById('ops-local-staff-notes').value = record.localStaffNotes || '';
+
   initLocationMap(record);
+}
+
+function setOperationsFeedback(message, type = 'info') {
+  const feedback = document.getElementById('operations-feedback');
+  if (!feedback) {
+    return;
+  }
+
+  feedback.textContent = message;
+  feedback.className = 'text-sm mb-4';
+
+  if (type === 'success') {
+    feedback.classList.add('text-emerald-600');
+    return;
+  }
+
+  if (type === 'error') {
+    feedback.classList.add('text-red-600');
+    return;
+  }
+
+  feedback.classList.add('text-slate-500');
+}
+
+async function saveOperationalDetails() {
+  if (!activeBusinessId) {
+    setOperationsFeedback('לא ניתן לשמור: מזהה עסק חסר.', 'error');
+    return;
+  }
+
+  const saveButton = document.getElementById('save-operations-btn');
+  const originalText = saveButton.textContent;
+  saveButton.disabled = true;
+  saveButton.textContent = 'שומר...';
+
+  const staffCount = Number.parseInt(document.getElementById('ops-local-staff-count').value, 10);
+  const trashCount = Number.parseInt(document.getElementById('ops-trash-can-count').value, 10);
+
+  const payload = {
+    localStaffCount: Number.isNaN(staffCount) ? null : staffCount,
+    localManagerName: document.getElementById('ops-local-manager-name').value.trim() || null,
+    localManagerPhone: document.getElementById('ops-local-manager-phone').value.trim() || null,
+    localContactName: document.getElementById('ops-local-contact-name').value.trim() || null,
+    localContactPhone: document.getElementById('ops-local-contact-phone').value.trim() || null,
+    emergencyContactName: document.getElementById('ops-emergency-contact-name').value.trim() || null,
+    emergencyContactPhone: document.getElementById('ops-emergency-contact-phone').value.trim() || null,
+    localStaffNotes: document.getElementById('ops-local-staff-notes').value.trim() || null,
+    hasTrashCans: parseBooleanInput(document.getElementById('ops-has-trash-cans').value),
+    trashCanType: document.getElementById('ops-trash-can-type').value.trim() || null,
+    trashCanCount: Number.isNaN(trashCount) ? null : trashCount,
+    trashCareOwner: document.getElementById('ops-trash-care-owner').value || 'unknown',
+    wastePickupSchedule: document.getElementById('ops-waste-pickup-schedule').value.trim() || null,
+  };
+
+  try {
+    const response = await apiFetch(`/api/businesses/${activeBusinessId}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload),
+    });
+
+    const result = await response.json().catch(() => ({}));
+    if (!response.ok) {
+      throw new Error(result.message || result.error || 'שמירת פרטים תפעוליים נכשלה');
+    }
+
+    setOperationsFeedback('הפרטים התפעוליים נשמרו בהצלחה.', 'success');
+    await loadBusinessDetails();
+  } catch (error) {
+    console.error('Error saving operational details:', error);
+    setOperationsFeedback(error.message || 'שגיאה בשמירת פרטים תפעוליים.', 'error');
+  } finally {
+    saveButton.disabled = false;
+    saveButton.textContent = originalText;
+  }
 }
 
 // ===== Data Loading =====
@@ -301,14 +438,24 @@ async function loadBusinessDetails() {
 function initBusinessDetailsPage() {
   requireAuth();
 
-  const user = renderUserName('user-name');
-  initThemeToggle(user);
-  renderAdminLink(user, 'admin-link-placeholder');
+  currentUser = renderUserName('user-name');
+  initThemeToggle(currentUser);
+  renderAdminLink(currentUser, 'admin-link-placeholder');
   bindLogout('logout-button');
 
   const saveLocationButton = document.getElementById('save-location-btn');
   if (saveLocationButton) {
     saveLocationButton.addEventListener('click', saveBusinessLocation);
+  }
+
+  const saveOperationsButton = document.getElementById('save-operations-btn');
+  if (saveOperationsButton) {
+    saveOperationsButton.addEventListener('click', saveOperationalDetails);
+  }
+
+  const deleteBusinessButton = document.getElementById('delete-business-btn');
+  if (deleteBusinessButton) {
+    deleteBusinessButton.addEventListener('click', deleteBusinessFromDetails);
   }
 
   loadBusinessDetails();

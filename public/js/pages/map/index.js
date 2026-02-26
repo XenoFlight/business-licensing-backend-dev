@@ -7,11 +7,14 @@ import { initThemeToggle } from '../../core/theme.js';
 // Displays businesses with saved coordinates on an interactive map.
 
 let map;
+let markerLayer;
+let allBusinesses = [];
 
 // ===== Map Initialization =====
 function initMap() {
   const defaultCenter = [31.6, 34.8];
   map = L.map('map').setView(defaultCenter, 11);
+  markerLayer = L.layerGroup().addTo(map);
 
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
@@ -32,11 +35,78 @@ function addMarkerForBusiness(business) {
     return;
   }
 
-  const marker = L.marker([business.latitude, business.longitude]).addTo(map);
+  const marker = L.marker([business.latitude, business.longitude]).addTo(markerLayer);
   const addressDisplay = business.address || business.businessArea || business.street || '-';
   const detailsLink = markerLinkForBusiness(business);
 
   marker.bindPopup(`<strong>${business.businessName || 'ללא שם'}</strong><br>${addressDisplay}<br><a href="${detailsLink}">פרטים</a>`);
+}
+
+function getBusinessAreaLabel(business) {
+  return String(business.businessArea || business.address || 'ללא אזור').trim();
+}
+
+function getBusinessesWithCoordinates(sourceBusinesses) {
+  return sourceBusinesses.filter((business) => {
+    const lat = Number(business.latitude);
+    const lng = Number(business.longitude);
+    return Number.isFinite(lat) && Number.isFinite(lng);
+  });
+}
+
+function fitMapToBusinesses(businesses) {
+  if (!map || businesses.length === 0) {
+    return;
+  }
+
+  const bounds = L.latLngBounds(businesses.map((business) => [business.latitude, business.longitude]));
+  map.fitBounds(bounds.pad(0.08));
+}
+
+function updateMapCountLabel(filteredBusinesses, totalBusinesses) {
+  const countElement = document.getElementById('map-count');
+  if (!countElement) {
+    return;
+  }
+
+  countElement.textContent = `מציג ${filteredBusinesses.length} מתוך ${totalBusinesses} עסקים עם מיקום`;
+}
+
+function renderMarkersByArea(areaValue = '') {
+  if (!markerLayer) {
+    return;
+  }
+
+  markerLayer.clearLayers();
+
+  const withCoordinates = getBusinessesWithCoordinates(allBusinesses);
+  const normalizedArea = String(areaValue || '').trim();
+  const filtered = normalizedArea
+    ? withCoordinates.filter((business) => getBusinessAreaLabel(business) === normalizedArea)
+    : withCoordinates;
+
+  filtered.forEach((business) => addMarkerForBusiness(business));
+  fitMapToBusinesses(filtered);
+  updateMapCountLabel(filtered, withCoordinates.length);
+}
+
+function populateAreaFilter(businesses) {
+  const areaFilter = document.getElementById('area-filter');
+  if (!areaFilter) {
+    return;
+  }
+
+  const uniqueAreas = Array.from(new Set(businesses.map((business) => getBusinessAreaLabel(business)))).sort((a, b) => a.localeCompare(b, 'he'));
+  uniqueAreas.forEach((area) => {
+    const option = document.createElement('option');
+    option.value = area;
+    option.textContent = area;
+    areaFilter.appendChild(option);
+  });
+
+  areaFilter.addEventListener('change', (event) => {
+    renderMarkersByArea(event.target.value);
+  });
 }
 
 // ===== Data Load =====
@@ -52,7 +122,9 @@ async function fetchBusinesses() {
     return;
   }
 
-  businesses.forEach((business) => addMarkerForBusiness(business));
+  allBusinesses = businesses;
+  populateAreaFilter(getBusinessesWithCoordinates(allBusinesses));
+  renderMarkersByArea('');
 }
 
 // ===== Page Bootstrap =====

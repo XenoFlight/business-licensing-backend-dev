@@ -89,10 +89,10 @@
                         <i class="fa-solid fa-chart-pie"></i> לוח בקרה
                     </a>
                     <a href="businesses.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors flex items-center gap-2">
-                        <i class="fa-solid fa-store"></i> רשימת עסקים
+                        <i class="fa-solid fa-store"></i> ניהול תיקי עסקים
                     </a>
-                    <a href="inspection.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors flex items-center gap-2">
-                        <i class="fa-solid fa-clipboard-check"></i> ביקורת חדשה
+                    <a href="inspections.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors flex items-center gap-2">
+                        <i class="fa-solid fa-clipboard-check"></i> ניהול ביקורות
                     </a>
                     <a href="map.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors flex items-center gap-2">
                         <i class="fa-solid fa-map-location-dot"></i> מפת עסקים
@@ -195,6 +195,28 @@
                     </div>
                 </div>
             </article>
+        </section>
+
+        <section class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 mb-8">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="text-lg font-bold text-slate-900">פעולות להיום</h3>
+                <span class="text-xs text-slate-500">גישה מהירה למשימות יומיות</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-3">
+                <a href="inspection.html" class="px-4 py-3 rounded-xl border border-slate-200 hover:border-brand-300 hover:bg-brand-50/40 transition-colors text-sm font-medium text-slate-700 flex items-center gap-2">
+                    <i class="fa-solid fa-plus text-brand-600"></i> פתיחת ביקורת חדשה
+                </a>
+                <a href="upcoming-inspections.html" class="px-4 py-3 rounded-xl border border-slate-200 hover:border-amber-300 hover:bg-amber-50/40 transition-colors text-sm font-medium text-slate-700 flex items-center gap-2">
+                    <i class="fa-solid fa-clock text-amber-600"></i> ביקורות קרובות
+                    <span id="upcoming-counts-chip" class="text-xs font-semibold px-2 py-0.5 rounded-md bg-amber-100 text-amber-700">0 / 0</span>
+                </a>
+                <a href="calendar.html?filter=redo" class="px-4 py-3 rounded-xl border border-slate-200 hover:border-purple-300 hover:bg-purple-50/40 transition-colors text-sm font-medium text-slate-700 flex items-center gap-2">
+                    <i class="fa-solid fa-rotate-right text-purple-600"></i> ביקורות חוזרות
+                </a>
+                <a href="businesses.html" class="px-4 py-3 rounded-xl border border-slate-200 hover:border-emerald-300 hover:bg-emerald-50/40 transition-colors text-sm font-medium text-slate-700 flex items-center gap-2">
+                    <i class="fa-solid fa-store text-emerald-600"></i> ניהול תיקי עסקים
+                </a>
+            </div>
         </section>
 
         <section class="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-8">

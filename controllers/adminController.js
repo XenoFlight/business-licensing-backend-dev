@@ -55,3 +55,88 @@ exports.denyUser = async (req, res) => {
     res.status(500).json({ message: 'שגיאה בדחיית המשתמש', error: error.message });
   }
 };
+
+// @desc    Get all system users
+// @route   GET /api/admin/users
+// @access  Private (Admin only)
+exports.getAllUsers = async (req, res) => {
+  try {
+    const users = await User.findAll({
+      attributes: ['id', 'fullName', 'email', 'role', 'isApproved', 'isActive', 'createdAt'],
+      order: [['createdAt', 'DESC']]
+    });
+
+    res.json(users);
+  } catch (error) {
+    console.error('Error fetching all users:', error);
+    res.status(500).json({ message: 'שגיאה בקבלת רשימת המשתמשים', error: error.message });
+  }
+};
+
+// @desc    Delete a user account
+// @route   DELETE /api/admin/users/:id
+// @access  Private (Admin only)
+exports.deleteUser = async (req, res) => {
+  try {
+    const targetUserId = Number(req.params.id);
+    if (!targetUserId) {
+      return res.status(400).json({ message: 'מזהה משתמש לא תקין' });
+    }
+
+    if (Number(req.user?.id) === targetUserId) {
+      return res.status(400).json({ message: 'לא ניתן למחוק את המשתמש המחובר כעת' });
+    }
+
+    const user = await User.findByPk(targetUserId);
+    if (!user) {
+      return res.status(404).json({ message: 'משתמש לא נמצא' });
+    }
+
+    await user.destroy();
+    res.json({ message: 'המשתמש נמחק בהצלחה' });
+  } catch (error) {
+    console.error('Error deleting user:', error);
+    res.status(500).json({ message: 'שגיאה במחיקת המשתמש', error: error.message });
+  }
+};
+
+// @desc    Activate or deactivate a user account
+// @route   PATCH /api/admin/users/:id/active
+// @access  Private (Admin only)
+exports.setUserActiveState = async (req, res) => {
+  try {
+    const targetUserId = Number(req.params.id);
+    const { isActive } = req.body;
+
+    if (!targetUserId) {
+      return res.status(400).json({ message: 'מזהה משתמש לא תקין' });
+    }
+
+    if (typeof isActive !== 'boolean') {
+      return res.status(400).json({ message: 'יש להעביר ערך בוליאני עבור isActive' });
+    }
+
+    if (Number(req.user?.id) === targetUserId && isActive === false) {
+      return res.status(400).json({ message: 'לא ניתן להשבית את המשתמש המחובר כעת' });
+    }
+
+    const user = await User.findByPk(targetUserId);
+    if (!user) {
+      return res.status(404).json({ message: 'משתמש לא נמצא' });
+    }
+
+    user.isActive = isActive;
+    await user.save();
+
+    res.json({
+      message: isActive ? 'המשתמש הופעל בהצלחה' : 'המשתמש הושבת בהצלחה',
+      user: {
+        id: user.id,
+        isActive: user.isActive,
+      },
+    });
+  } catch (error) {
+    console.error('Error updating user active state:', error);
+    res.status(500).json({ message: 'שגיאה בעדכון סטטוס המשתמש', error: error.message });
+  }
+};

@@ -49,10 +49,27 @@ const importBusinesses = async () => {
       isCompany: parseBoolean(b.isCompany),
       suitableForShortTrack: parseBoolean(b.suitableForShortTrack),
       fireAffidavit: parseBoolean(b.fireAffidavit),
+      // Normalize license number for unique index compatibility.
+      licenseNumber: normalizeLicenseNumber(b.licenseNumber),
       // Add audit timestamps for bulk insert.
       createdAt: new Date(),
       updatedAt: new Date()
     }));
+
+    // Prevent duplicate non-null license values inside this import batch.
+    const seenLicenseNumbers = new Set();
+    processedRecords.forEach((record) => {
+      if (!record.licenseNumber) {
+        return;
+      }
+
+      if (seenLicenseNumbers.has(record.licenseNumber)) {
+        record.licenseNumber = null;
+        return;
+      }
+
+      seenLicenseNumbers.add(record.licenseNumber);
+    });
 
     // Deduplicate records by file number, preferring non-closed status when duplicates exist.
     const uniqueRecordsMap = new Map();
@@ -116,6 +133,16 @@ function parseBoolean(val) {
   if (val === '1' || val === 1 || val === true || val === 'true') return true;
   if (val === '0' || val === 0 || val === false || val === 'false') return false;
   return null; // Treat empty string or other values as null
+}
+
+function normalizeLicenseNumber(value) {
+  const normalized = String(value ?? '').trim();
+
+  if (!normalized || normalized === '0' || normalized === '-' || normalized === 'לא ידוע' || normalized === 'לא קיים') {
+    return null;
+  }
+
+  return normalized;
 }
 
 importBusinesses();

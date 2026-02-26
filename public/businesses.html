@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>רשימת עסקים | מערכת רישוי עסקים</title>
+    <title>ניהול תיקי עסקים | מערכת רישוי עסקים</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -71,10 +71,10 @@
                         <i class="fa-solid fa-chart-pie"></i> לוח בקרה
                     </a>
                     <a href="businesses.html" class="px-3 py-2 rounded-lg text-sm font-medium bg-brand-50 text-brand-700 transition-colors flex items-center gap-2">
-                        <i class="fa-solid fa-store"></i> רשימת עסקים
+                        <i class="fa-solid fa-store"></i> ניהול תיקי עסקים
                     </a>
-                    <a href="inspection.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors flex items-center gap-2">
-                        <i class="fa-solid fa-clipboard-check"></i> ביקורת חדשה
+                    <a href="inspections.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors flex items-center gap-2">
+                        <i class="fa-solid fa-clipboard-check"></i> ניהול ביקורות
                     </a>
                     <a href="map.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors flex items-center gap-2">
                         <i class="fa-solid fa-map-location-dot"></i> מפת עסקים
@@ -103,14 +103,25 @@
     <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
         <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
             <div class="px-6 py-4 border-b border-slate-100 flex justify-between items-center bg-slate-50/50 flex-wrap gap-4">
-                <h2 class="font-bold text-slate-800 text-lg">רשימת עסקים</h2>
+                <h2 class="font-bold text-slate-800 text-lg">ניהול תיקי עסקים</h2>
                 <div class="flex gap-3 items-center flex-wrap">
+                    <button id="add-business-btn" class="bg-brand-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-brand-700 transition-colors flex items-center gap-2">
+                        <i class="fa-solid fa-plus"></i> תיק עסק חדש
+                    </button>
                     <input type="text" id="search-input" class="px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 w-64" placeholder="חפש לפי שם עסק, כתובת או בעלים...">
                     <select id="status-filter" class="px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
                         <option value="">כל הסטטוסים</option>
                     </select>
-                    <select id="area-filter" class="px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
-                        <option value="">כל האזורים</option>
+                    <select id="trash-filter" class="px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+                        <option value="">פחי אשפה: הכל</option>
+                        <option value="with">עם פחים</option>
+                        <option value="without">ללא פחים</option>
+                    </select>
+                    <select id="trash-care-filter" class="px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+                        <option value="">אחריות פחים: הכל</option>
+                        <option value="municipality">המועצה</option>
+                        <option value="business">בעל העסק</option>
+                        <option value="shared">משותף</option>
                     </select>
                     <label class="flex items-center gap-2 text-sm text-slate-600 cursor-pointer select-none">
                         <input type="checkbox" id="show-closed-checkbox" class="w-4 h-4 text-brand-600 rounded border-slate-300 focus:ring-brand-500">
@@ -118,19 +129,23 @@
                     </label>
                 </div>
             </div>
-            <div class="overflow-x-auto">
-                <table id="business-table" class="w-full text-sm text-right">
+            <div class="overflow-x-auto table-scroll-shell table-scroll-shell--businesses">
+                <table id="business-table" class="w-full text-sm text-right wide-data-table">
                     <thead class="bg-slate-50 text-slate-600 font-medium border-b border-slate-200">
                         <tr>
+                            <th class="px-6 py-3">מזהה תיק</th>
                             <th class="px-6 py-3">שם העסק</th>
                             <th class="px-6 py-3">כתובת</th>
                             <th class="px-6 py-3">בעלים</th>
-                            <th class="px-6 py-3">פריט רישוי</th>
+                            <th class="px-6 py-3">אנשי קשר מקומיים</th>
+                            <th class="px-6 py-3">צוות מקומי</th>
+                            <th class="px-6 py-3">פחי אשפה</th>
+                            <th class="px-6 py-3">סטטוס</th>
                             <th class="px-6 py-3">פעולות</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-slate-100">
-                        <tr><td colspan="5" class="px-6 py-8 text-center text-slate-500">טוען נתונים...</td></tr>
+                        <tr><td colspan="9" class="px-6 py-8 text-center text-slate-500">טוען נתונים...</td></tr>
                     </tbody>
                 </table>
             </div>

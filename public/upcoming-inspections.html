@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ביקורות קרובות | מערכת רישוי עסקים</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="theme.css">
+    <script>
+        (function () {
+            try {
+                var savedTheme = localStorage.getItem('theme:last') || 'light';
+                document.documentElement.setAttribute('data-theme', savedTheme);
+                if (savedTheme === 'dark') {
+                    document.documentElement.classList.add('dark');
+                }
+            } catch (error) {
+                console.error('Theme preload failed:', error);
+            }
+        })();
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen antialiased">
+    <header class="bg-white shadow-sm border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center gap-3">
+                    <div class="bg-brand-100 text-brand-700 p-2 rounded-lg"><i class="fa-solid fa-building-shield text-xl"></i></div>
+                    <div>
+                        <a href="dashboard.html" class="text-lg font-bold text-slate-900 tracking-tight">מערכת רישוי עסקים</a>
+                        <div class="text-xs text-slate-500 font-medium">מועצה אזורית יואב</div>
+                    </div>
+                </div>
+
+                <nav class="hidden md:flex space-x-reverse space-x-2">
+                    <a href="dashboard.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors flex items-center gap-2"><i class="fa-solid fa-chart-pie"></i> לוח בקרה</a>
+                    <a href="businesses.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors flex items-center gap-2"><i class="fa-solid fa-store"></i> ניהול תיקי עסקים</a>
+                    <a href="inspections.html" class="px-3 py-2 rounded-lg text-sm font-medium bg-brand-50 text-brand-700 transition-colors flex items-center gap-2"><i class="fa-solid fa-clipboard-check"></i> ניהול ביקורות</a>
+                    <a href="map.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors flex items-center gap-2"><i class="fa-solid fa-map-location-dot"></i> מפת עסקים</a>
+                    <a href="calendar.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors flex items-center gap-2"><i class="fa-solid fa-calendar-days"></i> יומן</a>
+                    <span id="admin-link-placeholder"></span>
+                </nav>
+
+                <div class="flex items-center gap-4">
+                    <div class="flex items-center gap-2 border-r border-slate-200 pr-4">
+                        <div class="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center text-slate-600 font-bold text-sm"><i class="fa-solid fa-user"></i></div>
+                        <span id="user-name" class="text-sm font-medium text-slate-700">שלום, משתמש</span>
+                    </div>
+                    <button id="logout-button" class="text-sm font-medium text-red-600 hover:text-red-700 hover:bg-red-50 px-3 py-2 rounded-lg transition-colors flex items-center gap-2"><i class="fa-solid fa-arrow-right-from-bracket"></i> יציאה</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+        <div class="mb-6 flex items-center justify-between gap-3 flex-wrap">
+            <div>
+                <h1 class="text-2xl font-bold text-slate-900">ביקורות קרובות</h1>
+                <p class="text-sm text-slate-500 mt-1">ריכוז ביקורות מתוזמנות ב־7 הימים הקרובים ובטווח של עד 30 ימים.</p>
+            </div>
+            <a href="inspections.html" class="text-sm text-slate-500 hover:text-slate-800 flex items-center gap-1"><i class="fa-solid fa-arrow-right"></i> חזרה לניהול ביקורות</a>
+        </div>
+
+        <p id="upcoming-feedback" class="text-sm text-slate-500 mb-4">טוען ביקורות קרובות...</p>
+
+        <div class="grid grid-cols-1 xl:grid-cols-2 gap-6">
+            <section class="bg-white rounded-2xl border border-red-200 shadow-sm overflow-hidden xl:col-span-2">
+                <div class="px-6 py-4 border-b border-red-100 bg-red-50/70">
+                    <h2 class="font-bold text-red-700">ביקורות באיחור</h2>
+                </div>
+                <div class="overflow-x-auto table-scroll-shell table-scroll-shell--admin-pending">
+                    <table class="w-full text-sm text-right wide-data-table">
+                        <thead class="bg-slate-50 text-slate-600 font-medium border-b border-slate-200">
+                            <tr>
+                                <th class="px-6 py-3">תאריך</th>
+                                <th class="px-6 py-3">ימים</th>
+                                <th class="px-6 py-3">כותרת</th>
+                                <th class="px-6 py-3">מקור</th>
+                                <th class="px-6 py-3">פעולה</th>
+                            </tr>
+                        </thead>
+                        <tbody id="overdue-body">
+                            <tr><td colspan="5" class="px-6 py-8 text-center text-slate-500">טוען...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+                <div class="px-6 py-4 border-b border-slate-100 bg-amber-50/60">
+                    <h2 class="font-bold text-slate-900">עד 7 ימים</h2>
+                </div>
+                <div class="overflow-x-auto table-scroll-shell table-scroll-shell--admin-pending">
+                    <table class="w-full text-sm text-right wide-data-table">
+                        <thead class="bg-slate-50 text-slate-600 font-medium border-b border-slate-200">
+                            <tr>
+                                <th class="px-6 py-3">תאריך</th>
+                                <th class="px-6 py-3">ימים</th>
+                                <th class="px-6 py-3">כותרת</th>
+                                <th class="px-6 py-3">מקור</th>
+                                <th class="px-6 py-3">פעולה</th>
+                            </tr>
+                        </thead>
+                        <tbody id="upcoming-7days-body">
+                            <tr><td colspan="5" class="px-6 py-8 text-center text-slate-500">טוען...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+                <div class="px-6 py-4 border-b border-slate-100 bg-sky-50/60">
+                    <h2 class="font-bold text-slate-900">8 עד 30 ימים</h2>
+                </div>
+                <div class="overflow-x-auto table-scroll-shell table-scroll-shell--admin-all">
+                    <table class="w-full text-sm text-right wide-data-table">
+                        <thead class="bg-slate-50 text-slate-600 font-medium border-b border-slate-200">
+                            <tr>
+                                <th class="px-6 py-3">תאריך</th>
+                                <th class="px-6 py-3">ימים</th>
+                                <th class="px-6 py-3">כותרת</th>
+                                <th class="px-6 py-3">מקור</th>
+                                <th class="px-6 py-3">פעולה</th>
+                            </tr>
+                        </thead>
+                        <tbody id="upcoming-30days-body">
+                            <tr><td colspan="5" class="px-6 py-8 text-center text-slate-500">טוען...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 py-6 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center justify-center gap-2">
+            <div class="text-sm text-slate-500 font-medium">&copy; 2026 מערכת רישוי עסקים - מועצה אזורית יואב. כל הזכויות שמורות.</div>
+            <div class="text-xs text-slate-400">פותח עבור מחלקת רישוי עסקים על ידי פבל רזודלוב</div>
+        </div>
+    </footer>
+
+    <script type="module" src="js/pages/upcoming-inspections/index.js"></script>
+</body>
+</html>
