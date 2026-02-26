@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>הרשמה למערכת | רישוי עסקים</title>
+    
+    <!-- Tailwind CSS (via CDN for single-file deployment) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Config for Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            900: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        .leaflet-container { z-index: 10 !important; font-family: inherit; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen antialiased justify-center items-center">
+
+    <div class="w-full max-w-md bg-white p-8 rounded-2xl shadow-lg border border-slate-100">
+        <h1 class="text-2xl font-bold text-slate-900 mb-6 text-center">הרשמה למערכת</h1>
+        <form id="register-form" class="space-y-4">
+            <div>
+                <label for="fullName" class="block text-sm font-medium text-slate-700 mb-1">שם מלא</label>
+                <input type="text" id="fullName" name="fullName" required class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500">
+            </div>
+            <div>
+                <label for="email" class="block text-sm font-medium text-slate-700 mb-1">דואר אלקטרוני</label>
+                <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500">
+            </div>
+            <div>
+                <label for="password" class="block text-sm font-medium text-slate-700 mb-1">סיסמה</label>
+                <input type="password" id="password" name="password" required minlength="6" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500">
+            </div>
+            <div>
+                <label for="role" class="block text-sm font-medium text-slate-700 mb-1">תפקיד</label>
+                <select id="role" name="role" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500">
+                    <option value="inspector">מפקח</option>
+                    <option value="manager">מנהל</option>
+                </select>
+            </div>
+            <button type="submit" class="w-full bg-green-600 text-white py-2.5 rounded-lg font-medium hover:bg-green-700 transition-colors shadow-sm mt-2">הרשמה</button>
+        </form>
+        <p id="error-message" class="text-red-500 text-sm mt-4 text-center min-h-[1.2em]"></p>
+        <div class="mt-6 text-center text-sm text-slate-500">
+            כבר רשום? <a href="login.html" class="text-brand-600 hover:text-brand-700 font-medium">התחבר כאן</a>
+        </div>
+    </div>
+
+    <footer class="fixed bottom-0 w-full text-center py-4 bg-slate-50 text-slate-400 text-xs">
+        &copy; 2026 מערכת רישוי עסקים - מועצה אזורית יואב. כל הזכויות שמורות.
+    </footer>
+
+    <script>
+        document.getElementById('register-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const fullName = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const role = document.getElementById('role').value;
+            const errorMessage = document.getElementById('error-message');
+            
+            errorMessage.textContent = '';
+
+            try {
+                const response = await fetch('/api/auth/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ fullName, email, password, role })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    alert('ההרשמה בוצעה בהצלחה! חשבונך הועבר לאישור מנהל המערכת. תוכל להתחבר לאחר קבלת האישור.');
+                    window.location.href = 'login.html';
+                } else {
+                    errorMessage.textContent = data.message || 'שגיאה בהרשמה';
+                }
+            } catch (error) {
+                errorMessage.textContent = 'שגיאת תקשורת. נסה שוב מאוחר יותר.';
+            }
+        });
+    </script>
+
+</body>
+</html>

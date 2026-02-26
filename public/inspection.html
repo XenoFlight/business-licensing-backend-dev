@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ביקורת חדשה | מערכת רישוי עסקים</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <!-- Custom Config for Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            900: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        
+        .signature-pad {
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            width: 100%;
+            height: 200px;
+            background-color: #fff;
+            touch-action: none;
+        }
+        .business-summary {
+            background-color: #f1f5f9;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 2rem;
+            border-right: 4px solid #0ea5e9;
+        }
+        .dynamic-list {
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            padding: 15px;
+            background-color: #f8fafc;
+            margin-top: 15px;
+        }
+        .dynamic-item {
+            background: white;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+        }
+        .leaflet-container { z-index: 10 !important; font-family: inherit; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen antialiased">
+
+    <!-- Header / Navbar -->
+    <header class="bg-white shadow-sm border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Right side: Logo & Brand -->
+                <div class="flex items-center gap-3">
+                    <div class="bg-brand-100 text-brand-700 p-2 rounded-lg">
+                        <i class="fa-solid fa-building-shield text-xl"></i>
+                    </div>
+                    <div>
+                        <a href="dashboard.html" class="text-lg font-bold text-slate-900 tracking-tight">מערכת רישוי עסקים</a>
+                        <div class="text-xs text-slate-500 font-medium">מועצה אזורית יואב</div>
+                    </div>
+                </div>
+
+                <!-- Center: Navigation -->
+                <nav class="hidden md:flex space-x-reverse space-x-2">
+                    <a href="dashboard.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors flex items-center gap-2">
+                        <i class="fa-solid fa-chart-pie"></i> לוח בקרה
+                    </a>
+                    <a href="businesses.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors flex items-center gap-2">
+                        <i class="fa-solid fa-store"></i> רשימת עסקים
+                    </a>
+                    <a href="inspection.html" class="px-3 py-2 rounded-lg text-sm font-medium bg-brand-50 text-brand-700 transition-colors flex items-center gap-2">
+                        <i class="fa-solid fa-clipboard-check"></i> ביקורת חדשה
+                    </a>
+                    <span id="admin-link-placeholder"></span>
+                </nav>
+
+                <!-- Left side: User Profile & Actions -->
+                <div class="flex items-center gap-4">
+                    <div class="flex items-center gap-2 border-r border-slate-200 pr-4">
+                        <div class="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center text-slate-600 font-bold text-sm">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <span id="user-name" class="text-sm font-medium text-slate-700">שלום, משתמש</span>
+                    </div>
+                    <button id="logout-button" class="text-sm font-medium text-red-600 hover:text-red-700 hover:bg-red-50 px-3 py-2 rounded-lg transition-colors flex items-center gap-2">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i> יציאה
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+        
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
+            <!-- תצוגה עבור עסק קיים -->
+            <div id="business-info" class="business-summary" style="display: none;">
+                טוען פרטי עסק...
+            </div>
+
+            <!-- טופס עבור עסק חדש -->
+            <div id="new-business-form" class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 border-b border-slate-200 pb-8" style="display: none;">
+                <h2 class="text-xl font-bold text-slate-800 md:col-span-2">פרטי עסק חדש</h2>
+                
+                <div>
+                    <label for="newBusinessName" class="block text-sm font-medium text-slate-700 mb-1">שם העסק:</label>
+                    <input type="text" id="newBusinessName" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500">
+                </div>
+                
+                <div>
+                    <label for="newAddress" class="block text-sm font-medium text-slate-700 mb-1">כתובת:</label>
+                    <div class="flex gap-2">
+                        <input type="text" id="newAddress" class="flex-grow px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500" onchange="geocodeAddress()">
+                        <button type="button" class="px-3 py-2 border border-slate-300 rounded-lg bg-slate-50 hover:bg-slate-100 text-slate-600 transition-colors" onclick="openMapModal()">📍 סמן במפה</button>
+                    </div>
+                </div>
+                
+                <div>
+                    <label for="newOwnerName" class="block text-sm font-medium text-slate-700 mb-1">שם הבעלים:</label>
+                    <input type="text" id="newOwnerName" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500">
+                </div>
+                
+                <div>
+                    <label for="newOwnerId" class="block text-sm font-medium text-slate-700 mb-1">ת.ז. / ח.פ בעלים:</label>
+                    <input type="text" id="newOwnerId" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500">
+                </div>
+                
+                <div>
+                    <label for="newContactPhone" class="block text-sm font-medium text-slate-700 mb-1">טלפון ליצירת קשר:</label>
+                    <input type="text" id="newContactPhone" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500">
+                </div>
+                
+                <div>
+                    <label for="newEmail" class="block text-sm font-medium text-slate-700 mb-1">אימייל (אופציונלי):</label>
+                    <input type="text" id="newEmail" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500">
+                </div>
+                
+                <div class="md:col-span-2 mt-4">
+                    <label class="block text-sm font-medium text-slate-700 mb-1">הוספת פריטי רישוי:</label>
+                    <div class="flex gap-2 mb-2">
+                        <select id="licensingCategory" class="flex-1 px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500" onchange="filterLicensingItems()">
+                            <option value="">בחר קטגוריה...</option>
+                        </select>
+                        <select id="newLicensingItemId" class="flex-1 px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500" disabled>
+                            <option value="">בחר פריט רישוי...</option>
+                        </select>
+                        <button type="button" id="addItemBtn" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors" onclick="addLicensingItem()">הוסף</button>
+                    </div>
+                    
+                    <div id="selected-items-container" class="dynamic-list" style="display: none;">
+                        <h5 class="font-bold text-slate-800 mb-3">פריטי רישוי שנבחרו</h5>
+                        <div id="selected-items-list"></div>
+                    </div>
+                </div>
+                
+                <div id="regulators-section" class="md:col-span-2" style="display: none;"></div>
+            </div>
+
+            <form id="inspection-form" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <input type="hidden" id="businessId" name="businessId">
+
+                <div class="md:col-span-2">
+                    <label class="block text-sm font-medium text-slate-700 mb-1">הוספת ליקויים:</label>
+                    <div class="flex gap-2 mb-2">
+                        <select id="defectCategory" class="flex-1 px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500" onchange="filterDefects()">
+                            <option value="">בחר קטגוריה...</option>
+                        </select>
+                        <select id="defectSelect" class="flex-1 px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500" disabled>
+                            <option value="">בחר ליקוי...</option>
+                        </select>
+                        <button type="button" id="addDefectBtn" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors" onclick="addDefect()">הוסף</button>
+                    </div>
+                    
+                    <div id="selected-defects-container" class="dynamic-list" style="display: none;">
+                        <h5 class="font-bold text-slate-800 mb-3">ליקויים שנבחרו</h5>
+                        <div id="selected-defects-list"></div>
+                    </div>
+                </div>
+
+                <div class="md:col-span-2">
+                    <label for="findings" class="block text-sm font-medium text-slate-700 mb-1">ממצאים ופירוט הליקויים (יופיע בדו"ח):</label>
+                    <textarea id="findings" name="findings" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 min-h-[120px]" required placeholder="פרט כאן את ממצאי הביקורת..."></textarea>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">חתימת המפקח:</label>
+                    <canvas id="inspector-signature-pad" class="signature-pad mb-2"></canvas>
+                    <button type="button" id="clearInspectorSignBtn" class="text-xs text-slate-500 hover:text-slate-700 underline">נקה חתימה</button>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">חתימת בעל העסק:</label>
+                    <canvas id="owner-signature-pad" class="signature-pad mb-2"></canvas>
+                    <div class="flex items-center gap-2 mb-2">
+                        <input type="checkbox" id="ownerRefusedSign" class="w-4 h-4 text-brand-600 rounded border-slate-300 focus:ring-brand-500">
+                        <label class="text-sm text-slate-600" for="ownerRefusedSign">סירוב חתימה</label>
+                    </div>
+                    <button type="button" id="clearOwnerSignBtn" class="text-xs text-slate-500 hover:text-slate-700 underline">נקה חתימה</button>
+                </div>
+
+                <div class="md:col-span-2 flex gap-3 mt-4">
+                    <button type="submit" class="flex-grow bg-brand-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-brand-700 transition-colors shadow-sm">שמור והפק דו"ח</button>
+                    <button type="button" class="bg-slate-200 text-slate-700 px-6 py-3 rounded-lg font-bold hover:bg-slate-300 transition-colors" onclick="window.location.href='dashboard.html'">ביטול</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Map Modal -->
+    <div id="mapModal" class="fixed inset-0 bg-black bg-opacity-50 z-[60] hidden flex items-center justify-center">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-4xl mx-4 overflow-hidden">
+            <div class="p-4 border-b border-slate-200 flex justify-between items-center">
+                <h3 class="font-bold text-lg text-slate-800">בחר מיקום במפה</h3>
+                <button onclick="closeMapModal()" class="text-slate-400 hover:text-slate-600">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+            <div class="p-4">
+                <div id="map" class="w-full h-[400px] rounded-lg border border-slate-200"></div>
+                <p class="text-sm text-slate-500 mt-2">לחץ על המפה כדי לסמן את המיקום המדויק. הכתובת תתעדכן אוטומטית.</p>
+            </div>
+            <div class="p-4 border-t border-slate-200 bg-slate-50 flex justify-end">
+                <button onclick="closeMapModal()" class="bg-brand-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-brand-700 transition-colors">
+                    אישור וסגירה
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-6 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center justify-center gap-2">
+            <div class="text-sm text-slate-500 font-medium">
+                &copy; 2026 מערכת רישוי עסקים - מועצה אזורית יואב. כל הזכויות שמורות.
+            </div>
+            <div class="text-xs text-slate-400">
+                פותח עבור מחלקת רישוי עסקים על ידי פבל רזודלוב
+            </div>
+        </div>
+    </footer>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script type="module" src="js/pages/inspection/index.js"></script>
+</body>
+</html>
