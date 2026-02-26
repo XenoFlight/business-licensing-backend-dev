@@ -10,6 +10,9 @@
     
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
     <!-- Custom Config for Tailwind -->
     <script>
@@ -147,6 +150,64 @@
                     <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center">
                         <i class="fa-solid fa-hourglass-half text-lg"></i>
                     </div>
+                </div>
+            </article>
+        </section>
+
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
+            <article class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 stat-card">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm text-slate-500">סה״כ ביקורות</p>
+                        <h2 id="total-reports" class="text-4xl font-bold text-slate-900 mt-1">-</h2>
+                    </div>
+                    <div class="w-12 h-12 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center">
+                        <i class="fa-solid fa-clipboard-list text-lg"></i>
+                    </div>
+                </div>
+            </article>
+
+            <article class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 stat-card">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm text-slate-500">אחוז מעבר ביקורות</p>
+                        <h2 id="report-pass-rate" class="text-4xl font-bold text-emerald-600 mt-1">-</h2>
+                    </div>
+                    <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center">
+                        <i class="fa-solid fa-chart-line text-lg"></i>
+                    </div>
+                </div>
+            </article>
+
+            <article class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 stat-card">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm text-slate-500">עסקים עם מיקום במפה</p>
+                        <h2 id="mapped-businesses" class="text-4xl font-bold text-brand-700 mt-1">-</h2>
+                    </div>
+                    <div class="w-12 h-12 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center">
+                        <i class="fa-solid fa-location-dot text-lg"></i>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-8">
+            <article class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-lg font-bold text-slate-900">התפלגות סטטוס עסקים</h3>
+                </div>
+                <div class="relative h-72">
+                    <canvas id="business-status-chart"></canvas>
+                </div>
+            </article>
+
+            <article class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-lg font-bold text-slate-900">תוצאות ביקורות</h3>
+                </div>
+                <div class="relative h-72">
+                    <canvas id="reports-status-chart"></canvas>
                 </div>
             </article>
         </section>
