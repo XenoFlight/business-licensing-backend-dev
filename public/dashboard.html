@@ -149,8 +149,21 @@
             <article class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 stat-card">
                 <div class="flex items-center justify-between">
                     <div>
-                        <p class="text-sm text-slate-500">בטיפול / חידוש</p>
-                        <h2 id="pending-businesses" class="text-4xl font-bold text-amber-500 mt-1">-</h2>
+                        <p class="text-sm text-slate-500">זמני / חידוש / נדחה</p>
+                        <a href="businesses.html?statuses=temporarily_permitted,renewal_in_progress,rejected" class="inline-block hover:opacity-90 transition-opacity" title="פתח רשימת עסקים מסוננת">
+                            <h2 id="pending-businesses" class="text-4xl font-bold text-amber-500 mt-1">-</h2>
+                        </a>
+                        <div class="mt-3 flex flex-wrap gap-2 text-xs">
+                            <a href="businesses.html?status=temporarily_permitted" class="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-sky-50 text-sky-700 border border-sky-100 hover:opacity-90 transition-opacity">
+                                היתר זמני: <strong id="short-license-businesses">-</strong>
+                            </a>
+                            <a href="businesses.html?status=renewal_in_progress" class="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-amber-50 text-amber-700 border border-amber-200 hover:opacity-90 transition-opacity">
+                                חידוש: <strong id="renewing-businesses">-</strong>
+                            </a>
+                            <a href="businesses.html?status=rejected" class="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-red-50 text-red-700 border border-red-200 hover:opacity-90 transition-opacity">
+                                נדחה: <strong id="denied-businesses">-</strong>
+                            </a>
+                        </div>
                     </div>
                     <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center">
                         <i class="fa-solid fa-hourglass-half text-lg"></i>

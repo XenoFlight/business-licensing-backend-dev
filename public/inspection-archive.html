@@ -64,14 +64,25 @@
         </div>
 
         <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
-            <div class="px-6 py-4 border-b border-slate-100 bg-slate-50/50 flex items-center gap-3 flex-wrap">
-                <input id="archive-search" type="text" placeholder="חיפוש לפי עסק / מפקח / ממצאים" class="px-3 py-2 border border-slate-300 rounded-lg text-sm w-72 max-w-full">
-                <select id="archive-status-filter" class="px-3 py-2 border border-slate-300 rounded-lg text-sm">
-                    <option value="">כל הסטטוסים</option>
-                    <option value="pass">עבר</option>
-                    <option value="fail">נכשל</option>
-                    <option value="conditional_pass">עבר בתנאי</option>
-                </select>
+            <div class="px-6 py-4 border-b border-slate-100 bg-slate-50/50 space-y-3">
+                <div class="flex items-center gap-3 flex-wrap">
+                    <input id="archive-search" type="text" placeholder="חיפוש לפי עסק / מפקח / ממצאים" class="px-3 py-2 border border-slate-300 rounded-lg text-sm w-72 max-w-full">
+                    <select id="archive-status-filter" class="px-3 py-2 border border-slate-300 rounded-lg text-sm">
+                        <option value="">כל הסטטוסים</option>
+                        <option value="pass">עבר</option>
+                        <option value="fail">נכשל</option>
+                        <option value="conditional_pass">עבר בתנאי</option>
+                    </select>
+                </div>
+                <div class="flex items-center justify-between gap-3 flex-wrap">
+                    <button id="archive-clear-filters" type="button" class="px-3 py-2 rounded-lg text-sm border border-slate-300 text-slate-600 hover:bg-slate-100 transition-colors">
+                        <i class="fa-solid fa-rotate-left ml-1"></i> איפוס סינון
+                    </button>
+                    <div class="flex items-center gap-2">
+                        <span id="archive-active-filter-indicator" class="hidden inline-flex items-center gap-1 px-2 py-1 rounded-md bg-amber-50 text-amber-700 border border-amber-200 text-xs font-medium">סינון פעיל</span>
+                        <div id="archive-results-label" class="text-sm text-slate-500">מציג 0 מתוך 0</div>
+                    </div>
+                </div>
             </div>
             <div class="overflow-x-auto table-scroll-shell table-scroll-shell--reports">
                 <table id="archive-table" class="w-full text-sm text-right wide-data-table">

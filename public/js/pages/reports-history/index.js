@@ -9,6 +9,145 @@ let cachedReports = [];
 let currentBusinessName = '';
 let currentUser = null;
 
+function getQueryParams() {
+  return new URLSearchParams(window.location.search);
+}
+
+function syncFiltersToQuery() {
+  const params = getQueryParams();
+  const businessId = getBusinessId();
+
+  params.delete('status');
+  params.delete('from');
+  params.delete('to');
+  params.delete('q');
+
+  if (businessId) {
+    params.set('businessId', businessId);
+  }
+
+  const statusValue = (document.getElementById('reports-status-filter')?.value || '').trim();
+  const fromValue = (document.getElementById('reports-date-from')?.value || '').trim();
+  const toValue = (document.getElementById('reports-date-to')?.value || '').trim();
+  const searchValue = (document.getElementById('reports-search')?.value || '').trim();
+
+  if (statusValue) {
+    params.set('status', statusValue);
+  }
+
+  if (fromValue) {
+    params.set('from', fromValue);
+  }
+
+  if (toValue) {
+    params.set('to', toValue);
+  }
+
+  if (searchValue) {
+    params.set('q', searchValue);
+  }
+
+  const query = params.toString();
+  const nextUrl = `${window.location.pathname}${query ? `?${query}` : ''}`;
+  window.history.replaceState(null, '', nextUrl);
+}
+
+function updateResultsLabel(visibleCount, totalCount) {
+  const label = document.getElementById('reports-results-label');
+  if (!label) {
+    return;
+  }
+
+  label.textContent = `מציג ${visibleCount} מתוך ${totalCount}`;
+}
+
+function updateActiveFilterIndicator(isActive) {
+  const indicator = document.getElementById('reports-active-filter-indicator');
+  if (!indicator) {
+    return;
+  }
+
+  indicator.classList.toggle('hidden', !isActive);
+}
+
+function filterReports(reports) {
+  const statusFilter = (document.getElementById('reports-status-filter')?.value || '').trim();
+  const dateFromFilter = (document.getElementById('reports-date-from')?.value || '').trim();
+  const dateToFilter = (document.getElementById('reports-date-to')?.value || '').trim();
+  const searchFilter = (document.getElementById('reports-search')?.value || '').trim().toLowerCase();
+
+  return reports.filter((report) => {
+    const reportStatus = String(report.status || '').trim();
+    const matchesStatus = !statusFilter || reportStatus === statusFilter;
+
+    const reportDate = report.visitDate ? new Date(report.visitDate) : null;
+    const reportDateIso = reportDate && !Number.isNaN(reportDate.getTime())
+      ? reportDate.toISOString().slice(0, 10)
+      : '';
+
+    const matchesFrom = !dateFromFilter || (reportDateIso && reportDateIso >= dateFromFilter);
+    const matchesTo = !dateToFilter || (reportDateIso && reportDateIso <= dateToFilter);
+
+    const searchHaystack = `${report.findings || ''} ${report.inspector?.fullName || ''}`.toLowerCase();
+    const matchesSearch = !searchFilter || searchHaystack.includes(searchFilter);
+
+    return matchesStatus && matchesFrom && matchesTo && matchesSearch;
+  });
+}
+
+function applyReportFilters() {
+  const statusFilter = (document.getElementById('reports-status-filter')?.value || '').trim();
+  const dateFromFilter = (document.getElementById('reports-date-from')?.value || '').trim();
+  const dateToFilter = (document.getElementById('reports-date-to')?.value || '').trim();
+  const searchFilter = (document.getElementById('reports-search')?.value || '').trim();
+
+  const hasActiveFilter = Boolean(statusFilter || dateFromFilter || dateToFilter || searchFilter);
+  const filteredReports = filterReports(cachedReports);
+
+  if (filteredReports.length === 0) {
+    renderEmptyRow();
+    updateResultsLabel(0, cachedReports.length);
+    updateActiveFilterIndicator(hasActiveFilter);
+    syncFiltersToQuery();
+    return;
+  }
+
+  renderReportsRows(filteredReports);
+  updateResultsLabel(filteredReports.length, cachedReports.length);
+  updateActiveFilterIndicator(hasActiveFilter);
+  syncFiltersToQuery();
+}
+
+function applyInitialFiltersFromQuery() {
+  const params = getQueryParams();
+
+  const status = (params.get('status') || '').trim();
+  const from = (params.get('from') || '').trim();
+  const to = (params.get('to') || '').trim();
+  const search = (params.get('q') || '').trim();
+
+  const statusInput = document.getElementById('reports-status-filter');
+  const fromInput = document.getElementById('reports-date-from');
+  const toInput = document.getElementById('reports-date-to');
+  const searchInput = document.getElementById('reports-search');
+
+  if (status && statusInput && Array.from(statusInput.options).some((option) => option.value === status)) {
+    statusInput.value = status;
+  }
+
+  if (from && fromInput) {
+    fromInput.value = from;
+  }
+
+  if (to && toInput) {
+    toInput.value = to;
+  }
+
+  if (search && searchInput) {
+    searchInput.value = search;
+  }
+}
+
 function getCalendarLocalEventsStorageKey() {
   const storageUserKey = currentUser?.id || currentUser?.email || currentUser?.fullName || 'anonymous';
   return `calendar:local-events:${storageUserKey}`;
@@ -113,8 +252,7 @@ function closeEditModal() {
 
 // ===== Query and Status Helpers =====
 function getBusinessId() {
-  const urlParams = new URLSearchParams(window.location.search);
-  return urlParams.get('businessId');
+  return getQueryParams().get('businessId');
 }
 
 function getStatusInfo(status) {
@@ -143,7 +281,7 @@ function renderEmptyRow() {
     return;
   }
 
-  tbody.innerHTML = '<tr><td colspan="6" class="px-6 py-8 text-center text-slate-500">לא נמצאו ביקורות קודמות לעסק זה.</td></tr>';
+  tbody.innerHTML = '<tr><td colspan="6" class="px-6 py-8 text-center text-slate-500">לא נמצאו דו"חות לפי הסינון שנבחר.</td></tr>';
 }
 
 // ===== Table Rows Rendering =====
@@ -153,7 +291,6 @@ function renderReportsRows(reports) {
     return;
   }
 
-  cachedReports = reports;
   tbody.innerHTML = '';
 
   reports.forEach((report) => {
@@ -181,6 +318,36 @@ function renderReportsRows(reports) {
     `;
 
     tbody.appendChild(row);
+  });
+}
+
+function bindFilters() {
+  const statusInput = document.getElementById('reports-status-filter');
+  const fromInput = document.getElementById('reports-date-from');
+  const toInput = document.getElementById('reports-date-to');
+  const searchInput = document.getElementById('reports-search');
+  const clearButton = document.getElementById('reports-clear-filters');
+
+  statusInput?.addEventListener('change', applyReportFilters);
+  fromInput?.addEventListener('change', applyReportFilters);
+  toInput?.addEventListener('change', applyReportFilters);
+  searchInput?.addEventListener('input', applyReportFilters);
+
+  clearButton?.addEventListener('click', () => {
+    if (statusInput) {
+      statusInput.value = '';
+    }
+    if (fromInput) {
+      fromInput.value = '';
+    }
+    if (toInput) {
+      toInput.value = '';
+    }
+    if (searchInput) {
+      searchInput.value = '';
+    }
+
+    applyReportFilters();
   });
 }
 
@@ -212,15 +379,19 @@ async function loadReports(businessId) {
 
     const reports = await reportsResponse.json();
 
-    if (!Array.isArray(reports) || reports.length === 0) {
+    cachedReports = Array.isArray(reports) ? reports : [];
+
+    if (cachedReports.length === 0) {
       renderEmptyRow();
+      updateResultsLabel(0, 0);
       return;
     }
 
-    renderReportsRows(reports);
+    applyReportFilters();
   } catch (error) {
     console.error('Failed loading reports history:', error);
     renderErrorRow('שגיאה בטעינת הנתונים.');
+    updateResultsLabel(0, 0);
   }
 }
 
@@ -370,6 +541,8 @@ function initPage() {
     return;
   }
 
+  bindFilters();
+  applyInitialFiltersFromQuery();
   bindEditActions(businessId);
   loadReports(businessId);
 }

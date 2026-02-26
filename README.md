@@ -55,6 +55,27 @@ This repository provides:
 	- `DELETE /api/admin/users/:id`
 	- `PATCH /api/admin/users/:id/active`
 
+### Dashboard, Filtering & UX Consistency
+- Dashboard KPI upgraded for licensing pipeline visibility:
+	- Main card breakdown for `היתר זמני`, `חידוש`, `נדחה`
+	- Main KPI value now represents combined total of those three categories
+	- Breakdown chips deep-link directly to filtered business management views
+- `businesses.html` now supports advanced deep-link filtering and URL sync:
+	- `status` / `statuses`, `q`, `trash`, `trashCare`, `showClosed`
+	- Filter state is shareable/bookmarkable and restored on page load
+- URL-synced filters were added for operational consistency across:
+	- `public/reports-history.html` (`status`, `from`, `to`, `q`)
+	- `public/upcoming-inspections.html` (`source`, `range`, `q`)
+	- `public/inspection-archive.html` (`status`, `q`)
+- Filter toolbars now include a unified active-filter indicator (`סינון פעיל`) and live results counters.
+
+### Dark Mode Polish
+- Expanded dark-theme token coverage for newly introduced utility classes and semantic accents.
+- Improved dark readability for:
+	- Dashboard chart legends (theme-aware re-render on toggle)
+	- Leaflet controls/popup/attribution styles
+	- New translucent cards, chips, and filter panels across updated pages
+
 ## Tech Stack
 
 - Node.js + Express.js
