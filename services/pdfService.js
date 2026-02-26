@@ -160,7 +160,7 @@ const generateReportPDF = async (reportData) => {
   try {
     // Use sandbox flags for typical hosted Linux environments.
     const browserArgs = process.env.NODE_ENV === 'production' 
-      ? ['--no-sandbox', '--disable-setuid-sandbox'] 
+      ? ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'] 
       : [];
 
     browser = await puppeteer.launch({

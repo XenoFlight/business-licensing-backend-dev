@@ -186,6 +186,37 @@ Optional:
 - `GEMINI_API_KEY`
 - `DEFAULT_ICAL_URL`
 
+### Render Troubleshooting
+
+- **Startup fails with `FATAL ERROR: JWT_SECRET is not defined`**  
+	Add `JWT_SECRET` in Render service environment variables.
+
+- **Startup fails with `DATABASE_URL environment variable is not set in production`**  
+	Set `DATABASE_URL` to a valid PostgreSQL connection string in Render.
+
+- **Service deploys but health check fails**  
+	Ensure health check path is `/` and confirm app logs include `Server running on port`.
+
+- **DB connection/auth errors during boot**  
+	Recheck DB credentials, SSL requirements in the connection string, and network access from Render to your DB provider.
+
+- **PDF generation errors in logs**  
+	Confirm Docker build completed with Chromium installation and that runtime uses the provided container image (not native Node environment).
+
+- **Unexpected schema changes or boot delays**  
+	Current startup runs `sequelize.sync({ alter: true })`; this can be slower on large databases. Review logs until `Database tables synced successfully` appears.
+
+### Post-Deploy Verification Checklist
+
+1. Open the service root URL (`GET /`) and confirm HTTP `200` response.
+2. Check Render logs for startup milestones:
+	- `Database connection established successfully.`
+	- `Database tables synced successfully.`
+	- `Server running on port ...`
+3. Verify authentication works (`POST /api/auth/login` with a valid user).
+4. Verify business listing works (`GET /api/businesses` with a valid token).
+5. Create a test report and confirm PDF path is populated (if report generation is enabled).
+
 ## License
 
 ISC

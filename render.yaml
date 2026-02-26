@@ -15,5 +15,7 @@ services:
         generateValue: true
       - key: JWT_EXPIRES_IN
         value: 1d
+      - key: GEMINI_API_KEY
+        sync: false
       - key: DEFAULT_ICAL_URL
         sync: false
