@@ -7,6 +7,96 @@ import { initThemeToggle } from '../../core/theme.js';
 let businessStatusChartInstance;
 let reportStatusChartInstance;
 
+function getStorageUserKey(user) {
+  return user?.id || user?.email || user?.fullName || 'anonymous';
+}
+
+function readLocalCalendarEvents(user) {
+  const key = `calendar:local-events:${getStorageUserKey(user)}`;
+  try {
+    const raw = localStorage.getItem(key);
+    if (!raw) {
+      return [];
+    }
+
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? parsed : [];
+  } catch (error) {
+    console.warn('Failed reading local calendar events', error);
+    return [];
+  }
+}
+
+function isInspectionEvent(event) {
+  const haystack = `${event.title || ''} ${event.description || ''}`.toLowerCase();
+  return /ביקורת|inspection|redo|reinspection|חוזרת/.test(haystack);
+}
+
+function countUpcomingByRange(events) {
+  const now = new Date();
+  const dayMs = 24 * 60 * 60 * 1000;
+
+  let within7Days = 0;
+  let within30Days = 0;
+
+  events.forEach((event) => {
+    const startDate = event?.start ? new Date(event.start) : null;
+    if (!startDate || Number.isNaN(startDate.getTime())) {
+      return;
+    }
+
+    const diffMs = startDate.getTime() - now.getTime();
+    if (diffMs < 0) {
+      return;
+    }
+
+    const diffDays = diffMs / dayMs;
+    if (diffDays <= 7) {
+      within7Days += 1;
+    }
+
+    if (diffDays <= 30) {
+      within30Days += 1;
+    }
+  });
+
+  return { within7Days, within30Days };
+}
+
+function renderUpcomingCounts({ within7Days, within30Days }) {
+  const chip = document.getElementById('upcoming-counts-chip');
+  if (!chip) {
+    return;
+  }
+
+  chip.textContent = `${within7Days} / ${within30Days}`;
+}
+
+async function loadUpcomingCounts(user) {
+  const localEvents = readLocalCalendarEvents(user).filter(isInspectionEvent);
+  let syncedEvents = [];
+
+  try {
+    const response = await apiFetch('/api/calendar/ical', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({}),
+    });
+
+    if (response.ok) {
+      const payload = await response.json().catch(() => []);
+      syncedEvents = (Array.isArray(payload) ? payload : []).filter(isInspectionEvent);
+    }
+  } catch (error) {
+    console.warn('Failed to load synced upcoming events for dashboard', error);
+  }
+
+  const counts = countUpcomingByRange([...localEvents, ...syncedEvents]);
+  renderUpcomingCounts(counts);
+}
+
 // ===== KPI Rendering =====
 function updateKpiCards(businesses, reports) {
   const totalBusinessesElement = document.getElementById('total-businesses');
@@ -182,6 +272,7 @@ function initDashboard() {
   bindLogout('logout-button');
 
   fetchDashboardData();
+  loadUpcomingCounts(user);
 }
 
 initDashboard();

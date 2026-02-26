@@ -6,20 +6,93 @@ import { initThemeToggle } from '../../core/theme.js';
 // ===== Reports History Page =====
 // Loads and renders inspection history for a selected business.
 let cachedReports = [];
+let currentBusinessName = '';
+let currentUser = null;
+
+function getCalendarLocalEventsStorageKey() {
+  const storageUserKey = currentUser?.id || currentUser?.email || currentUser?.fullName || 'anonymous';
+  return `calendar:local-events:${storageUserKey}`;
+}
+
+function readLocalCalendarEvents() {
+  try {
+    const raw = localStorage.getItem(getCalendarLocalEventsStorageKey());
+    if (!raw) {
+      return [];
+    }
+
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? parsed : [];
+  } catch (error) {
+    console.warn('Failed to read local calendar events', error);
+    return [];
+  }
+}
+
+function writeLocalCalendarEvents(events) {
+  localStorage.setItem(getCalendarLocalEventsStorageKey(), JSON.stringify(events));
+}
+
+function addRedoInspectionToLocalCalendar({ businessId, businessName, report, findings, redoDate }) {
+  const startDate = new Date(redoDate);
+  if (Number.isNaN(startDate.getTime())) {
+    throw new Error('INVALID_REDO_DATE');
+  }
+
+  const endDate = new Date(startDate.getTime() + (60 * 60 * 1000));
+  const originalVisitDate = report?.visitDate
+    ? new Date(report.visitDate).toLocaleString('he-IL')
+    : 'לא ידוע';
+  const inspectorName = report?.inspector?.fullName || 'לא ידוע';
+
+  const eventDescription = [
+    `ביקורת חוזרת עבור עסק: ${businessName || `#${businessId}`}`,
+    `מקור: דו"ח ביקורת מתאריך ${originalVisitDate}`,
+    `מפקח אחרון: ${inspectorName}`,
+    `סטטוס דו"ח אחרון: ${report?.status || '-'}`,
+    '',
+    'ליקויים/ממצאים מהביקורת האחרונה:',
+    findings || 'לא הוזנו ממצאים.',
+  ].join('\n');
+
+  const localEvents = readLocalCalendarEvents();
+  localEvents.push({
+    id: `local-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+    title: `ביקורת חוזרת - ${businessName || `עסק #${businessId}`}`,
+    start: startDate.toISOString(),
+    end: endDate.toISOString(),
+    description: eventDescription,
+    location: '',
+    classNames: ['calendar-event-tone-pending'],
+    extendedProps: {
+      tone: 'pending',
+      source: 'local',
+      isRedo: true,
+      businessId: String(businessId),
+    },
+  });
+
+  writeLocalCalendarEvents(localEvents);
+}
 
 function openEditModal(report) {
   const modal = document.getElementById('edit-report-modal');
   const reportIdInput = document.getElementById('edit-report-id');
   const statusInput = document.getElementById('edit-report-status');
   const findingsInput = document.getElementById('edit-report-findings');
+  const scheduleRedoInput = document.getElementById('edit-schedule-redo');
+  const redoDateInput = document.getElementById('edit-redo-date');
 
-  if (!modal || !reportIdInput || !statusInput || !findingsInput) {
+  if (!modal || !reportIdInput || !statusInput || !findingsInput || !scheduleRedoInput || !redoDateInput) {
     return;
   }
 
   reportIdInput.value = String(report.id || '');
   statusInput.value = report.status || 'pass';
   findingsInput.value = report.findings || '';
+  scheduleRedoInput.checked = false;
+  redoDateInput.value = '';
+  redoDateInput.disabled = true;
 
   modal.classList.remove('hidden');
   modal.classList.add('flex');
@@ -124,6 +197,7 @@ async function loadBusinessTitle(businessId) {
   }
 
   const business = await bizResponse.json();
+  currentBusinessName = business.businessName || '';
   titleElement.textContent = `היסטוריית דו"חות: ${business.businessName}`;
 }
 
@@ -173,6 +247,8 @@ function bindEditActions(businessId) {
   const modal = document.getElementById('edit-report-modal');
   const form = document.getElementById('edit-report-form');
   const saveButton = document.getElementById('edit-modal-save');
+  const scheduleRedoInput = document.getElementById('edit-schedule-redo');
+  const redoDateInput = document.getElementById('edit-redo-date');
 
   if (tbody) {
     tbody.addEventListener('click', (event) => {
@@ -207,6 +283,16 @@ function bindEditActions(businessId) {
     });
   }
 
+  if (scheduleRedoInput && redoDateInput) {
+    scheduleRedoInput.addEventListener('change', () => {
+      const enabled = scheduleRedoInput.checked;
+      redoDateInput.disabled = !enabled;
+      if (!enabled) {
+        redoDateInput.value = '';
+      }
+    });
+  }
+
   if (!form || !saveButton) {
     return;
   }
@@ -217,9 +303,16 @@ function bindEditActions(businessId) {
     const reportId = document.getElementById('edit-report-id')?.value;
     const status = document.getElementById('edit-report-status')?.value;
     const findings = document.getElementById('edit-report-findings')?.value?.trim();
+    const shouldScheduleRedo = Boolean(scheduleRedoInput?.checked);
+    const redoDate = redoDateInput?.value;
 
     if (!reportId || !status || !findings) {
       alert('יש למלא את כל השדות לפני שמירה.');
+      return;
+    }
+
+    if (shouldScheduleRedo && !redoDate) {
+      alert('יש לבחור תאריך לביקורת חוזרת.');
       return;
     }
 
@@ -229,9 +322,28 @@ function bindEditActions(businessId) {
 
     try {
       await updateReport(reportId, { status, findings });
+      if (shouldScheduleRedo) {
+        const selectedReport = cachedReports.find((report) => String(report.id) === String(reportId));
+        addRedoInspectionToLocalCalendar({
+          businessId,
+          businessName: currentBusinessName,
+          report: selectedReport,
+          findings,
+          redoDate,
+        });
+      }
+
       closeEditModal();
       await loadReports(businessId);
-      alert('הדו"ח עודכן בהצלחה.');
+      if (shouldScheduleRedo) {
+        const shouldOpenCalendar = confirm('הדו"ח עודכן בהצלחה ונוספה ביקורת חוזרת ליומן המקומי. לעבור עכשיו ליומן?');
+        if (shouldOpenCalendar) {
+          window.location.href = 'calendar.html';
+          return;
+        }
+      } else {
+        alert('הדו"ח עודכן בהצלחה.');
+      }
     } catch (error) {
       console.error('Failed to update report:', error);
       alert('שמירת הדו"ח נכשלה. נסה שוב.');
@@ -246,9 +358,9 @@ function bindEditActions(businessId) {
 function initPage() {
   requireAuth();
 
-  const user = renderUserName('user-name');
-  initThemeToggle(user);
-  renderAdminLink(user, 'admin-link-placeholder');
+  currentUser = renderUserName('user-name');
+  initThemeToggle(currentUser);
+  renderAdminLink(currentUser, 'admin-link-placeholder');
   bindLogout('logout-button');
 
   const businessId = getBusinessId();

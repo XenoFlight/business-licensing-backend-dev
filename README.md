@@ -12,6 +12,49 @@ This repository provides:
 - Optional AI-assisted analysis for report insights
 - Optional iCal feed ingestion for calendar events
 
+## Latest Updates (Feb 2026)
+
+### Inspection Workflow
+- New inspections hub page with quick navigation:
+	- `public/inspections.html`
+	- `public/upcoming-inspections.html`
+	- `public/inspection-archive.html`
+- `inspection.html` upgraded with:
+	- Existing business autofill by business name / owner ID
+	- Auto-loading saved licensing items and regulator data from business file
+	- Local draft save/restore
+	- Offline report queue and auto-sync when connection returns
+	- Inline status feedback and faster defect entry UX
+
+### Business File Management
+- New dedicated create/edit pages:
+	- `public/business-create.html`
+	- `public/business-edit.html`
+- Business model expanded with operational and sanitation fields (local staff, contacts, trash handling).
+- Business file now supports multi-item licensing persistence:
+	- `licensingItemIds` (JSONB)
+	- `regulatorApprovals` (JSONB)
+- Business delete action moved to business details page (admin only).
+
+### Calendar & Re-Inspection Flow
+- Calendar now supports merged synced + local events with local CRUD behavior.
+- Added quick filters (`all`, `pending`, `alert`, `done`, `redo`) and event-details modal.
+- Reports history edit modal can schedule a redo inspection directly into local calendar (with findings notes).
+
+### Map & Test Data
+- Map page now includes area filter + live marker count.
+- New utility script to enrich `data/businesses.json` with deterministic Yoav-area coordinates:
+	- `utils/enrich-businesses-json.js`
+- Import script improved to normalize duplicate/placeholder license values before insert:
+	- `utils/import-businesses.js`
+
+### Admin & User Management
+- Admin dashboard expanded with full users table and active-state management.
+- New admin endpoints:
+	- `GET /api/admin/users`
+	- `DELETE /api/admin/users/:id`
+	- `PATCH /api/admin/users/:id/active`
+
 ## Tech Stack
 
 - Node.js + Express.js
@@ -77,6 +120,17 @@ npm run seed:system
 npm run seed:defects
 npm run seed:all
 ```
+
+For test-map datasets (Yoav area markers):
+
+```bash
+node utils/enrich-businesses-json.js
+node utils/import-businesses.js
+```
+
+Notes:
+- `enrich-businesses-json.js` updates `data/businesses.json` with normalized area text, fallback addresses, and bounded coordinates.
+- `import-businesses.js` recreates tables (`sync({ force: true })`) and imports deduplicated data.
 
 ### Seeding Commands
 
@@ -178,11 +232,16 @@ All routes are mounted in `app.js`.
 - `GET /` (protected)
 - `POST /` (inspector, manager, admin)
 - `GET /:id` (protected)
-- `PUT /:id` (manager, admin)
+- `PUT /:id` (inspector, manager, admin)
 - `DELETE /:id` (admin)
 - `GET /:id/reports` (protected)
 - `PATCH /:id/status` (inspector, manager, admin)
 - `PATCH /:id/location` (inspector, manager, admin)
+
+Business payload supports extended optional fields including:
+- Local contacts/staff (`localStaffCount`, `localManagerName`, `localContactName`, etc.)
+- Sanitation/trash management (`hasTrashCans`, `trashCanType`, `trashCareOwner`, etc.)
+- Multi licensing and regulator state (`licensingItemIds`, `regulatorApprovals`)
 
 ### Defects (`/api/defects`)
 - `GET /` (protected)
@@ -202,6 +261,9 @@ All routes are mounted in `app.js`.
 - `GET /pending-users` (admin)
 - `PUT /approve/:id` (admin)
 - `DELETE /deny/:id` (admin)
+- `GET /users` (admin)
+- `DELETE /users/:id` (admin)
+- `PATCH /users/:id/active` (admin)
 
 ## Runtime Behavior Notes
 

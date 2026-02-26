@@ -83,10 +83,10 @@
                         <i class="fa-solid fa-chart-pie"></i> לוח בקרה
                     </a>
                     <a href="businesses.html" class="px-3 py-2 rounded-lg text-sm font-medium bg-brand-50 text-brand-700 transition-colors flex items-center gap-2">
-                        <i class="fa-solid fa-store"></i> רשימת עסקים
+                        <i class="fa-solid fa-store"></i> ניהול תיקי עסקים
                     </a>
-                    <a href="inspection.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors flex items-center gap-2">
-                        <i class="fa-solid fa-clipboard-check"></i> ביקורת חדשה
+                    <a href="inspections.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors flex items-center gap-2">
+                        <i class="fa-solid fa-clipboard-check"></i> ניהול ביקורות
                     </a>
                     <a href="map.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors flex items-center gap-2">
                         <i class="fa-solid fa-map-location-dot"></i> מפת עסקים
@@ -118,11 +118,14 @@
         
         <div class="flex flex-wrap items-center gap-3 mb-4">
             <a href="businesses.html" class="inline-flex items-center gap-2 text-slate-500 hover:text-slate-800 transition-colors">
-                <i class="fa-solid fa-arrow-right"></i> חזרה לרשימה
+                <i class="fa-solid fa-arrow-right"></i> חזרה לניהול תיקי עסקים
             </a>
             <a id="open-reports-history-btn" href="#" class="hidden inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors">
                 <i class="fa-solid fa-pen-to-square"></i> עריכת דו"חות
             </a>
+            <button id="delete-business-btn" type="button" class="hidden inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-red-100 text-red-700 hover:bg-red-200 transition-colors">
+                <i class="fa-solid fa-trash"></i> מחיקת תיק עסק
+            </button>
         </div>
         
         <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6">
@@ -158,9 +161,87 @@
                     <div id="business-location-map" class="w-full h-[320px] rounded-lg border border-slate-200"></div>
                 </div>
 
+                <div class="mb-8 bg-white border border-slate-200 rounded-xl p-4">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-3">
+                        <h2 class="text-lg font-bold text-slate-800">ניהול תפעולי ואנשי קשר</h2>
+                        <button id="save-operations-btn" class="bg-brand-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-brand-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed" type="button">שמור פרטים תפעוליים</button>
+                    </div>
+                    <p id="operations-feedback" class="text-sm text-slate-500 mb-4">עדכן פרטי צוות, אנשי קשר וניהול פחי אשפה.</p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="ops-local-staff-count" class="block mb-1 text-sm font-medium text-slate-700">כמות צוות מקומי</label>
+                            <input id="ops-local-staff-count" type="number" min="0" class="w-full px-3 py-2 border border-slate-300 rounded-lg">
+                        </div>
+                        <div>
+                            <label for="ops-local-manager-name" class="block mb-1 text-sm font-medium text-slate-700">שם מנהל מקומי</label>
+                            <input id="ops-local-manager-name" class="w-full px-3 py-2 border border-slate-300 rounded-lg">
+                        </div>
+
+                        <div>
+                            <label for="ops-local-manager-phone" class="block mb-1 text-sm font-medium text-slate-700">טלפון מנהל מקומי</label>
+                            <input id="ops-local-manager-phone" class="w-full px-3 py-2 border border-slate-300 rounded-lg">
+                        </div>
+                        <div>
+                            <label for="ops-local-contact-name" class="block mb-1 text-sm font-medium text-slate-700">איש קשר מקומי</label>
+                            <input id="ops-local-contact-name" class="w-full px-3 py-2 border border-slate-300 rounded-lg">
+                        </div>
+
+                        <div>
+                            <label for="ops-local-contact-phone" class="block mb-1 text-sm font-medium text-slate-700">טלפון איש קשר מקומי</label>
+                            <input id="ops-local-contact-phone" class="w-full px-3 py-2 border border-slate-300 rounded-lg">
+                        </div>
+                        <div>
+                            <label for="ops-emergency-contact-name" class="block mb-1 text-sm font-medium text-slate-700">איש קשר חירום</label>
+                            <input id="ops-emergency-contact-name" class="w-full px-3 py-2 border border-slate-300 rounded-lg">
+                        </div>
+
+                        <div>
+                            <label for="ops-emergency-contact-phone" class="block mb-1 text-sm font-medium text-slate-700">טלפון חירום</label>
+                            <input id="ops-emergency-contact-phone" class="w-full px-3 py-2 border border-slate-300 rounded-lg">
+                        </div>
+                        <div>
+                            <label for="ops-has-trash-cans" class="block mb-1 text-sm font-medium text-slate-700">האם קיימים פחי אשפה?</label>
+                            <select id="ops-has-trash-cans" class="w-full px-3 py-2 border border-slate-300 rounded-lg">
+                                <option value="">לא צוין</option>
+                                <option value="true">כן</option>
+                                <option value="false">לא</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="ops-trash-can-type" class="block mb-1 text-sm font-medium text-slate-700">סוג פחים</label>
+                            <input id="ops-trash-can-type" class="w-full px-3 py-2 border border-slate-300 rounded-lg">
+                        </div>
+                        <div>
+                            <label for="ops-trash-can-count" class="block mb-1 text-sm font-medium text-slate-700">כמות פחים</label>
+                            <input id="ops-trash-can-count" type="number" min="0" class="w-full px-3 py-2 border border-slate-300 rounded-lg">
+                        </div>
+
+                        <div>
+                            <label for="ops-trash-care-owner" class="block mb-1 text-sm font-medium text-slate-700">מי מטפל בפחים?</label>
+                            <select id="ops-trash-care-owner" class="w-full px-3 py-2 border border-slate-300 rounded-lg">
+                                <option value="unknown">לא צוין</option>
+                                <option value="municipality">המועצה</option>
+                                <option value="business">בעל העסק</option>
+                                <option value="shared">משותף</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="ops-waste-pickup-schedule" class="block mb-1 text-sm font-medium text-slate-700">תדירות פינוי</label>
+                            <input id="ops-waste-pickup-schedule" class="w-full px-3 py-2 border border-slate-300 rounded-lg">
+                        </div>
+
+                        <div class="md:col-span-2">
+                            <label for="ops-local-staff-notes" class="block mb-1 text-sm font-medium text-slate-700">הערות צוות מקומי</label>
+                            <textarea id="ops-local-staff-notes" rows="3" class="w-full px-3 py-2 border border-slate-300 rounded-lg"></textarea>
+                        </div>
+                    </div>
+                </div>
+
                 <h2 class="text-xl font-bold text-slate-800 mb-4">תיקי רישוי ופריטים</h2>
-                <div class="overflow-x-auto">
-                    <table class="w-full text-sm text-right">
+                <div class="overflow-x-auto table-scroll-shell table-scroll-shell--details-files">
+                    <table class="w-full text-sm text-right wide-data-table">
                         <thead class="bg-slate-50 text-slate-600 font-medium border-b border-slate-200">
                             <tr>
                                 <th class="px-6 py-3">מס' תיק</th>

@@ -98,10 +98,10 @@
                         <i class="fa-solid fa-chart-pie"></i> לוח בקרה
                     </a>
                     <a href="businesses.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors flex items-center gap-2">
-                        <i class="fa-solid fa-store"></i> רשימת עסקים
+                        <i class="fa-solid fa-store"></i> ניהול תיקי עסקים
                     </a>
-                    <a href="inspection.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors flex items-center gap-2">
-                        <i class="fa-solid fa-clipboard-check"></i> ביקורת חדשה
+                    <a href="inspections.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors flex items-center gap-2">
+                        <i class="fa-solid fa-clipboard-check"></i> ניהול ביקורות
                     </a>
                     <a href="map.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors flex items-center gap-2">
                         <i class="fa-solid fa-map-location-dot"></i> מפת עסקים
@@ -134,10 +134,88 @@
             <h1 class="text-2xl font-bold text-slate-900">יומן ביקורות</h1>
             <p class="text-slate-500 text-sm mt-1">סנכרון אוטומטי עם יומן ה-Outlook בכל טעינת דף</p>
             <p id="ical-feedback" class="text-sm text-slate-500 mt-2">טוען אירועים מהיומן הארגוני...</p>
+            <div class="mt-3 flex items-center gap-4 text-xs text-slate-600" id="calendar-status-legend">
+                <span class="inline-flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-sky-500"></span> ברירת מחדל</span>
+                <span class="inline-flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span> ממתין/בתהליך</span>
+                <span class="inline-flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span> הושלם</span>
+                <span class="inline-flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-rose-500"></span> דחוף/חריגה</span>
+            </div>
+            <div class="mt-3 flex items-center gap-2" id="calendar-quick-filters">
+                <button type="button" data-filter="all" class="calendar-filter-btn px-3 py-1.5 rounded-lg text-xs font-medium bg-brand-50 text-brand-700">הכל</button>
+                <button type="button" data-filter="pending" class="calendar-filter-btn px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 text-slate-700 hover:bg-slate-200">ממתין/בתהליך</button>
+                <button type="button" data-filter="alert" class="calendar-filter-btn px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 text-slate-700 hover:bg-slate-200">דחוף/חריגה</button>
+                <button type="button" data-filter="done" class="calendar-filter-btn px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 text-slate-700 hover:bg-slate-200">הושלם</button>
+                <button type="button" data-filter="redo" class="calendar-filter-btn px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 text-slate-700 hover:bg-slate-200">ביקורות חוזרות</button>
+                <button type="button" id="add-local-event-btn" class="px-3 py-1.5 rounded-lg text-xs font-medium bg-emerald-100 text-emerald-800 hover:bg-emerald-200">אירוע מקומי חדש</button>
+            </div>
         </div>
 
         <div id="calendar"></div>
     </main>
+
+    <div id="calendar-event-modal" class="fixed inset-0 bg-slate-900/40 hidden items-center justify-center z-[60] p-4">
+        <div class="bg-white w-full max-w-xl rounded-2xl shadow-lg border border-slate-200 overflow-hidden">
+            <div class="px-6 py-4 border-b border-slate-200 flex items-center justify-between">
+                <h3 id="calendar-modal-title" class="text-lg font-bold text-slate-900">פרטי אירוע</h3>
+                <button id="calendar-modal-close" class="text-slate-500 hover:text-slate-700 text-xl leading-none">&times;</button>
+            </div>
+            <div class="p-6 space-y-3 text-sm">
+                <p id="calendar-modal-time" class="text-slate-600"></p>
+                <p id="calendar-modal-location" class="text-slate-600"></p>
+                <p id="calendar-modal-description" class="text-slate-700 whitespace-pre-line"></p>
+            </div>
+            <div class="px-6 py-4 border-t border-slate-200 bg-slate-50 flex items-center justify-end gap-2">
+                <button id="calendar-modal-delete-btn" type="button" class="px-4 py-2 rounded-lg bg-red-100 text-red-700 hover:bg-red-200 text-sm">הסר מהיומן המקומי</button>
+                <a id="calendar-modal-inspection-link" href="inspection.html" class="px-4 py-2 rounded-lg bg-brand-600 text-white hover:bg-brand-700 text-sm">ביקורת חדשה</a>
+                <a id="calendar-modal-reports-link" href="reports-history.html" class="px-4 py-2 rounded-lg bg-slate-200 text-slate-800 hover:bg-slate-300 text-sm">דו"חות עסק</a>
+                <button id="calendar-modal-cancel" type="button" class="px-4 py-2 rounded-lg border border-slate-300 text-slate-700 hover:bg-slate-100 text-sm">סגירה</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="calendar-local-event-modal" class="fixed inset-0 bg-slate-900/40 hidden items-center justify-center z-[60] p-4">
+        <div class="bg-white w-full max-w-xl rounded-2xl shadow-lg border border-slate-200 overflow-hidden">
+            <div class="px-6 py-4 border-b border-slate-200 flex items-center justify-between">
+                <h3 class="text-lg font-bold text-slate-900">אירוע מקומי חדש</h3>
+                <button id="calendar-local-modal-close" class="text-slate-500 hover:text-slate-700 text-xl leading-none">&times;</button>
+            </div>
+            <form id="calendar-local-event-form" class="p-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="md:col-span-2">
+                    <label for="local-event-title" class="block text-sm font-medium text-slate-700 mb-1">כותרת</label>
+                    <input id="local-event-title" required class="w-full px-3 py-2 border border-slate-300 rounded-lg">
+                </div>
+                <div>
+                    <label for="local-event-start" class="block text-sm font-medium text-slate-700 mb-1">התחלה</label>
+                    <input id="local-event-start" type="datetime-local" required class="w-full px-3 py-2 border border-slate-300 rounded-lg">
+                </div>
+                <div>
+                    <label for="local-event-end" class="block text-sm font-medium text-slate-700 mb-1">סיום (אופציונלי)</label>
+                    <input id="local-event-end" type="datetime-local" class="w-full px-3 py-2 border border-slate-300 rounded-lg">
+                </div>
+                <div>
+                    <label for="local-event-tone" class="block text-sm font-medium text-slate-700 mb-1">סוג</label>
+                    <select id="local-event-tone" class="w-full px-3 py-2 border border-slate-300 rounded-lg">
+                        <option value="default">ברירת מחדל</option>
+                        <option value="pending">ממתין/בתהליך</option>
+                        <option value="alert">דחוף/חריגה</option>
+                        <option value="done">הושלם</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="local-event-location" class="block text-sm font-medium text-slate-700 mb-1">מיקום (אופציונלי)</label>
+                    <input id="local-event-location" class="w-full px-3 py-2 border border-slate-300 rounded-lg">
+                </div>
+                <div class="md:col-span-2">
+                    <label for="local-event-description" class="block text-sm font-medium text-slate-700 mb-1">תיאור (אופציונלי)</label>
+                    <textarea id="local-event-description" rows="3" class="w-full px-3 py-2 border border-slate-300 rounded-lg"></textarea>
+                </div>
+                <div class="md:col-span-2 flex items-center justify-end gap-2 pt-2">
+                    <button type="button" id="calendar-local-modal-cancel" class="px-4 py-2 rounded-lg border border-slate-300 text-slate-700 hover:bg-slate-100 text-sm">ביטול</button>
+                    <button type="submit" class="px-4 py-2 rounded-lg bg-emerald-600 text-white hover:bg-emerald-700 text-sm">שמירה ליומן מקומי</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-white border-t border-slate-200 py-6 mt-auto">

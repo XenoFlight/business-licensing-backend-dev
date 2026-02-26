@@ -27,6 +27,10 @@ exports.protect = async (req, res, next) => {
         return res.status(401).json({ message: 'המשתמש לא נמצא, ההרשאה נדחתה' });
       }
 
+      if (!req.user.isActive) {
+        return res.status(401).json({ message: 'החשבון מושבת, אין הרשאה לפעולה זו' });
+      }
+
       return next();
     } catch (error) {
       console.error('Auth Error:', error.message);

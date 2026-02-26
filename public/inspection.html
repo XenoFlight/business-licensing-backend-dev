@@ -113,10 +113,10 @@
                         <i class="fa-solid fa-chart-pie"></i> לוח בקרה
                     </a>
                     <a href="businesses.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors flex items-center gap-2">
-                        <i class="fa-solid fa-store"></i> רשימת עסקים
+                        <i class="fa-solid fa-store"></i> ניהול תיקי עסקים
                     </a>
-                    <a href="inspection.html" class="px-3 py-2 rounded-lg text-sm font-medium bg-brand-50 text-brand-700 transition-colors flex items-center gap-2">
-                        <i class="fa-solid fa-clipboard-check"></i> ביקורת חדשה
+                    <a href="inspections.html" class="px-3 py-2 rounded-lg text-sm font-medium bg-brand-50 text-brand-700 transition-colors flex items-center gap-2">
+                        <i class="fa-solid fa-clipboard-check"></i> ניהול ביקורות
                     </a>
                     <a href="map.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors flex items-center gap-2">
                         <i class="fa-solid fa-map-location-dot"></i> מפת עסקים
@@ -158,7 +158,9 @@
                 
                 <div>
                     <label for="newBusinessName" class="block text-sm font-medium text-slate-700 mb-1">שם העסק:</label>
-                    <input type="text" id="newBusinessName" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500">
+                    <input type="text" id="newBusinessName" list="business-name-suggestions" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500" autocomplete="off">
+                    <datalist id="business-name-suggestions"></datalist>
+                    <button type="button" id="clear-existing-match-btn" class="hidden mt-2 text-xs text-slate-500 hover:text-slate-700 underline">שחרר שיוך לעסק קיים</button>
                 </div>
                 
                 <div>
@@ -176,7 +178,8 @@
                 
                 <div>
                     <label for="newOwnerId" class="block text-sm font-medium text-slate-700 mb-1">ת.ז. / ח.פ בעלים:</label>
-                    <input type="text" id="newOwnerId" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500">
+                    <input type="text" id="newOwnerId" list="owner-id-suggestions" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500" autocomplete="off">
+                    <datalist id="owner-id-suggestions"></datalist>
                 </div>
                 
                 <div>
@@ -224,6 +227,7 @@
                         </select>
                         <button type="button" id="addDefectBtn" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors" onclick="addDefect()">הוסף</button>
                     </div>
+                    <p class="text-xs text-slate-500">טיפ: ניתן לבחור קטגוריה ואז ללחוץ Enter בשדה הליקוי כדי להוסיף מהר.</p>
                     
                     <div id="selected-defects-container" class="dynamic-list" style="display: none;">
                         <h5 class="font-bold text-slate-800 mb-3">ליקויים שנבחרו</h5>
@@ -253,9 +257,18 @@
                 </div>
 
                 <div class="md:col-span-2 flex gap-3 mt-4">
+                    <div id="inspection-status" class="hidden w-full rounded-lg border px-4 py-3 text-sm"></div>
+                </div>
+
+                <div class="md:col-span-2 flex gap-3">
                     <button type="submit" class="flex-grow bg-brand-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-brand-700 transition-colors shadow-sm">שמור והפק דו"ח</button>
+                    <button type="button" id="save-local-draft-btn" class="bg-amber-100 text-amber-800 px-6 py-3 rounded-lg font-bold hover:bg-amber-200 transition-colors">שמירת טיוטה מקומית</button>
+                    <button type="button" id="clear-local-draft-btn" class="bg-slate-100 text-slate-700 px-6 py-3 rounded-lg font-bold hover:bg-slate-200 transition-colors">מחיקת טיוטה</button>
                     <a id="open-reports-history-btn" href="#" class="hidden bg-slate-100 text-slate-700 px-6 py-3 rounded-lg font-bold hover:bg-slate-200 transition-colors">עריכת דו"חות קיימים</a>
                     <button type="button" class="bg-slate-200 text-slate-700 px-6 py-3 rounded-lg font-bold hover:bg-slate-300 transition-colors" onclick="window.location.href='dashboard.html'">ביטול</button>
+                </div>
+                <div class="md:col-span-2">
+                    <div id="sync-queue-indicator" class="text-xs text-slate-500"></div>
                 </div>
             </form>
         </div>

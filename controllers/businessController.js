@@ -14,6 +14,123 @@ function serializeBusinessWithStatus(business) {
   };
 }
 
+function normalizeBusinessPayload(payloadInput) {
+  const payload = { ...payloadInput };
+
+  if (Object.prototype.hasOwnProperty.call(payload, 'licensingItemIds')) {
+    if (payload.licensingItemIds == null) {
+      payload.licensingItemIds = null;
+    } else if (!Array.isArray(payload.licensingItemIds)) {
+      const error = new Error('licensingItemIds חייב להיות מערך');
+      error.statusCode = 400;
+      throw error;
+    } else {
+      const parsedIds = payload.licensingItemIds
+        .map((value) => Number.parseInt(value, 10))
+        .filter((value) => Number.isInteger(value) && value > 0);
+
+      payload.licensingItemIds = Array.from(new Set(parsedIds));
+      payload.licensingItemId = payload.licensingItemIds.length > 0 ? payload.licensingItemIds[0] : null;
+    }
+  }
+
+  if (Object.prototype.hasOwnProperty.call(payload, 'licensingItemId') && !Object.prototype.hasOwnProperty.call(payload, 'licensingItemIds')) {
+    if (!payload.licensingItemId) {
+      payload.licensingItemIds = null;
+    } else {
+      const parsedId = Number.parseInt(payload.licensingItemId, 10);
+      if (!Number.isInteger(parsedId) || parsedId <= 0) {
+        const error = new Error('ערך licensingItemId לא תקין');
+        error.statusCode = 400;
+        throw error;
+      }
+
+      payload.licensingItemId = parsedId;
+      payload.licensingItemIds = [parsedId];
+    }
+  }
+
+  if (Object.prototype.hasOwnProperty.call(payload, 'regulatorApprovals')) {
+    if (payload.regulatorApprovals == null) {
+      payload.regulatorApprovals = null;
+    } else if (typeof payload.regulatorApprovals !== 'object' || Array.isArray(payload.regulatorApprovals)) {
+      const error = new Error('regulatorApprovals חייב להיות אובייקט');
+      error.statusCode = 400;
+      throw error;
+    }
+  }
+
+  if (Object.prototype.hasOwnProperty.call(payload, 'status')) {
+    const normalizedStatus = normalizeBusinessStatus(payload.status);
+    if (!normalizedStatus) {
+      const error = new Error('סטטוס עסק לא תקין');
+      error.statusCode = 400;
+      throw error;
+    }
+
+    payload.status = normalizedStatus;
+  }
+
+  ['localStaffCount', 'trashCanCount'].forEach((fieldName) => {
+    if (!Object.prototype.hasOwnProperty.call(payload, fieldName)) {
+      return;
+    }
+
+    if (payload[fieldName] === '' || payload[fieldName] === null) {
+      payload[fieldName] = null;
+      return;
+    }
+
+    const parsedValue = Number.parseInt(payload[fieldName], 10);
+    if (Number.isNaN(parsedValue) || parsedValue < 0) {
+      const error = new Error(`ערך לא תקין עבור ${fieldName}`);
+      error.statusCode = 400;
+      throw error;
+    }
+
+    payload[fieldName] = parsedValue;
+  });
+
+  if (Object.prototype.hasOwnProperty.call(payload, 'hasTrashCans')) {
+    if (payload.hasTrashCans === false) {
+      payload.trashCanType = null;
+      payload.trashCanCount = null;
+      payload.wastePickupSchedule = null;
+      payload.trashCareOwner = 'unknown';
+    }
+
+    if (payload.hasTrashCans === true && !payload.trashCareOwner) {
+      payload.trashCareOwner = 'unknown';
+    }
+  }
+
+  return payload;
+}
+
+async function validateLicensingReferences(payload) {
+  const licensingIds = Array.isArray(payload.licensingItemIds)
+    ? payload.licensingItemIds
+    : (payload.licensingItemId ? [payload.licensingItemId] : []);
+
+  if (licensingIds.length === 0) {
+    return;
+  }
+
+  const existingItems = await LicensingItem.findAll({
+    where: { id: licensingIds },
+    attributes: ['id'],
+  });
+
+  const existingIds = new Set(existingItems.map((item) => item.id));
+  const missingId = licensingIds.find((id) => !existingIds.has(id));
+
+  if (missingId) {
+    const error = new Error(`פריט רישוי לא תקין או לא נמצא: ${missingId}`);
+    error.statusCode = 400;
+    throw error;
+  }
+}
+
 // ===== Business Endpoints =====
 // @desc    Get all businesses
 // @route   GET /api/businesses
@@ -89,25 +206,8 @@ exports.getBusinessReports = async (req, res) => {
 // @access  Private (Manager/Inspector/Admin)
 exports.createBusiness = async (req, res) => {
   try {
-    // Validate referenced licensing item when provided.
-    if (req.body.licensingItemId) {
-      const licensingItem = await LicensingItem.findByPk(req.body.licensingItemId);
-      if (!licensingItem) {
-        return res.status(400).json({ message: 'פריט רישוי לא תקין או לא נמצא' });
-      }
-    }
-
-    const payload = { ...req.body };
-
-    // Normalize status values into canonical internal statuses.
-    if (Object.prototype.hasOwnProperty.call(payload, 'status')) {
-      const normalizedStatus = normalizeBusinessStatus(payload.status);
-      if (!normalizedStatus) {
-        return res.status(400).json({ message: 'סטטוס עסק לא תקין' });
-      }
-
-      payload.status = normalizedStatus;
-    }
+    const payload = normalizeBusinessPayload(req.body);
+    await validateLicensingReferences(payload);
 
     const newBusiness = await Business.create(payload);
     
@@ -117,7 +217,8 @@ exports.createBusiness = async (req, res) => {
     });
   } catch (error) {
     console.error('Error creating business:', error);
-    res.status(400).json({ message: 'שגיאה ביצירת עסק', error: error.message });
+    const statusCode = error.statusCode || 400;
+    res.status(statusCode).json({ message: 'שגיאה ביצירת עסק', error: error.message });
   }
 };
 
@@ -126,15 +227,8 @@ exports.createBusiness = async (req, res) => {
 // @access  Private (Manager)
 exports.updateBusiness = async (req, res) => {
   try {
-    const payload = { ...req.body };
-    if (Object.prototype.hasOwnProperty.call(payload, 'status')) {
-      const normalizedStatus = normalizeBusinessStatus(payload.status);
-      if (!normalizedStatus) {
-        return res.status(400).json({ message: 'סטטוס עסק לא תקין' });
-      }
-
-      payload.status = normalizedStatus;
-    }
+    const payload = normalizeBusinessPayload(req.body);
+    await validateLicensingReferences(payload);
 
     const business = await Business.findByPk(req.params.id);
 
@@ -148,7 +242,8 @@ exports.updateBusiness = async (req, res) => {
       res.status(404).json({ message: 'עסק לא נמצא' });
     }
   } catch (error) {
-    res.status(400).json({ message: 'שגיאה בעדכון עסק', error: error.message });
+    const statusCode = error.statusCode || 400;
+    res.status(statusCode).json({ message: 'שגיאה בעדכון עסק', error: error.message });
   }
 };
 

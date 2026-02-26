@@ -25,7 +25,7 @@ router.patch('/:id/location', protect, authorize('manager', 'inspector', 'admin'
 
 router.route('/:id')
   .get(protect, getBusinessById)
-  .put(protect, authorize('manager', 'admin'), updateBusiness)
+  .put(protect, authorize('manager', 'inspector', 'admin'), updateBusiness)
   .delete(protect, authorize('admin'), deleteBusiness);
 
 module.exports = router;

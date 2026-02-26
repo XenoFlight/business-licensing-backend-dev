@@ -17,7 +17,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "לא נדרש",
     "economyStatus": "",
-    "accessibilityStatus": "לא נדרש"
+    "accessibilityStatus": "לא נדרש",
+    "address": "א.ת. גלאון",
+    "latitude": 31.6658,
+    "longitude": 34.74899
   },
   {
     "fileNumber": "1010",
@@ -37,7 +40,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "מאושרת",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "מועצה אזורית מתחם סיביי",
+    "latitude": 31.662767,
+    "longitude": 34.835027
   },
   {
     "fileNumber": "01010א",
@@ -57,7 +63,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "מועצה אזורית מתחם סיביי",
+    "latitude": 31.669414,
+    "longitude": 34.843195
   },
   {
     "fileNumber": "2001",
@@ -77,7 +86,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "מאושר להיתר זמני",
-    "accessibilityStatus": "מאושרת"
+    "accessibilityStatus": "מאושרת",
+    "address": "א.ת. בית גוברין",
+    "latitude": 31.62224,
+    "longitude": 34.894302
   },
   {
     "fileNumber": "02001ד",
@@ -97,7 +109,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "מאושרת"
+    "accessibilityStatus": "מאושרת",
+    "address": "א.ת. בית גוברין",
+    "latitude": 31.623965,
+    "longitude": 34.896412
   },
   {
     "fileNumber": "2002",
@@ -117,7 +132,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "מאושר להיתר זמני",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "שטח כללי מועצה אזורית",
+    "latitude": 31.691788,
+    "longitude": 34.808053
   },
   {
     "fileNumber": "02002א",
@@ -137,7 +155,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "מאושרת"
+    "accessibilityStatus": "מאושרת",
+    "address": "שטח כללי מועצה אזורית",
+    "latitude": 31.701151,
+    "longitude": 34.819564
   },
   {
     "fileNumber": "02002ב",
@@ -157,7 +178,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "מאושר להיתר זמני",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "שטח כללי מועצה אזורית",
+    "latitude": 31.691722,
+    "longitude": 34.807959
   },
   {
     "fileNumber": "02002ג",
@@ -177,7 +201,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "מאושר להיתר זמני",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "שטח כללי מועצה אזורית",
+    "latitude": 31.697808,
+    "longitude": 34.815462
   },
   {
     "fileNumber": "02002ד",
@@ -197,7 +224,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "מאושר להיתר זמני",
-    "accessibilityStatus": "לא נשלחה"
+    "accessibilityStatus": "לא נשלחה",
+    "address": "שטח כללי מועצה אזורית",
+    "latitude": 31.689192,
+    "longitude": 34.804846
   },
   {
     "fileNumber": "02002ה",
@@ -217,7 +247,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "מאושר להיתר זמני",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "שטח כללי מועצה אזורית",
+    "latitude": 31.692545,
+    "longitude": 34.808984
   },
   {
     "fileNumber": "2003",
@@ -237,7 +270,10 @@
     "fireDeptStatus": "נדחיתה",
     "agricultureStatus": "",
     "economyStatus": "נדחיתה",
-    "accessibilityStatus": "נדחיתה"
+    "accessibilityStatus": "נדחיתה",
+    "address": "א.ת. ורדון",
+    "latitude": 31.686299,
+    "longitude": 34.828528
   },
   {
     "fileNumber": "2004",
@@ -257,7 +293,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "מאושרת",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.693697,
+    "longitude": 34.81039
   },
   {
     "fileNumber": "02004א",
@@ -277,7 +316,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "לא נדרש",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.688505,
+    "longitude": 34.82
   },
   {
     "fileNumber": "02004ב",
@@ -297,7 +339,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "מאושרת"
+    "accessibilityStatus": "מאושרת",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.688982,
+    "longitude": 34.8046
   },
   {
     "fileNumber": "2006",
@@ -317,7 +362,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "מאושר בתנאים נוספים",
-    "accessibilityStatus": "מאושרת"
+    "accessibilityStatus": "מאושרת",
+    "address": "א.ת. שדה יואב",
+    "latitude": 31.690931,
+    "longitude": 34.772217
   },
   {
     "fileNumber": "02006א",
@@ -337,7 +385,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "מאושרת"
+    "accessibilityStatus": "מאושרת",
+    "address": "א.ת. שדה יואב",
+    "latitude": 31.688338,
+    "longitude": 34.769037
   },
   {
     "fileNumber": "2009",
@@ -357,7 +408,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "שטח כללי מועצה אזורית",
+    "latitude": 31.68922,
+    "longitude": 34.80488
   },
   {
     "fileNumber": "02009א",
@@ -377,7 +431,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "שטח כללי מועצה אזורית",
+    "latitude": 31.691076,
+    "longitude": 34.807177
   },
   {
     "fileNumber": "02009ב",
@@ -397,7 +454,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "שטח כללי מועצה אזורית",
+    "latitude": 31.699058,
+    "longitude": 34.817001
   },
   {
     "fileNumber": "2010",
@@ -409,7 +469,7 @@
     "lastSubmissionReason": "עסק חדש",
     "lastInspectionDate": "11/9/25",
     "expirationDate": "12/31/28",
-    "businessArea": "אזור לא מוגדר",
+    "businessArea": "שטח כללי מועצה אזורית",
     "planningStatus": "מאושרת",
     "environmentStatus": "מאושרת",
     "healthStatus": "",
@@ -417,7 +477,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "שטח כללי מועצה אזורית",
+    "latitude": 31.699167,
+    "longitude": 34.817122
   },
   {
     "fileNumber": "2011",
@@ -437,7 +500,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "מאושרת",
-    "accessibilityStatus": "מאושרת"
+    "accessibilityStatus": "מאושרת",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.70066,
+    "longitude": 34.818973
   },
   {
     "fileNumber": "02011א",
@@ -457,7 +523,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "מאושרת"
+    "accessibilityStatus": "מאושרת",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.693469,
+    "longitude": 34.81011
   },
   {
     "fileNumber": "2012",
@@ -477,7 +546,10 @@
     "fireDeptStatus": "לא נשלחה",
     "agricultureStatus": "",
     "economyStatus": "לא נשלחה",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "שטח כללי מועצה אזורית",
+    "latitude": 31.695261,
+    "longitude": 34.812315
   },
   {
     "fileNumber": "02012א",
@@ -497,7 +569,10 @@
     "fireDeptStatus": "לא נשלחה",
     "agricultureStatus": "",
     "economyStatus": "לא נשלחה",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "שטח כללי מועצה אזורית",
+    "latitude": 31.692873,
+    "longitude": 34.809388
   },
   {
     "fileNumber": "02012ב",
@@ -517,7 +592,10 @@
     "fireDeptStatus": "לא נשלחה",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "שטח כללי מועצה אזורית",
+    "latitude": 31.695622,
+    "longitude": 34.81276
   },
   {
     "fileNumber": "02012ג",
@@ -537,7 +615,10 @@
     "fireDeptStatus": "לא נשלחה",
     "agricultureStatus": "",
     "economyStatus": "לא נשלחה",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "שטח כללי מועצה אזורית",
+    "latitude": 31.697619,
+    "longitude": 34.815217
   },
   {
     "fileNumber": "2013",
@@ -557,7 +638,10 @@
     "fireDeptStatus": "מאושר בתנאים נוספים",
     "agricultureStatus": "",
     "economyStatus": "מאושר בתנאים נוספים",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. כפר מנחם",
+    "latitude": 31.73396,
+    "longitude": 34.844418
   },
   {
     "fileNumber": "2016",
@@ -577,7 +661,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "מאושר בתנאים נוספים",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. נחלה",
+    "latitude": 31.689335,
+    "longitude": 34.795573
   },
   {
     "fileNumber": "02016/1",
@@ -597,7 +684,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "מאושרת",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. נחלה",
+    "latitude": 31.689401,
+    "longitude": 34.795653
   },
   {
     "fileNumber": "2018",
@@ -617,7 +707,10 @@
     "fireDeptStatus": "מאושר בתנאים נוספים",
     "agricultureStatus": "",
     "economyStatus": "מאושרת",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. גלאון",
+    "latitude": 31.659196,
+    "longitude": 34.740851
   },
   {
     "fileNumber": "2019",
@@ -637,7 +730,10 @@
     "fireDeptStatus": "לא נשלחה",
     "agricultureStatus": "",
     "economyStatus": "לא נשלחה",
-    "accessibilityStatus": "לא נשלחה"
+    "accessibilityStatus": "לא נשלחה",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.692503,
+    "longitude": 34.808921
   },
   {
     "fileNumber": "02019א",
@@ -657,7 +753,10 @@
     "fireDeptStatus": "",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.698223,
+    "longitude": 34.81596
   },
   {
     "fileNumber": "02019ב",
@@ -677,7 +776,10 @@
     "fireDeptStatus": "לא נשלחה",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.690997,
+    "longitude": 34.807079
   },
   {
     "fileNumber": "03/012",
@@ -697,7 +799,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "מאושרת",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. רבדים",
+    "latitude": 31.745619,
+    "longitude": 34.80946
   },
   {
     "fileNumber": "3001",
@@ -717,7 +822,10 @@
     "fireDeptStatus": "לא נשלחה",
     "agricultureStatus": "לא נשלחה",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. שדה יואב",
+    "latitude": 31.70032,
+    "longitude": 34.783772
   },
   {
     "fileNumber": "3002",
@@ -737,7 +845,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "מאושרת",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "ישוב סגולה",
+    "latitude": 31.700702,
+    "longitude": 34.793012
   },
   {
     "fileNumber": "3004",
@@ -757,7 +868,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "מאושרת",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. גת",
+    "latitude": 31.622293,
+    "longitude": 34.777277
   },
   {
     "fileNumber": "3005",
@@ -777,7 +891,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "מאושרת",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. כפר מנחם",
+    "latitude": 31.737956,
+    "longitude": 34.849324
   },
   {
     "fileNumber": "3009",
@@ -797,7 +914,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "מאושרת",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. נגבה",
+    "latitude": 31.742344,
+    "longitude": 34.741429
   },
   {
     "fileNumber": "3010",
@@ -817,7 +937,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "מאושרת",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. גלאון",
+    "latitude": 31.666631,
+    "longitude": 34.750001
   },
   {
     "fileNumber": "03010א",
@@ -837,7 +960,10 @@
     "fireDeptStatus": "לא נשלחה",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. גלאון",
+    "latitude": 31.663386,
+    "longitude": 34.746008
   },
   {
     "fileNumber": "3011",
@@ -857,7 +983,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "מאושרת",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. כפר מנחם",
+    "latitude": 31.727915,
+    "longitude": 34.836979
   },
   {
     "fileNumber": "03012א",
@@ -877,7 +1006,10 @@
     "fireDeptStatus": "לא נשלחה",
     "agricultureStatus": "לא נשלחה",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. רבדים",
+    "latitude": 31.745335,
+    "longitude": 34.809111
   },
   {
     "fileNumber": "03012ב",
@@ -897,7 +1029,10 @@
     "fireDeptStatus": "לא נשלחה",
     "agricultureStatus": "לא נשלחה",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. רבדים",
+    "latitude": 31.747465,
+    "longitude": 34.81172
   },
   {
     "fileNumber": "03012ג",
@@ -917,7 +1052,10 @@
     "fireDeptStatus": "לא נשלחה",
     "agricultureStatus": "לא נשלחה",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. רבדים",
+    "latitude": 31.74031,
+    "longitude": 34.802926
   },
   {
     "fileNumber": "3014",
@@ -929,7 +1067,7 @@
     "lastSubmissionReason": "עסק חדש",
     "lastInspectionDate": "",
     "expirationDate": "1/1/28",
-    "businessArea": "ישוב כפר הרי\"\"ף",
+    "businessArea": "ישוב כפר הרי\"ף",
     "planningStatus": "מאושרת",
     "environmentStatus": "מאושרת",
     "healthStatus": "",
@@ -937,7 +1075,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "מאושרת",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "ישוב כפר הרי\"ף",
+    "latitude": 31.745437,
+    "longitude": 34.866916
   },
   {
     "fileNumber": "3015",
@@ -957,7 +1098,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "מאושרת",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. רבדים",
+    "latitude": 31.740722,
+    "longitude": 34.803433
   },
   {
     "fileNumber": "3016",
@@ -977,7 +1121,10 @@
     "fireDeptStatus": "",
     "agricultureStatus": "מאושרת",
     "economyStatus": "מאושר בתנאים נוספים",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "מועצה אזורית מתחם סיביי",
+    "latitude": 31.662514,
+    "longitude": 34.834703
   },
   {
     "fileNumber": "03016א",
@@ -997,7 +1144,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "מאושר להיתר זמני",
     "economyStatus": "",
-    "accessibilityStatus": "מאושרת"
+    "accessibilityStatus": "מאושרת",
+    "address": "מועצה אזורית מתחם סיביי",
+    "latitude": 31.665342,
+    "longitude": 34.838196
   },
   {
     "fileNumber": "3017",
@@ -1017,7 +1167,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "מאושרת",
     "economyStatus": "",
-    "accessibilityStatus": "לא נדרש"
+    "accessibilityStatus": "לא נדרש",
+    "address": "מועצה אזורית מתחם סיביי",
+    "latitude": 31.661289,
+    "longitude": 34.833207
   },
   {
     "fileNumber": "3019",
@@ -1037,7 +1190,10 @@
     "fireDeptStatus": "",
     "agricultureStatus": "",
     "economyStatus": "מאושר בתנאים נוספים",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "מנחת קדמה",
+    "latitude": 31.655504,
+    "longitude": 34.879845
   },
   {
     "fileNumber": "3021",
@@ -1057,7 +1213,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "מאושרת",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. נחלה",
+    "latitude": 31.684749,
+    "longitude": 34.789916
   },
   {
     "fileNumber": "3022",
@@ -1077,7 +1236,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "מאושרת",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. גלאון",
+    "latitude": 31.659684,
+    "longitude": 34.741451
   },
   {
     "fileNumber": "3023",
@@ -1097,7 +1259,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "מאושרת",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. סגולה",
+    "latitude": 31.696534,
+    "longitude": 34.787895
   },
   {
     "fileNumber": "3026",
@@ -1117,7 +1282,10 @@
     "fireDeptStatus": "מאושר להיתר זמני",
     "agricultureStatus": "מאושרת",
     "economyStatus": "",
-    "accessibilityStatus": "לא נדרש"
+    "accessibilityStatus": "לא נדרש",
+    "address": "מועצה אזורית מתחם סיביי",
+    "latitude": 31.670163,
+    "longitude": 34.84413
   },
   {
     "fileNumber": "03026ב",
@@ -1137,7 +1305,10 @@
     "fireDeptStatus": "נדחיתה",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "מועצה אזורית מתחם סיביי",
+    "latitude": 31.672036,
+    "longitude": 34.846435
   },
   {
     "fileNumber": "3027",
@@ -1157,7 +1328,10 @@
     "fireDeptStatus": "מאושר על פי תצהיר",
     "agricultureStatus": "מאושרת",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "כפר נוער קדמה",
+    "latitude": 31.65448,
+    "longitude": 34.878584
   },
   {
     "fileNumber": "3028",
@@ -1177,7 +1351,10 @@
     "fireDeptStatus": "בטיפול",
     "agricultureStatus": "",
     "economyStatus": "מאושרת",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. רבדים",
+    "latitude": 31.737394,
+    "longitude": 34.799338
   },
   {
     "fileNumber": "03028א",
@@ -1197,7 +1374,10 @@
     "fireDeptStatus": "בטיפול",
     "agricultureStatus": "",
     "economyStatus": "לא נשלחה",
-    "accessibilityStatus": "לא נשלחה"
+    "accessibilityStatus": "לא נשלחה",
+    "address": "א.ת. רבדים",
+    "latitude": 31.735771,
+    "longitude": 34.797327
   },
   {
     "fileNumber": "03028ג",
@@ -1217,7 +1397,10 @@
     "fireDeptStatus": "בטיפול",
     "agricultureStatus": "",
     "economyStatus": "לא נשלחה",
-    "accessibilityStatus": "לא נשלחה"
+    "accessibilityStatus": "לא נשלחה",
+    "address": "א.ת. רבדים",
+    "latitude": 31.739363,
+    "longitude": 34.80176
   },
   {
     "fileNumber": "03028ה",
@@ -1237,7 +1420,10 @@
     "fireDeptStatus": "בטיפול",
     "agricultureStatus": "",
     "economyStatus": "לא נשלחה",
-    "accessibilityStatus": "לא נשלחה"
+    "accessibilityStatus": "לא נשלחה",
+    "address": "א.ת. רבדים",
+    "latitude": 31.739831,
+    "longitude": 34.802337
   },
   {
     "fileNumber": "03028ו",
@@ -1257,7 +1443,10 @@
     "fireDeptStatus": "בטיפול",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "לא נשלחה"
+    "accessibilityStatus": "לא נשלחה",
+    "address": "א.ת. רבדים",
+    "latitude": 31.737306,
+    "longitude": 34.799217
   },
   {
     "fileNumber": "03028ז",
@@ -1277,7 +1466,10 @@
     "fireDeptStatus": "לא נשלחה",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. רבדים",
+    "latitude": 31.746575,
+    "longitude": 34.810624
   },
   {
     "fileNumber": "3030",
@@ -1297,7 +1489,10 @@
     "fireDeptStatus": "בטיפול",
     "agricultureStatus": "מסתמך על גורם אחר",
     "economyStatus": "",
-    "accessibilityStatus": "לא נדרש"
+    "accessibilityStatus": "לא נדרש",
+    "address": "א.ת. ורדון",
+    "latitude": 31.680861,
+    "longitude": 34.821823
   },
   {
     "fileNumber": "3031",
@@ -1317,7 +1512,10 @@
     "fireDeptStatus": "לא נשלחה",
     "agricultureStatus": "לא נשלחה",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "קיבוץ בית ניר",
+    "latitude": 31.6714,
+    "longitude": 34.842576
   },
   {
     "fileNumber": "3032",
@@ -1337,7 +1535,10 @@
     "fireDeptStatus": "",
     "agricultureStatus": "",
     "economyStatus": "לא נשלחה",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "מנחת קדמה",
+    "latitude": 31.65566,
+    "longitude": 34.88005
   },
   {
     "fileNumber": "4022",
@@ -1357,7 +1558,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "מאושרת"
+    "accessibilityStatus": "מאושרת",
+    "address": "ישוב נחלה",
+    "latitude": 31.688922,
+    "longitude": 34.795051
   },
   {
     "fileNumber": "4024",
@@ -1377,7 +1581,10 @@
     "fireDeptStatus": "מאושר לרשיון זמני",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. פגש - גת",
+    "latitude": 31.620564,
+    "longitude": 34.775162
   },
   {
     "fileNumber": "04024ב",
@@ -1397,7 +1604,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "נדרשים תנאים מוקדמים",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "מתחם גניר - גת",
+    "latitude": 31.612368,
+    "longitude": 34.765074
   },
   {
     "fileNumber": "04024ז",
@@ -1417,7 +1627,10 @@
     "fireDeptStatus": "לא נשלחה",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "בטיפול"
+    "accessibilityStatus": "בטיפול",
+    "address": "מתחם גניר - גת",
+    "latitude": 31.622025,
+    "longitude": 34.776948
   },
   {
     "fileNumber": "04024ח",
@@ -1437,7 +1650,10 @@
     "fireDeptStatus": "לא נשלחה",
     "agricultureStatus": "",
     "economyStatus": "לא נשלחה",
-    "accessibilityStatus": "בטיפול"
+    "accessibilityStatus": "בטיפול",
+    "address": "מתחם גניר - גת",
+    "latitude": 31.616266,
+    "longitude": 34.76986
   },
   {
     "fileNumber": "04024ט",
@@ -1457,7 +1673,10 @@
     "fireDeptStatus": "לא נשלחה",
     "agricultureStatus": "",
     "economyStatus": "לא נשלחה",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "מתחם גניר - גת",
+    "latitude": 31.613902,
+    "longitude": 34.766963
   },
   {
     "fileNumber": "04024י",
@@ -1477,7 +1696,10 @@
     "fireDeptStatus": "לא נשלחה",
     "agricultureStatus": "",
     "economyStatus": "לא נשלחה",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "מתחם גניר - גת",
+    "latitude": 31.613768,
+    "longitude": 34.766786
   },
   {
     "fileNumber": "04024ך",
@@ -1497,7 +1719,10 @@
     "fireDeptStatus": "לא נשלחה",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "מתחם גניר - גת",
+    "latitude": 31.618977,
+    "longitude": 34.773209
   },
   {
     "fileNumber": "4069",
@@ -1517,7 +1742,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.700125,
+    "longitude": 34.818314
   },
   {
     "fileNumber": "04069א",
@@ -1537,7 +1765,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.700357,
+    "longitude": 34.8186
   },
   {
     "fileNumber": "4096",
@@ -1549,7 +1780,7 @@
     "lastSubmissionReason": "הארכה - חרבות ברזל",
     "lastInspectionDate": "2/10/26",
     "expirationDate": "4/24/26",
-    "businessArea": "מועצה אזורית  מתחם יבולי",
+    "businessArea": "מועצה אזורית מתחם יבולי",
     "planningStatus": "מאושר להיתר זמני",
     "environmentStatus": "מסתמך על גורם אחר",
     "healthStatus": "מאושר בתנאים נוספים",
@@ -1557,7 +1788,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "מועצה אזורית מתחם יבולי",
+    "latitude": 31.665549,
+    "longitude": 34.838439
   },
   {
     "fileNumber": "4104",
@@ -1577,7 +1811,10 @@
     "fireDeptStatus": "נדחיתה",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. גלאון",
+    "latitude": 31.671233,
+    "longitude": 34.755665
   },
   {
     "fileNumber": "04104א",
@@ -1597,7 +1834,10 @@
     "fireDeptStatus": "נדחיתה",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. גלאון",
+    "latitude": 31.65875,
+    "longitude": 34.740315
   },
   {
     "fileNumber": "04104ב",
@@ -1617,7 +1857,10 @@
     "fireDeptStatus": "נדחיתה",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. גלאון",
+    "latitude": 31.664165,
+    "longitude": 34.746978
   },
   {
     "fileNumber": "4118",
@@ -1637,7 +1880,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "מועצה אזורית מתחם סיביי",
+    "latitude": 31.671887,
+    "longitude": 34.846251
   },
   {
     "fileNumber": "4125",
@@ -1657,7 +1903,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "ישוב בית גוברין",
+    "latitude": 31.626874,
+    "longitude": 34.899992
   },
   {
     "fileNumber": "04125א",
@@ -1677,7 +1926,10 @@
     "fireDeptStatus": "לא נשלחה",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "לא נשלחה"
+    "accessibilityStatus": "לא נשלחה",
+    "address": "ישוב בית גוברין",
+    "latitude": 31.620845,
+    "longitude": 34.892572
   },
   {
     "fileNumber": "4130",
@@ -1697,7 +1949,10 @@
     "fireDeptStatus": "נדרשים תנאים מוקדמים",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "לא נשלחה"
+    "accessibilityStatus": "לא נשלחה",
+    "address": "ישוב בית ניר",
+    "latitude": 31.674767,
+    "longitude": 34.846707
   },
   {
     "fileNumber": "4132",
@@ -1717,7 +1972,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "ישוב כפר מנחם",
+    "latitude": 31.734622,
+    "longitude": 34.84522
   },
   {
     "fileNumber": "4133",
@@ -1737,7 +1995,10 @@
     "fireDeptStatus": "נדחיתה",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "ישוב נגבה",
+    "latitude": 31.735573,
+    "longitude": 34.733096
   },
   {
     "fileNumber": "4134",
@@ -1757,7 +2018,10 @@
     "fireDeptStatus": "בטיפול",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "בטיפול"
+    "accessibilityStatus": "בטיפול",
+    "address": "א.ת. ורדון",
+    "latitude": 31.678557,
+    "longitude": 34.818999
   },
   {
     "fileNumber": "4136",
@@ -1769,7 +2033,7 @@
     "lastSubmissionReason": "חידוש רשיון עסק",
     "lastInspectionDate": "5/11/25",
     "expirationDate": "",
-    "businessArea": "ישוב כפר הרי\"\"ף",
+    "businessArea": "ישוב כפר הרי\"ף",
     "planningStatus": "לא נשלחה",
     "environmentStatus": "",
     "healthStatus": "לא נשלחה",
@@ -1777,7 +2041,10 @@
     "fireDeptStatus": "בטיפול",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "לא נשלחה"
+    "accessibilityStatus": "לא נשלחה",
+    "address": "ישוב כפר הרי\"ף",
+    "latitude": 31.73633,
+    "longitude": 34.85572
   },
   {
     "fileNumber": "4140",
@@ -1797,7 +2064,10 @@
     "fireDeptStatus": "לא נשלחה",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "בטיפול"
+    "accessibilityStatus": "בטיפול",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.694422,
+    "longitude": 34.811295
   },
   {
     "fileNumber": "4147",
@@ -1809,7 +2079,7 @@
     "lastSubmissionReason": "חידוש רשיון עסק",
     "lastInspectionDate": "9/15/25",
     "expirationDate": "12/31/24",
-    "businessArea": "מועצה אזורית  מתחם יבולי",
+    "businessArea": "מועצה אזורית מתחם יבולי",
     "planningStatus": "בטיפול",
     "environmentStatus": "לידיעה",
     "healthStatus": "בטיפול",
@@ -1817,7 +2087,10 @@
     "fireDeptStatus": "לא נשלחה",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "מועצה אזורית מתחם יבולי",
+    "latitude": 31.665451,
+    "longitude": 34.83833
   },
   {
     "fileNumber": "04147ב",
@@ -1829,7 +2102,7 @@
     "lastSubmissionReason": "חידוש רשיון עסק",
     "lastInspectionDate": "",
     "expirationDate": "12/31/24",
-    "businessArea": "מועצה אזורית  מתחם יבולי",
+    "businessArea": "מועצה אזורית מתחם יבולי",
     "planningStatus": "בטיפול",
     "environmentStatus": "לידיעה",
     "healthStatus": "בטיפול",
@@ -1837,7 +2110,10 @@
     "fireDeptStatus": "לא נשלחה",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "מועצה אזורית מתחם יבולי",
+    "latitude": 31.666663,
+    "longitude": 34.839822
   },
   {
     "fileNumber": "04147ד",
@@ -1849,7 +2125,7 @@
     "lastSubmissionReason": "עסק חדש",
     "lastInspectionDate": "",
     "expirationDate": "",
-    "businessArea": "מועצה אזורית  מתחם יבולי",
+    "businessArea": "מועצה אזורית מתחם יבולי",
     "planningStatus": "בטיפול",
     "environmentStatus": "לא נשלחה",
     "healthStatus": "בטיפול",
@@ -1857,7 +2133,10 @@
     "fireDeptStatus": "לא נשלחה",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "מועצה אזורית מתחם יבולי",
+    "latitude": 31.66846,
+    "longitude": 34.842034
   },
   {
     "fileNumber": "04147ה",
@@ -1869,7 +2148,7 @@
     "lastSubmissionReason": "עסק חדש",
     "lastInspectionDate": "",
     "expirationDate": "",
-    "businessArea": "מועצה אזורית  מתחם יבולי",
+    "businessArea": "מועצה אזורית מתחם יבולי",
     "planningStatus": "בטיפול",
     "environmentStatus": "",
     "healthStatus": "",
@@ -1877,7 +2156,10 @@
     "fireDeptStatus": "לא נשלחה",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "מועצה אזורית מתחם יבולי",
+    "latitude": 31.661344,
+    "longitude": 34.833276
   },
   {
     "fileNumber": "04148א",
@@ -1897,7 +2179,10 @@
     "fireDeptStatus": "בטיפול",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. ורדון",
+    "latitude": 31.686708,
+    "longitude": 34.829019
   },
   {
     "fileNumber": "4150",
@@ -1917,7 +2202,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. רבדים",
+    "latitude": 31.738038,
+    "longitude": 34.800117
   },
   {
     "fileNumber": "4156",
@@ -1937,7 +2225,10 @@
     "fireDeptStatus": "נדחיתה",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "לא נדרש"
+    "accessibilityStatus": "לא נדרש",
+    "address": "ישוב רבדים",
+    "latitude": 31.738054,
+    "longitude": 34.800137
   },
   {
     "fileNumber": "4162",
@@ -1957,7 +2248,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "לא נדרש",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. ורדון",
+    "latitude": 31.680524,
+    "longitude": 34.821408
   },
   {
     "fileNumber": "04162א",
@@ -1977,7 +2271,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. ורדון",
+    "latitude": 31.682216,
+    "longitude": 34.82349
   },
   {
     "fileNumber": "04162ב",
@@ -1997,7 +2294,10 @@
     "fireDeptStatus": "לא נשלחה",
     "agricultureStatus": "",
     "economyStatus": "לא נשלחה",
-    "accessibilityStatus": "לא נשלחה"
+    "accessibilityStatus": "לא נשלחה",
+    "address": "א.ת. ורדון",
+    "latitude": 31.680152,
+    "longitude": 34.82095
   },
   {
     "fileNumber": "04162ג",
@@ -2017,7 +2317,10 @@
     "fireDeptStatus": "לא נשלחה",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. ורדון",
+    "latitude": 31.686387,
+    "longitude": 34.828636
   },
   {
     "fileNumber": "4163",
@@ -2037,7 +2340,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. רבדים",
+    "latitude": 31.737529,
+    "longitude": 34.799491
   },
   {
     "fileNumber": "04163א",
@@ -2057,7 +2363,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. רבדים",
+    "latitude": 31.739566,
+    "longitude": 34.802011
   },
   {
     "fileNumber": "04163ח",
@@ -2077,7 +2386,10 @@
     "fireDeptStatus": "",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. רבדים",
+    "latitude": 31.74583,
+    "longitude": 34.809708
   },
   {
     "fileNumber": "04163ט",
@@ -2097,7 +2409,10 @@
     "fireDeptStatus": "",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. רבדים",
+    "latitude": 31.73829,
+    "longitude": 34.800428
   },
   {
     "fileNumber": "04163י",
@@ -2117,7 +2432,10 @@
     "fireDeptStatus": "",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. רבדים",
+    "latitude": 31.74025,
+    "longitude": 34.802852
   },
   {
     "fileNumber": "04163ך",
@@ -2137,7 +2455,10 @@
     "fireDeptStatus": "",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. רבדים",
+    "latitude": 31.735785,
+    "longitude": 34.797345
   },
   {
     "fileNumber": "04163כ",
@@ -2157,7 +2478,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. רבדים",
+    "latitude": 31.736799,
+    "longitude": 34.798593
   },
   {
     "fileNumber": "04163ל",
@@ -2177,7 +2501,10 @@
     "fireDeptStatus": "",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. רבדים",
+    "latitude": 31.737295,
+    "longitude": 34.799215
   },
   {
     "fileNumber": "04163ם",
@@ -2197,7 +2524,10 @@
     "fireDeptStatus": "",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. רבדים",
+    "latitude": 31.73874,
+    "longitude": 34.800981
   },
   {
     "fileNumber": "4166",
@@ -2217,7 +2547,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "מאושרת"
+    "accessibilityStatus": "מאושרת",
+    "address": "ישוב כפר מנחם",
+    "latitude": 31.731239,
+    "longitude": 34.84107
   },
   {
     "fileNumber": "4172",
@@ -2237,7 +2570,10 @@
     "fireDeptStatus": "לא נשלחה",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "לא נשלחה"
+    "accessibilityStatus": "לא נשלחה",
+    "address": "קיבוץ גלאון",
+    "latitude": 31.666678,
+    "longitude": 34.750059
   },
   {
     "fileNumber": "4173",
@@ -2257,7 +2593,10 @@
     "fireDeptStatus": "לא נשלחה",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "לא נשלחה"
+    "accessibilityStatus": "לא נשלחה",
+    "address": "קיבוץ כפר מנחם",
+    "latitude": 31.731271,
+    "longitude": 34.841096
   },
   {
     "fileNumber": "4178",
@@ -2277,7 +2616,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "מאושרת"
+    "accessibilityStatus": "מאושרת",
+    "address": "שטח כללי מועצה אזורית",
+    "latitude": 31.700731,
+    "longitude": 34.81906
   },
   {
     "fileNumber": "4179",
@@ -2297,7 +2639,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "מסתמך על גורם אחר"
+    "accessibilityStatus": "מסתמך על גורם אחר",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.689466,
+    "longitude": 34.805182
   },
   {
     "fileNumber": "4180",
@@ -2317,7 +2662,10 @@
     "fireDeptStatus": "בטיפול",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "קיבוץ גלאון",
+    "latitude": 31.67004,
+    "longitude": 34.754209
   },
   {
     "fileNumber": "4182",
@@ -2337,7 +2685,10 @@
     "fireDeptStatus": "נדרשים תנאים מוקדמים",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "נדרשים תנאים מוקדמים"
+    "accessibilityStatus": "נדרשים תנאים מוקדמים",
+    "address": "מושב סגולה",
+    "latitude": 31.689105,
+    "longitude": 34.778751
   },
   {
     "fileNumber": "5011",
@@ -2357,7 +2708,10 @@
     "fireDeptStatus": "מאושר בתנאים נוספים",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. כפר מנחם",
+    "latitude": 31.736531,
+    "longitude": 34.847583
   },
   {
     "fileNumber": "05011ב",
@@ -2377,7 +2731,10 @@
     "fireDeptStatus": "",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. כפר מנחם",
+    "latitude": 31.733491,
+    "longitude": 34.843842
   },
   {
     "fileNumber": "05011ג",
@@ -2397,7 +2754,10 @@
     "fireDeptStatus": "מאושר בתנאים נוספים",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. כפר מנחם",
+    "latitude": 31.726129,
+    "longitude": 34.83478
   },
   {
     "fileNumber": "6001",
@@ -2417,7 +2777,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "מאושרת"
+    "accessibilityStatus": "מאושרת",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.696868,
+    "longitude": 34.814292
   },
   {
     "fileNumber": "6024",
@@ -2437,7 +2800,10 @@
     "fireDeptStatus": "בטיפול",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. רבדים",
+    "latitude": 31.736663,
+    "longitude": 34.798438
   },
   {
     "fileNumber": "6026",
@@ -2457,7 +2823,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. פגש - גת",
+    "latitude": 31.620968,
+    "longitude": 34.77566
   },
   {
     "fileNumber": "6027",
@@ -2477,7 +2846,10 @@
     "fireDeptStatus": "מאושר על פי תצהיר",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "מאושר על פי תצהיר"
+    "accessibilityStatus": "מאושר על פי תצהיר",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.693242,
+    "longitude": 34.809843
   },
   {
     "fileNumber": "6028",
@@ -2497,7 +2869,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.692544,
+    "longitude": 34.808983
   },
   {
     "fileNumber": "6031",
@@ -2517,7 +2892,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. רבדים",
+    "latitude": 31.744862,
+    "longitude": 34.808516
   },
   {
     "fileNumber": "6033",
@@ -2537,7 +2915,10 @@
     "fireDeptStatus": "",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. ורדון",
+    "latitude": 31.676587,
+    "longitude": 34.816575
   },
   {
     "fileNumber": "06036ב",
@@ -2557,7 +2938,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "מאושרת",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.698048,
+    "longitude": 34.815745
   },
   {
     "fileNumber": "06036ג",
@@ -2577,7 +2961,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.700635,
+    "longitude": 34.818929
   },
   {
     "fileNumber": "06036ד",
@@ -2597,7 +2984,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "מאושרת",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.689853,
+    "longitude": 34.805659
   },
   {
     "fileNumber": "6038",
@@ -2609,7 +2999,7 @@
     "lastSubmissionReason": "עסק חדש",
     "lastInspectionDate": "8/25/25",
     "expirationDate": "12/31/34",
-    "businessArea": "מועצה אזורית  מתחם יבולי",
+    "businessArea": "מועצה אזורית מתחם יבולי",
     "planningStatus": "מאושרת",
     "environmentStatus": "",
     "healthStatus": "",
@@ -2617,7 +3007,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "מועצה אזורית מתחם יבולי",
+    "latitude": 31.67154,
+    "longitude": 34.845813
   },
   {
     "fileNumber": "6040",
@@ -2637,7 +3030,10 @@
     "fireDeptStatus": "בטיפול",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "בטיפול"
+    "accessibilityStatus": "בטיפול",
+    "address": "ישוב כפר מנחם",
+    "latitude": 31.730041,
+    "longitude": 34.839596
   },
   {
     "fileNumber": "06040א",
@@ -2657,7 +3053,10 @@
     "fireDeptStatus": "בטיפול",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "בטיפול"
+    "accessibilityStatus": "בטיפול",
+    "address": "ישוב כפר מנחם",
+    "latitude": 31.737887,
+    "longitude": 34.849252
   },
   {
     "fileNumber": "6045",
@@ -2677,7 +3076,10 @@
     "fireDeptStatus": "נדחיתה",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "מועצה אזורית מתחם סיביי",
+    "latitude": 31.670253,
+    "longitude": 34.844241
   },
   {
     "fileNumber": "6046",
@@ -2697,7 +3099,10 @@
     "fireDeptStatus": "בטיפול",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.690657,
+    "longitude": 34.806661
   },
   {
     "fileNumber": "06046א",
@@ -2717,7 +3122,10 @@
     "fireDeptStatus": "בטיפול",
     "agricultureStatus": "",
     "economyStatus": "בטיפול",
-    "accessibilityStatus": "לא נשלחה"
+    "accessibilityStatus": "לא נשלחה",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.697628,
+    "longitude": 34.815228
   },
   {
     "fileNumber": "6049",
@@ -2737,7 +3145,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "מועצה אזורית מתחם סיביי",
+    "latitude": 31.666584,
+    "longitude": 34.839712
   },
   {
     "fileNumber": "6050",
@@ -2757,7 +3168,10 @@
     "fireDeptStatus": "בטיפול",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "בטיפול"
+    "accessibilityStatus": "בטיפול",
+    "address": "מושב סגולה",
+    "latitude": 31.698415,
+    "longitude": 34.790197
   },
   {
     "fileNumber": "6051",
@@ -2769,7 +3183,7 @@
     "lastSubmissionReason": "חידוש רשיון עסק",
     "lastInspectionDate": "5/21/25",
     "expirationDate": "6/26/26",
-    "businessArea": "קיבץ בית גוברין",
+    "businessArea": "קיבוץ בית גוברין",
     "planningStatus": "מאושרת",
     "environmentStatus": "",
     "healthStatus": "לא נדרש",
@@ -2777,7 +3191,10 @@
     "fireDeptStatus": "",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "קיבוץ בית גוברין",
+    "latitude": 31.623591,
+    "longitude": 34.895965
   },
   {
     "fileNumber": "06051א",
@@ -2789,7 +3206,7 @@
     "lastSubmissionReason": "חידוש רשיון עסק",
     "lastInspectionDate": "",
     "expirationDate": "6/26/26",
-    "businessArea": "קיבץ בית גוברין",
+    "businessArea": "קיבוץ בית גוברין",
     "planningStatus": "מאושרת",
     "environmentStatus": "",
     "healthStatus": "לא נשלחה",
@@ -2797,7 +3214,10 @@
     "fireDeptStatus": "",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "לא נדרש"
+    "accessibilityStatus": "לא נדרש",
+    "address": "קיבוץ בית גוברין",
+    "latitude": 31.625363,
+    "longitude": 34.898133
   },
   {
     "fileNumber": "6054",
@@ -2817,7 +3237,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.689919,
+    "longitude": 34.805741
   },
   {
     "fileNumber": "06055א",
@@ -2837,7 +3260,10 @@
     "fireDeptStatus": "לא נשלחה",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. ורדון",
+    "latitude": 31.685869,
+    "longitude": 34.827998
   },
   {
     "fileNumber": "6056",
@@ -2857,7 +3283,10 @@
     "fireDeptStatus": "",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. פגש - גת",
+    "latitude": 31.614319,
+    "longitude": 34.767463
   },
   {
     "fileNumber": "6057",
@@ -2877,7 +3306,10 @@
     "fireDeptStatus": "נדחיתה",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "מועצה אזורית מתחם סיביי",
+    "latitude": 31.663384,
+    "longitude": 34.835787
   },
   {
     "fileNumber": "6058",
@@ -2897,7 +3329,10 @@
     "fireDeptStatus": "בטיפול",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. ורדון",
+    "latitude": 31.678373,
+    "longitude": 34.818773
   },
   {
     "fileNumber": "6060",
@@ -2917,7 +3352,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "מועצה אזורית מתחם Y פארק",
+    "latitude": 31.671335,
+    "longitude": 34.845573
   },
   {
     "fileNumber": "6063",
@@ -2937,7 +3375,10 @@
     "fireDeptStatus": "",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "קיבוץ נגבה",
+    "latitude": 31.742749,
+    "longitude": 34.741928
   },
   {
     "fileNumber": "6064",
@@ -2949,7 +3390,7 @@
     "lastSubmissionReason": "חידוש רשיון עסק",
     "lastInspectionDate": "2/10/26",
     "expirationDate": "4/24/26",
-    "businessArea": "מושב כפר הרי\"\"ף",
+    "businessArea": "מושב כפר הרי\"ף",
     "planningStatus": "לא נשלחה",
     "environmentStatus": "",
     "healthStatus": "לא נשלחה",
@@ -2957,7 +3398,10 @@
     "fireDeptStatus": "לא נשלחה",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "בטיפול"
+    "accessibilityStatus": "בטיפול",
+    "address": "מושב כפר הרי\"ף",
+    "latitude": 31.741227,
+    "longitude": 34.861735
   },
   {
     "fileNumber": "6065",
@@ -2977,7 +3421,10 @@
     "fireDeptStatus": "",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "קיבוץ רבדים",
+    "latitude": 31.737783,
+    "longitude": 34.799816
   },
   {
     "fileNumber": "6066",
@@ -2997,7 +3444,10 @@
     "fireDeptStatus": "לא נשלחה",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "מועצה אזורית מתחם סיביי",
+    "latitude": 31.667732,
+    "longitude": 34.841125
   },
   {
     "fileNumber": "6068",
@@ -3017,7 +3467,10 @@
     "fireDeptStatus": "לא נשלחה",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. רבדים",
+    "latitude": 31.746859,
+    "longitude": 34.810975
   },
   {
     "fileNumber": "6069",
@@ -3037,7 +3490,10 @@
     "fireDeptStatus": "בטיפול",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "מועצה אזורית מתחם Y פארק",
+    "latitude": 31.659565,
+    "longitude": 34.831086
   },
   {
     "fileNumber": "6070",
@@ -3057,7 +3513,10 @@
     "fireDeptStatus": "בטיפול",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. רבדים",
+    "latitude": 31.741509,
+    "longitude": 34.804401
   },
   {
     "fileNumber": "6071",
@@ -3077,7 +3536,10 @@
     "fireDeptStatus": "בטיפול",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. רבדים",
+    "latitude": 31.738227,
+    "longitude": 34.80035
   },
   {
     "fileNumber": "6072",
@@ -3097,7 +3559,10 @@
     "fireDeptStatus": "לא נשלחה",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "מועצה אזורית מתחם Y פארק",
+    "latitude": 31.662414,
+    "longitude": 34.834581
   },
   {
     "fileNumber": "07/243",
@@ -3117,7 +3582,10 @@
     "fireDeptStatus": "בטיפול",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "מאושרת"
+    "accessibilityStatus": "מאושרת",
+    "address": "ישוב נחלה",
+    "latitude": 31.689044,
+    "longitude": 34.795202
   },
   {
     "fileNumber": "7001",
@@ -3137,7 +3605,10 @@
     "fireDeptStatus": "לא נשלחה",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "בטיפול"
+    "accessibilityStatus": "בטיפול",
+    "address": "קיבוץ נגבה",
+    "latitude": 31.745687,
+    "longitude": 34.745532
   },
   {
     "fileNumber": "07001א",
@@ -3157,7 +3628,10 @@
     "fireDeptStatus": "לא נשלחה",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "בטיפול"
+    "accessibilityStatus": "בטיפול",
+    "address": "קיבוץ נגבה",
+    "latitude": 31.747968,
+    "longitude": 34.748339
   },
   {
     "fileNumber": "7004",
@@ -3177,7 +3651,10 @@
     "fireDeptStatus": "מאושר לרשיון זמני",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "ישוב כפר מנחם",
+    "latitude": 31.73737,
+    "longitude": 34.848603
   },
   {
     "fileNumber": "7012",
@@ -3197,7 +3674,10 @@
     "fireDeptStatus": "לא נשלחה",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "מאושר בתנאים נוספים"
+    "accessibilityStatus": "מאושר בתנאים נוספים",
+    "address": "ישוב שדה יואב",
+    "latitude": 31.700391,
+    "longitude": 34.78386
   },
   {
     "fileNumber": "7014",
@@ -3217,7 +3697,10 @@
     "fireDeptStatus": "לא נשלחה",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "בטיפול"
+    "accessibilityStatus": "בטיפול",
+    "address": "ישוב בית גוברין",
+    "latitude": 31.615704,
+    "longitude": 34.886257
   },
   {
     "fileNumber": "07014א",
@@ -3237,7 +3720,10 @@
     "fireDeptStatus": "לא נשלחה",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "בטיפול"
+    "accessibilityStatus": "בטיפול",
+    "address": "ישוב בית גוברין",
+    "latitude": 31.624502,
+    "longitude": 34.897074
   },
   {
     "fileNumber": "7016",
@@ -3257,7 +3743,10 @@
     "fireDeptStatus": "מאושר בתנאים נוספים",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "בטיפול"
+    "accessibilityStatus": "בטיפול",
+    "address": "ישוב גלאון",
+    "latitude": 31.670636,
+    "longitude": 34.75493
   },
   {
     "fileNumber": "7030",
@@ -3277,7 +3766,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "בטיפול"
+    "accessibilityStatus": "בטיפול",
+    "address": "ישוב קיבוץ גת",
+    "latitude": 31.614665,
+    "longitude": 34.767902
   },
   {
     "fileNumber": "07030א",
@@ -3297,7 +3789,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "בטיפול"
+    "accessibilityStatus": "בטיפול",
+    "address": "ישוב קיבוץ גת",
+    "latitude": 31.621094,
+    "longitude": 34.775802
   },
   {
     "fileNumber": "7062",
@@ -3317,7 +3812,10 @@
     "fireDeptStatus": "מאושר בתנאים נוספים",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "בטיפול"
+    "accessibilityStatus": "בטיפול",
+    "address": "ישוב רבדים",
+    "latitude": 31.748239,
+    "longitude": 34.812673
   },
   {
     "fileNumber": "07062א",
@@ -3337,7 +3835,10 @@
     "fireDeptStatus": "מאושר בתנאים נוספים",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "בטיפול"
+    "accessibilityStatus": "בטיפול",
+    "address": "ישוב רבדים",
+    "latitude": 31.741684,
+    "longitude": 34.804617
   },
   {
     "fileNumber": "7077",
@@ -3357,7 +3858,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "מאושרת"
+    "accessibilityStatus": "מאושרת",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.68986,
+    "longitude": 34.805681
   },
   {
     "fileNumber": "7080",
@@ -3377,7 +3881,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "בטיפול"
+    "accessibilityStatus": "בטיפול",
+    "address": "ישוב כפר מנחם",
+    "latitude": 31.72842,
+    "longitude": 34.8376
   },
   {
     "fileNumber": "7100",
@@ -3397,7 +3904,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "נדרשים תנאים מוקדמים"
+    "accessibilityStatus": "נדרשים תנאים מוקדמים",
+    "address": "ישוב בית ניר",
+    "latitude": 31.668886,
+    "longitude": 34.839468
   },
   {
     "fileNumber": "07100א",
@@ -3417,7 +3927,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "נדרשים תנאים מוקדמים"
+    "accessibilityStatus": "נדרשים תנאים מוקדמים",
+    "address": "ישוב בית ניר",
+    "latitude": 31.676154,
+    "longitude": 34.848426
   },
   {
     "fileNumber": "7127",
@@ -3437,7 +3950,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "בטיפול"
+    "accessibilityStatus": "בטיפול",
+    "address": "ישוב סגולה",
+    "latitude": 31.689137,
+    "longitude": 34.778791
   },
   {
     "fileNumber": "07127א",
@@ -3457,7 +3973,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "בטיפול"
+    "accessibilityStatus": "בטיפול",
+    "address": "ישוב סגולה",
+    "latitude": 31.698633,
+    "longitude": 34.790477
   },
   {
     "fileNumber": "7173",
@@ -3477,7 +3996,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "ישוב שדה יואב",
+    "latitude": 31.691944,
+    "longitude": 34.773476
   },
   {
     "fileNumber": "7240",
@@ -3497,7 +4019,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "ישוב שדה יואב",
+    "latitude": 31.697926,
+    "longitude": 34.780838
   },
   {
     "fileNumber": "07240ב",
@@ -3517,7 +4042,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "ישוב שדה יואב",
+    "latitude": 31.694675,
+    "longitude": 34.776825
   },
   {
     "fileNumber": "07240ג",
@@ -3537,7 +4065,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "ישוב שדה יואב",
+    "latitude": 31.699566,
+    "longitude": 34.782856
   },
   {
     "fileNumber": "07240ד",
@@ -3557,7 +4088,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "ישוב שדה יואב",
+    "latitude": 31.700178,
+    "longitude": 34.783597
   },
   {
     "fileNumber": "7247",
@@ -3577,7 +4111,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "מאושר להיתר זמני"
+    "accessibilityStatus": "מאושר להיתר זמני",
+    "address": "ישוב גלאון",
+    "latitude": 31.664206,
+    "longitude": 34.747017
   },
   {
     "fileNumber": "07247א",
@@ -3597,7 +4134,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "מאושר להיתר זמני"
+    "accessibilityStatus": "מאושר להיתר זמני",
+    "address": "ישוב גלאון",
+    "latitude": 31.670333,
+    "longitude": 34.75457
   },
   {
     "fileNumber": "07247ב",
@@ -3617,7 +4157,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "מאושר להיתר זמני"
+    "accessibilityStatus": "מאושר להיתר זמני",
+    "address": "ישוב גלאון",
+    "latitude": 31.670245,
+    "longitude": 34.754462
   },
   {
     "fileNumber": "7256",
@@ -3637,7 +4180,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "מאושרת"
+    "accessibilityStatus": "מאושרת",
+    "address": "קיבוץ כפר מנחם",
+    "latitude": 31.736092,
+    "longitude": 34.84703
   },
   {
     "fileNumber": "07256א",
@@ -3657,7 +4203,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "מאושרת"
+    "accessibilityStatus": "מאושרת",
+    "address": "קיבוץ כפר מנחם",
+    "latitude": 31.726914,
+    "longitude": 34.835734
   },
   {
     "fileNumber": "7260",
@@ -3677,7 +4226,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "מאושרת"
+    "accessibilityStatus": "מאושרת",
+    "address": "ישוב רבדים",
+    "latitude": 31.737389,
+    "longitude": 34.799331
   },
   {
     "fileNumber": "07260א",
@@ -3697,7 +4249,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "מאושרת"
+    "accessibilityStatus": "מאושרת",
+    "address": "ישוב רבדים",
+    "latitude": 31.740934,
+    "longitude": 34.803694
   },
   {
     "fileNumber": "07260ב",
@@ -3717,7 +4272,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "מאושרת"
+    "accessibilityStatus": "מאושרת",
+    "address": "ישוב רבדים",
+    "latitude": 31.745703,
+    "longitude": 34.809551
   },
   {
     "fileNumber": "7261",
@@ -3737,7 +4295,10 @@
     "fireDeptStatus": "מאושר להיתר זמני",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "מאושרת"
+    "accessibilityStatus": "מאושרת",
+    "address": "קיבוץ נגבה",
+    "latitude": 31.739467,
+    "longitude": 34.737888
   },
   {
     "fileNumber": "07261א",
@@ -3757,7 +4318,10 @@
     "fireDeptStatus": "בטיפול",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "מאושרת"
+    "accessibilityStatus": "מאושרת",
+    "address": "קיבוץ נגבה",
+    "latitude": 31.740365,
+    "longitude": 34.738982
   },
   {
     "fileNumber": "07261ב",
@@ -3777,7 +4341,10 @@
     "fireDeptStatus": "בטיפול",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "מאושרת"
+    "accessibilityStatus": "מאושרת",
+    "address": "קיבוץ נגבה",
+    "latitude": 31.74741,
+    "longitude": 34.747664
   },
   {
     "fileNumber": "7262",
@@ -3797,7 +4364,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "מאושרת"
+    "accessibilityStatus": "מאושרת",
+    "address": "ישוב בית גוברין",
+    "latitude": 31.617962,
+    "longitude": 34.889036
   },
   {
     "fileNumber": "7264",
@@ -3817,7 +4387,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "מאושרת"
+    "accessibilityStatus": "מאושרת",
+    "address": "ישוב קיבוץ גת",
+    "latitude": 31.618911,
+    "longitude": 34.773127
   },
   {
     "fileNumber": "07264א",
@@ -3837,7 +4410,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "מאושרת"
+    "accessibilityStatus": "מאושרת",
+    "address": "ישוב קיבוץ גת",
+    "latitude": 31.616957,
+    "longitude": 34.77071
   },
   {
     "fileNumber": "07264ב",
@@ -3857,7 +4433,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "מאושרת"
+    "accessibilityStatus": "מאושרת",
+    "address": "ישוב קיבוץ גת",
+    "latitude": 31.619505,
+    "longitude": 34.773846
   },
   {
     "fileNumber": "7266",
@@ -3877,7 +4456,10 @@
     "fireDeptStatus": "מאושר בתנאים נוספים",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "מאושרת"
+    "accessibilityStatus": "מאושרת",
+    "address": "ישוב שדה יואב",
+    "latitude": 31.687544,
+    "longitude": 34.76806
   },
   {
     "fileNumber": "07266א",
@@ -3897,7 +4479,10 @@
     "fireDeptStatus": "מאושר בתנאים נוספים",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "מאושרת"
+    "accessibilityStatus": "מאושרת",
+    "address": "ישוב שדה יואב",
+    "latitude": 31.697981,
+    "longitude": 34.780894
   },
   {
     "fileNumber": "07266ב",
@@ -3917,7 +4502,10 @@
     "fireDeptStatus": "מאושר בתנאים נוספים",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "מאושרת"
+    "accessibilityStatus": "מאושרת",
+    "address": "ישוב שדה יואב",
+    "latitude": 31.697724,
+    "longitude": 34.780577
   },
   {
     "fileNumber": "7267",
@@ -3937,7 +4525,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "מאושרת"
+    "accessibilityStatus": "מאושרת",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.690555,
+    "longitude": 34.806523
   },
   {
     "fileNumber": "7269",
@@ -3957,7 +4548,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "בטיפול"
+    "accessibilityStatus": "בטיפול",
+    "address": "קיבוץ בית ניר",
+    "latitude": 31.681068,
+    "longitude": 34.854474
   },
   {
     "fileNumber": "7271",
@@ -3977,7 +4571,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "מאושרת"
+    "accessibilityStatus": "מאושרת",
+    "address": "קיבוץ כפר מנחם",
+    "latitude": 31.731148,
+    "longitude": 34.840945
   },
   {
     "fileNumber": "7277",
@@ -3997,7 +4594,10 @@
     "fireDeptStatus": "לא נשלחה",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "בטיפול"
+    "accessibilityStatus": "בטיפול",
+    "address": "איזור א",
+    "latitude": 31.689882,
+    "longitude": 34.805695
   },
   {
     "fileNumber": "8001",
@@ -4017,7 +4617,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. ורדון",
+    "latitude": 31.682904,
+    "longitude": 34.824337
   },
   {
     "fileNumber": "8008",
@@ -4037,7 +4640,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "לא נדרש",
-    "accessibilityStatus": "לא נדרש"
+    "accessibilityStatus": "לא נדרש",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.698615,
+    "longitude": 34.816443
   },
   {
     "fileNumber": "8014",
@@ -4057,7 +4663,10 @@
     "fireDeptStatus": "בטיפול",
     "agricultureStatus": "",
     "economyStatus": "מאושר בתנאים נוספים",
-    "accessibilityStatus": "מאושרת"
+    "accessibilityStatus": "מאושרת",
+    "address": "א.ת. נגבה",
+    "latitude": 31.746642,
+    "longitude": 34.746707
   },
   {
     "fileNumber": "8015",
@@ -4077,7 +4686,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "מאושרת",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.689787,
+    "longitude": 34.805578
   },
   {
     "fileNumber": "8027",
@@ -4097,7 +4709,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "שטח כללי מועצה אזורית",
+    "latitude": 31.688965,
+    "longitude": 34.804567
   },
   {
     "fileNumber": "8028",
@@ -4117,7 +4732,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.697808,
+    "longitude": 34.815462
   },
   {
     "fileNumber": "8029",
@@ -4137,7 +4755,10 @@
     "fireDeptStatus": "מאושר בתנאים נוספים",
     "agricultureStatus": "",
     "economyStatus": "מאושר בתנאים נוספים",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "מנחת קדמה",
+    "latitude": 31.655192,
+    "longitude": 34.879461
   },
   {
     "fileNumber": "08029ב",
@@ -4157,7 +4778,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "מאושר בתנאים נוספים",
-    "accessibilityStatus": "לא נדרש"
+    "accessibilityStatus": "לא נדרש",
+    "address": "מנחת קדמה",
+    "latitude": 31.652,
+    "longitude": 34.875544
   },
   {
     "fileNumber": "8034",
@@ -4177,7 +4801,10 @@
     "fireDeptStatus": "מאושר לרשיון זמני",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. כפר מנחם",
+    "latitude": 31.737848,
+    "longitude": 34.849192
   },
   {
     "fileNumber": "08034א",
@@ -4197,7 +4824,10 @@
     "fireDeptStatus": "מאושר להיתר זמני",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "לא נדרש"
+    "accessibilityStatus": "לא נדרש",
+    "address": "א.ת. כפר מנחם",
+    "latitude": 31.727149,
+    "longitude": 34.836036
   },
   {
     "fileNumber": "9001",
@@ -4209,7 +4839,7 @@
     "lastSubmissionReason": "חידוש רשיון עסק",
     "lastInspectionDate": "2/9/26",
     "expirationDate": "4/24/26",
-    "businessArea": "ישוב כפר הרי\"\"ף",
+    "businessArea": "ישוב כפר הרי\"ף",
     "planningStatus": "בטיפול",
     "environmentStatus": "",
     "healthStatus": "",
@@ -4217,7 +4847,10 @@
     "fireDeptStatus": "מאושר על פי תצהיר",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "מאושר על פי תצהיר"
+    "accessibilityStatus": "מאושר על פי תצהיר",
+    "address": "ישוב כפר הרי\"ף",
+    "latitude": 31.744141,
+    "longitude": 34.865321
   },
   {
     "fileNumber": "10/009",
@@ -4237,7 +4870,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "מאושרת",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. רבדים",
+    "latitude": 31.746145,
+    "longitude": 34.810108
   },
   {
     "fileNumber": "10002",
@@ -4257,7 +4893,10 @@
     "fireDeptStatus": "בטיפול",
     "agricultureStatus": "",
     "economyStatus": "מאושרת",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. בית גוברין",
+    "latitude": 31.615672,
+    "longitude": 34.886206
   },
   {
     "fileNumber": "10002א",
@@ -4277,7 +4916,10 @@
     "fireDeptStatus": "בטיפול",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. בית גוברין",
+    "latitude": 31.626638,
+    "longitude": 34.899714
   },
   {
     "fileNumber": "10002ב",
@@ -4297,7 +4939,10 @@
     "fireDeptStatus": "בטיפול",
     "agricultureStatus": "",
     "economyStatus": "מאושרת",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. בית גוברין",
+    "latitude": 31.627231,
+    "longitude": 34.900432
   },
   {
     "fileNumber": "10002ג",
@@ -4317,7 +4962,10 @@
     "fireDeptStatus": "בטיפול",
     "agricultureStatus": "",
     "economyStatus": "בטיפול",
-    "accessibilityStatus": "לא נשלחה"
+    "accessibilityStatus": "לא נשלחה",
+    "address": "א.ת. בית גוברין",
+    "latitude": 31.622315,
+    "longitude": 34.894394
   },
   {
     "fileNumber": "10008א",
@@ -4337,7 +4985,10 @@
     "fireDeptStatus": "לא נשלחה",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. נגבה",
+    "latitude": 31.74042,
+    "longitude": 34.739062
   },
   {
     "fileNumber": "10008ב",
@@ -4357,7 +5008,10 @@
     "fireDeptStatus": "לא נשלחה",
     "agricultureStatus": "",
     "economyStatus": "לא נשלחה",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. נגבה",
+    "latitude": 31.740802,
+    "longitude": 34.739532
   },
   {
     "fileNumber": "10008ג",
@@ -4377,7 +5031,10 @@
     "fireDeptStatus": "לא נשלחה",
     "agricultureStatus": "",
     "economyStatus": "לא נשלחה",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. נגבה",
+    "latitude": 31.739195,
+    "longitude": 34.737554
   },
   {
     "fileNumber": "10008ד",
@@ -4397,7 +5054,10 @@
     "fireDeptStatus": "לא נשלחה",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. נגבה",
+    "latitude": 31.748121,
+    "longitude": 34.748527
   },
   {
     "fileNumber": "10008ה",
@@ -4417,7 +5077,10 @@
     "fireDeptStatus": "לא נשלחה",
     "agricultureStatus": "",
     "economyStatus": "לא נשלחה",
-    "accessibilityStatus": "לא נשלחה"
+    "accessibilityStatus": "לא נשלחה",
+    "address": "א.ת. נגבה",
+    "latitude": 31.742958,
+    "longitude": 34.742185
   },
   {
     "fileNumber": "10008ו",
@@ -4437,7 +5100,10 @@
     "fireDeptStatus": "לא נשלחה",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "לא נשלחה"
+    "accessibilityStatus": "לא נשלחה",
+    "address": "א.ת. נגבה",
+    "latitude": 31.74423,
+    "longitude": 34.743751
   },
   {
     "fileNumber": "10008ז",
@@ -4457,7 +5123,10 @@
     "fireDeptStatus": "לא נשלחה",
     "agricultureStatus": "",
     "economyStatus": "לא נשלחה",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. נגבה",
+    "latitude": 31.741696,
+    "longitude": 34.740619
   },
   {
     "fileNumber": "10018",
@@ -4477,7 +5146,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "מאושרת",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "מועצה אזורית מתחם סיביי",
+    "latitude": 31.662299,
+    "longitude": 34.834439
   },
   {
     "fileNumber": "10034",
@@ -4497,7 +5169,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "מאושרת",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. כפר מנחם",
+    "latitude": 31.73638,
+    "longitude": 34.847396
   },
   {
     "fileNumber": "10034א",
@@ -4517,7 +5192,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. כפר מנחם",
+    "latitude": 31.734664,
+    "longitude": 34.845272
   },
   {
     "fileNumber": "10035",
@@ -4537,7 +5215,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "מאושר בתנאים נוספים",
-    "accessibilityStatus": "לא נדרש"
+    "accessibilityStatus": "לא נדרש",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.693642,
+    "longitude": 34.810322
   },
   {
     "fileNumber": "10037א",
@@ -4557,7 +5238,10 @@
     "fireDeptStatus": "בטיפול",
     "agricultureStatus": "",
     "economyStatus": "מאושר בתנאים נוספים",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. כפר מנחם",
+    "latitude": 31.72631,
+    "longitude": 34.835004
   },
   {
     "fileNumber": "10039",
@@ -4577,7 +5261,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "מאושרת",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. פגש - גת",
+    "latitude": 31.617216,
+    "longitude": 34.771029
   },
   {
     "fileNumber": "10039א",
@@ -4597,7 +5284,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "לא נדרש"
+    "accessibilityStatus": "לא נדרש",
+    "address": "א.ת. פגש - גת",
+    "latitude": 31.614093,
+    "longitude": 34.767198
   },
   {
     "fileNumber": "10040",
@@ -4617,7 +5307,10 @@
     "fireDeptStatus": "מאושר בתנאים נוספים",
     "agricultureStatus": "",
     "economyStatus": "מאושר בתנאים נוספים",
-    "accessibilityStatus": "מאושרת"
+    "accessibilityStatus": "מאושרת",
+    "address": "א.ת. ורדון",
+    "latitude": 31.678528,
+    "longitude": 34.818951
   },
   {
     "fileNumber": "10040א",
@@ -4637,7 +5330,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "מאושר בתנאים נוספים",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. ורדון",
+    "latitude": 31.679791,
+    "longitude": 34.820506
   },
   {
     "fileNumber": "10041",
@@ -4657,7 +5353,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "ישוב נחלה",
+    "latitude": 31.687402,
+    "longitude": 34.793181
   },
   {
     "fileNumber": "10042",
@@ -4677,7 +5376,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "מאושרת",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. נחלה",
+    "latitude": 31.688556,
+    "longitude": 34.794614
   },
   {
     "fileNumber": "10043",
@@ -4697,7 +5399,10 @@
     "fireDeptStatus": "מאושר בתנאים נוספים",
     "agricultureStatus": "",
     "economyStatus": "מאושר בתנאים נוספים",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. ורדון",
+    "latitude": 31.675083,
+    "longitude": 34.814712
   },
   {
     "fileNumber": "10045",
@@ -4717,7 +5422,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "מאושר בתנאים נוספים",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. גלאון",
+    "latitude": 31.659719,
+    "longitude": 34.741494
   },
   {
     "fileNumber": "10046א",
@@ -4737,7 +5445,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. ורדון",
+    "latitude": 31.677372,
+    "longitude": 34.817528
   },
   {
     "fileNumber": "10047",
@@ -4757,7 +5468,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. ורדון",
+    "latitude": 31.685123,
+    "longitude": 34.827068
   },
   {
     "fileNumber": "10047א",
@@ -4777,7 +5491,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "לא נדרש",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. ורדון",
+    "latitude": 31.683929,
+    "longitude": 34.825611
   },
   {
     "fileNumber": "10050",
@@ -4797,7 +5514,10 @@
     "fireDeptStatus": "בטיפול",
     "agricultureStatus": "",
     "economyStatus": "מאושרת",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.696948,
+    "longitude": 34.814391
   },
   {
     "fileNumber": "10050א",
@@ -4817,7 +5537,10 @@
     "fireDeptStatus": "בטיפול",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.692995,
+    "longitude": 34.809538
   },
   {
     "fileNumber": "10054",
@@ -4837,7 +5560,10 @@
     "fireDeptStatus": "לא נשלחה",
     "agricultureStatus": "",
     "economyStatus": "לא נשלחה",
-    "accessibilityStatus": "לא נשלחה"
+    "accessibilityStatus": "לא נשלחה",
+    "address": "א.ת. ורדון",
+    "latitude": 31.681186,
+    "longitude": 34.822235
   },
   {
     "fileNumber": "10056א",
@@ -4857,7 +5583,10 @@
     "fireDeptStatus": "מאושרת",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.692619,
+    "longitude": 34.809064
   },
   {
     "fileNumber": "10057א",
@@ -4877,7 +5606,10 @@
     "fireDeptStatus": "בטיפול",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": "מאושרת"
+    "accessibilityStatus": "מאושרת",
+    "address": "א.ת. רבדים",
+    "latitude": 31.73916,
+    "longitude": 34.801511
   },
   {
     "fileNumber": "10058",
@@ -4897,7 +5629,10 @@
     "fireDeptStatus": "נדחיתה",
     "agricultureStatus": "",
     "economyStatus": "מאושרת",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "א.ת. ורדון",
+    "latitude": 31.685595,
+    "longitude": 34.827661
   },
   {
     "fileNumber": "10059",
@@ -4917,7 +5652,10 @@
     "fireDeptStatus": "לא נשלחה",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "מועצה אזורית מתחם סיביי הדרום",
+    "latitude": 31.660754,
+    "longitude": 34.832537
   },
   {
     "fileNumber": "10060",
@@ -4929,7 +5667,7 @@
     "lastSubmissionReason": "עסק חדש",
     "lastInspectionDate": "7/28/25",
     "expirationDate": "",
-    "businessArea": "קיבץ בית גוברין",
+    "businessArea": "קיבוץ בית גוברין",
     "planningStatus": "בטיפול",
     "environmentStatus": "לא נשלחה",
     "healthStatus": "",
@@ -4937,7 +5675,10 @@
     "fireDeptStatus": "בטיפול",
     "agricultureStatus": "",
     "economyStatus": "מאושרת",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "קיבוץ בית גוברין",
+    "latitude": 31.617055,
+    "longitude": 34.887907
   },
   {
     "fileNumber": "10061",
@@ -4957,7 +5698,10 @@
     "fireDeptStatus": "לא נשלחה",
     "agricultureStatus": "",
     "economyStatus": "לא נשלחה",
-    "accessibilityStatus": "לא נשלחה"
+    "accessibilityStatus": "לא נשלחה",
+    "address": "מועצה אזורית מתחם סיביי",
+    "latitude": 31.663542,
+    "longitude": 34.835981
   },
   {
     "fileNumber": "10061א",
@@ -4977,7 +5721,10 @@
     "fireDeptStatus": "לא נשלחה",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "מועצה אזורית מתחם סיביי",
+    "latitude": 31.667128,
+    "longitude": 34.840395
   },
   {
     "fileNumber": "10062",
@@ -4997,7 +5744,10 @@
     "fireDeptStatus": "בטיפול",
     "agricultureStatus": "",
     "economyStatus": "לא נשלחה",
-    "accessibilityStatus": "לא נשלחה"
+    "accessibilityStatus": "לא נשלחה",
+    "address": "א.ת. ורדון",
+    "latitude": 31.678681,
+    "longitude": 34.819152
   },
   {
     "fileNumber": "א",
@@ -5017,7 +5767,10 @@
     "fireDeptStatus": "",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "מועצה אזורית מתחם סיביי",
+    "latitude": 31.669512,
+    "longitude": 34.843316
   },
   {
     "fileNumber": "א\u0001\u0001",
@@ -5037,7 +5790,10 @@
     "fireDeptStatus": "",
     "agricultureStatus": "",
     "economyStatus": "",
-    "accessibilityStatus": ""
+    "accessibilityStatus": "",
+    "address": "מועצה אזורית מתחם סיביי",
+    "latitude": 31.659702,
+    "longitude": 34.831242
   },
   {
     "fileNumber": "01008א",
@@ -5066,7 +5822,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. גלאון",
+    "latitude": 31.6658,
+    "longitude": 34.74899
   },
   {
     "fileNumber": "1010",
@@ -5095,7 +5854,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "מועצה אזורית מתחם סיביי הדרום",
+    "latitude": 31.662767,
+    "longitude": 34.835027
   },
   {
     "fileNumber": "01010א",
@@ -5124,7 +5886,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "מועצה אזורית מתחם סיביי הדרום",
+    "latitude": 31.669414,
+    "longitude": 34.843195
   },
   {
     "fileNumber": "2001",
@@ -5153,7 +5918,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. בית גוברין",
+    "latitude": 31.62224,
+    "longitude": 34.894302
   },
   {
     "fileNumber": "02001ד",
@@ -5182,7 +5950,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. בית גוברין",
+    "latitude": 31.623965,
+    "longitude": 34.896412
   },
   {
     "fileNumber": "2002",
@@ -5211,7 +5982,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": "פבל רזודלוב"
+    "inspector": "פבל רזודלוב",
+    "address": "שטח כללי מועצה אזורית",
+    "latitude": 31.691788,
+    "longitude": 34.808053
   },
   {
     "fileNumber": "02002א",
@@ -5240,7 +6014,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": "פבל רזודלוב"
+    "inspector": "פבל רזודלוב",
+    "address": "שטח כללי מועצה אזורית",
+    "latitude": 31.701151,
+    "longitude": 34.819564
   },
   {
     "fileNumber": "02002ב",
@@ -5269,7 +6046,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": "פבל רזודלוב"
+    "inspector": "פבל רזודלוב",
+    "address": "שטח כללי מועצה אזורית",
+    "latitude": 31.691722,
+    "longitude": 34.807959
   },
   {
     "fileNumber": "02002ג",
@@ -5298,7 +6078,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": "פבל רזודלוב"
+    "inspector": "פבל רזודלוב",
+    "address": "שטח כללי מועצה אזורית",
+    "latitude": 31.697808,
+    "longitude": 34.815462
   },
   {
     "fileNumber": "02002ד",
@@ -5327,7 +6110,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": "פבל רזודלוב"
+    "inspector": "פבל רזודלוב",
+    "address": "שטח כללי מועצה אזורית",
+    "latitude": 31.689192,
+    "longitude": 34.804846
   },
   {
     "fileNumber": "02002ה",
@@ -5356,7 +6142,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": "פבל רזודלוב"
+    "inspector": "פבל רזודלוב",
+    "address": "שטח כללי מועצה אזורית",
+    "latitude": 31.692545,
+    "longitude": 34.808984
   },
   {
     "fileNumber": "2003",
@@ -5385,7 +6174,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "הארכה - חרבות ברזל",
     "isCompany": "0",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. ורדון",
+    "latitude": 31.686299,
+    "longitude": 34.828528
   },
   {
     "fileNumber": "02003א",
@@ -5414,7 +6206,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "0",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. ורדון",
+    "latitude": 31.680409,
+    "longitude": 34.821278
   },
   {
     "fileNumber": "2004",
@@ -5443,7 +6238,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "שינוי בעלים",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.693697,
+    "longitude": 34.81039
   },
   {
     "fileNumber": "02004א",
@@ -5472,7 +6270,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "שינוי בעלים",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.688505,
+    "longitude": 34.82
   },
   {
     "fileNumber": "02004ב",
@@ -5501,7 +6302,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "הארכה - חרבות ברזל",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.688982,
+    "longitude": 34.8046
   },
   {
     "fileNumber": "2006",
@@ -5530,7 +6334,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. שדה יואב",
+    "latitude": 31.690931,
+    "longitude": 34.772217
   },
   {
     "fileNumber": "02006א",
@@ -5559,7 +6366,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. שדה יואב",
+    "latitude": 31.688338,
+    "longitude": 34.769037
   },
   {
     "fileNumber": "2009",
@@ -5588,7 +6398,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "שטח כללי מועצה אזורית",
+    "latitude": 31.68922,
+    "longitude": 34.80488
   },
   {
     "fileNumber": "02009א",
@@ -5617,7 +6430,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "שטח כללי מועצה אזורית",
+    "latitude": 31.691076,
+    "longitude": 34.807177
   },
   {
     "fileNumber": "02009ב",
@@ -5646,7 +6462,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "שטח כללי מועצה אזורית",
+    "latitude": 31.699058,
+    "longitude": 34.817001
   },
   {
     "fileNumber": "2011",
@@ -5675,7 +6494,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "הארכה - חרבות ברזל",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.70066,
+    "longitude": 34.818973
   },
   {
     "fileNumber": "02011א",
@@ -5704,7 +6526,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "בקשה לחידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.693469,
+    "longitude": 34.81011
   },
   {
     "fileNumber": "2012",
@@ -5733,7 +6558,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "שטח כללי מועצה אזורית",
+    "latitude": 31.695261,
+    "longitude": 34.812315
   },
   {
     "fileNumber": "02012א",
@@ -5762,7 +6590,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "שטח כללי מועצה אזורית",
+    "latitude": 31.692873,
+    "longitude": 34.809388
   },
   {
     "fileNumber": "02012ב",
@@ -5791,7 +6622,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "שטח כללי מועצה אזורית",
+    "latitude": 31.695622,
+    "longitude": 34.81276
   },
   {
     "fileNumber": "02012ג",
@@ -5820,7 +6654,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "שטח כללי מועצה אזורית",
+    "latitude": 31.697619,
+    "longitude": 34.815217
   },
   {
     "fileNumber": "2013",
@@ -5849,7 +6686,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. כפר מנחם",
+    "latitude": 31.73396,
+    "longitude": 34.844418
   },
   {
     "fileNumber": "2016",
@@ -5878,7 +6718,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. נחלה",
+    "latitude": 31.689335,
+    "longitude": 34.795573
   },
   {
     "fileNumber": "02016/1",
@@ -5907,7 +6750,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. נחלה",
+    "latitude": 31.689401,
+    "longitude": 34.795653
   },
   {
     "fileNumber": "2018",
@@ -5936,7 +6782,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. גלאון",
+    "latitude": 31.659196,
+    "longitude": 34.740851
   },
   {
     "fileNumber": "2019",
@@ -5965,7 +6814,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.692503,
+    "longitude": 34.808921
   },
   {
     "fileNumber": "02019א",
@@ -5994,7 +6846,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.698223,
+    "longitude": 34.81596
   },
   {
     "fileNumber": "02019ב",
@@ -6023,7 +6878,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.690997,
+    "longitude": 34.807079
   },
   {
     "fileNumber": "03/012",
@@ -6052,7 +6910,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. רבדים",
+    "latitude": 31.745619,
+    "longitude": 34.80946
   },
   {
     "fileNumber": "3001",
@@ -6081,7 +6942,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "0",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. שדה יואב",
+    "latitude": 31.70032,
+    "longitude": 34.783772
   },
   {
     "fileNumber": "3002",
@@ -6110,7 +6974,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "0",
-    "inspector": "פבל רזודלוב"
+    "inspector": "פבל רזודלוב",
+    "address": "מושב סגולה",
+    "latitude": 31.700702,
+    "longitude": 34.793012
   },
   {
     "fileNumber": "3004",
@@ -6139,7 +7006,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. גת",
+    "latitude": 31.622293,
+    "longitude": 34.777277
   },
   {
     "fileNumber": "3005",
@@ -6168,7 +7038,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. כפר מנחם",
+    "latitude": 31.737956,
+    "longitude": 34.849324
   },
   {
     "fileNumber": "3009",
@@ -6197,7 +7070,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "שינויים במבנה העסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. נגבה",
+    "latitude": 31.742344,
+    "longitude": 34.741429
   },
   {
     "fileNumber": "3010",
@@ -6226,7 +7102,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. גלאון",
+    "latitude": 31.666631,
+    "longitude": 34.750001
   },
   {
     "fileNumber": "03010א",
@@ -6255,7 +7134,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. גלאון",
+    "latitude": 31.663386,
+    "longitude": 34.746008
   },
   {
     "fileNumber": "3011",
@@ -6284,7 +7166,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": "פבל רזודלוב"
+    "inspector": "פבל רזודלוב",
+    "address": "א.ת. כפר מנחם",
+    "latitude": 31.727915,
+    "longitude": 34.836979
   },
   {
     "fileNumber": "03011א",
@@ -6313,7 +7198,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. כפר מנחם",
+    "latitude": 31.738135,
+    "longitude": 34.849545
   },
   {
     "fileNumber": "03012א",
@@ -6342,7 +7230,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. רבדים",
+    "latitude": 31.745335,
+    "longitude": 34.809111
   },
   {
     "fileNumber": "03012ב",
@@ -6371,7 +7262,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. רבדים",
+    "latitude": 31.747465,
+    "longitude": 34.81172
   },
   {
     "fileNumber": "03012ג",
@@ -6400,7 +7294,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. רבדים",
+    "latitude": 31.74031,
+    "longitude": 34.802926
   },
   {
     "fileNumber": "3014",
@@ -6411,7 +7308,7 @@
     "block": "2605",
     "plot": "100/107",
     "status": "רישוין תקופתי",
-    "businessArea": "מושב כפר הרי\"\"ף",
+    "businessArea": "מושב כפר הרי\"ף",
     "phone": "88503861",
     "mobile": "528326008",
     "totalArea": "9744",
@@ -6429,7 +7326,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "0",
-    "inspector": ""
+    "inspector": "",
+    "address": "מושב כפר הרי\"ף",
+    "latitude": 31.745437,
+    "longitude": 34.866916
   },
   {
     "fileNumber": "3015",
@@ -6458,7 +7358,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. רבדים",
+    "latitude": 31.740722,
+    "longitude": 34.803433
   },
   {
     "fileNumber": "3016",
@@ -6487,7 +7390,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "מועצה אזורית מתחם סיביי הדרום",
+    "latitude": 31.662514,
+    "longitude": 34.834703
   },
   {
     "fileNumber": "03016א",
@@ -6516,7 +7422,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "מועצה אזורית מתחם סיביי הדרום",
+    "latitude": 31.665342,
+    "longitude": 34.838196
   },
   {
     "fileNumber": "3017",
@@ -6545,7 +7454,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "מועצה אזורית מתחם סיביי הדרום",
+    "latitude": 31.661289,
+    "longitude": 34.833207
   },
   {
     "fileNumber": "3019",
@@ -6574,7 +7486,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "מנחת קדמה",
+    "latitude": 31.655504,
+    "longitude": 34.879845
   },
   {
     "fileNumber": "3021",
@@ -6603,7 +7518,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "0",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. נחלה",
+    "latitude": 31.684749,
+    "longitude": 34.789916
   },
   {
     "fileNumber": "3022",
@@ -6632,7 +7550,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "בקשה חוזרת לרשיון עסק",
     "isCompany": "0",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. גלאון",
+    "latitude": 31.659684,
+    "longitude": 34.741451
   },
   {
     "fileNumber": "3023",
@@ -6661,7 +7582,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "0",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. סגולה",
+    "latitude": 31.696534,
+    "longitude": 34.787895
   },
   {
     "fileNumber": "3026",
@@ -6690,7 +7614,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "מועצה אזורית מתחם סיביי הדרום",
+    "latitude": 31.670163,
+    "longitude": 34.84413
   },
   {
     "fileNumber": "03026ב",
@@ -6719,7 +7646,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "מועצה אזורית מתחם סיביי הדרום",
+    "latitude": 31.672036,
+    "longitude": 34.846435
   },
   {
     "fileNumber": "3027",
@@ -6748,7 +7678,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "כפר נוער קדמה",
+    "latitude": 31.65448,
+    "longitude": 34.878584
   },
   {
     "fileNumber": "3028",
@@ -6777,7 +7710,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. רבדים",
+    "latitude": 31.737394,
+    "longitude": 34.799338
   },
   {
     "fileNumber": "03028א",
@@ -6806,7 +7742,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. רבדים",
+    "latitude": 31.735771,
+    "longitude": 34.797327
   },
   {
     "fileNumber": "03028ג",
@@ -6835,7 +7774,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. רבדים",
+    "latitude": 31.739363,
+    "longitude": 34.80176
   },
   {
     "fileNumber": "03028ה",
@@ -6864,7 +7806,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. רבדים",
+    "latitude": 31.739831,
+    "longitude": 34.802337
   },
   {
     "fileNumber": "03028ו",
@@ -6893,7 +7838,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. רבדים",
+    "latitude": 31.737306,
+    "longitude": 34.799217
   },
   {
     "fileNumber": "03028ז",
@@ -6922,7 +7870,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. רבדים",
+    "latitude": 31.746575,
+    "longitude": 34.810624
   },
   {
     "fileNumber": "3030",
@@ -6951,7 +7902,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "עסק חדש",
     "isCompany": "",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. ורדון",
+    "latitude": 31.680861,
+    "longitude": 34.821823
   },
   {
     "fileNumber": "3031",
@@ -6980,7 +7934,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ בית ניר",
+    "latitude": 31.6714,
+    "longitude": 34.842576
   },
   {
     "fileNumber": "3032",
@@ -7009,7 +7966,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "מנחת קדמה",
+    "latitude": 31.65566,
+    "longitude": 34.88005
   },
   {
     "fileNumber": "4006",
@@ -7038,7 +7998,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "שינוי בעלים",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.697154,
+    "longitude": 34.814644
   },
   {
     "fileNumber": "4022",
@@ -7067,7 +8030,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "0",
-    "inspector": ""
+    "inspector": "",
+    "address": "מושב נחלה",
+    "latitude": 31.688922,
+    "longitude": 34.795051
   },
   {
     "fileNumber": "4024",
@@ -7096,7 +8062,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": "פבל רזודלוב"
+    "inspector": "פבל רזודלוב",
+    "address": "א.ת. פגש - גת",
+    "latitude": 31.620564,
+    "longitude": 34.775162
   },
   {
     "fileNumber": "04024ב",
@@ -7125,7 +8094,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "מתחם גניר - גת",
+    "latitude": 31.612368,
+    "longitude": 34.765074
   },
   {
     "fileNumber": "04024ז",
@@ -7154,7 +8126,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "מתחם גניר - גת",
+    "latitude": 31.622025,
+    "longitude": 34.776948
   },
   {
     "fileNumber": "04024ח",
@@ -7183,7 +8158,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "מתחם גניר - גת",
+    "latitude": 31.616266,
+    "longitude": 34.76986
   },
   {
     "fileNumber": "04024ט",
@@ -7212,7 +8190,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "מתחם גניר - גת",
+    "latitude": 31.613902,
+    "longitude": 34.766963
   },
   {
     "fileNumber": "04024י",
@@ -7241,7 +8222,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "מתחם גניר - גת",
+    "latitude": 31.613768,
+    "longitude": 34.766786
   },
   {
     "fileNumber": "04024ך",
@@ -7270,7 +8254,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "מתחם גניר - גת",
+    "latitude": 31.618977,
+    "longitude": 34.773209
   },
   {
     "fileNumber": "4069",
@@ -7299,7 +8286,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "שינויים במבנה העסק",
     "isCompany": "0",
-    "inspector": ""
+    "inspector": "",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.700125,
+    "longitude": 34.818314
   },
   {
     "fileNumber": "04069א",
@@ -7328,7 +8318,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "שינויים במבנה העסק",
     "isCompany": "0",
-    "inspector": ""
+    "inspector": "",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.700357,
+    "longitude": 34.8186
   },
   {
     "fileNumber": "4096",
@@ -7339,7 +8332,7 @@
     "block": "2199",
     "plot": "75",
     "status": "היתר זמני",
-    "businessArea": "מועצה אזורית  מתחם יבולים",
+    "businessArea": "מועצה אזורית מתחם יבולים",
     "phone": "88585166",
     "mobile": "054-4339983",
     "totalArea": "10548.1",
@@ -7357,7 +8350,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "הארכה - חרבות ברזל",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "מועצה אזורית מתחם יבולים",
+    "latitude": 31.665549,
+    "longitude": 34.838439
   },
   {
     "fileNumber": "4104",
@@ -7386,7 +8382,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. גלאון",
+    "latitude": 31.671233,
+    "longitude": 34.755665
   },
   {
     "fileNumber": "04104א",
@@ -7415,7 +8414,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. גלאון",
+    "latitude": 31.65875,
+    "longitude": 34.740315
   },
   {
     "fileNumber": "04104ב",
@@ -7444,7 +8446,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. גלאון",
+    "latitude": 31.664165,
+    "longitude": 34.746978
   },
   {
     "fileNumber": "4118",
@@ -7473,7 +8478,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "מועצה אזורית מתחם סיביי הדרום",
+    "latitude": 31.671887,
+    "longitude": 34.846251
   },
   {
     "fileNumber": "4125",
@@ -7484,7 +8492,7 @@
     "block": "34202",
     "plot": "2",
     "status": "רישוין תקופתי",
-    "businessArea": "קיבץ בית גוברין",
+    "businessArea": "קיבוץ בית גוברין",
     "phone": "86874207",
     "mobile": "507449926",
     "totalArea": "550",
@@ -7502,7 +8510,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ בית גוברין",
+    "latitude": 31.626874,
+    "longitude": 34.899992
   },
   {
     "fileNumber": "04125א",
@@ -7513,7 +8524,7 @@
     "block": "34202",
     "plot": "2",
     "status": "לידיעה",
-    "businessArea": "קיבץ בית גוברין",
+    "businessArea": "קיבוץ בית גוברין",
     "phone": "86874207",
     "mobile": "507449926",
     "totalArea": "550",
@@ -7531,7 +8542,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ בית גוברין",
+    "latitude": 31.620845,
+    "longitude": 34.892572
   },
   {
     "fileNumber": "4130",
@@ -7560,7 +8574,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ בית ניר",
+    "latitude": 31.674767,
+    "longitude": 34.846707
   },
   {
     "fileNumber": "4132",
@@ -7589,7 +8606,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ כפר מנחם",
+    "latitude": 31.734622,
+    "longitude": 34.84522
   },
   {
     "fileNumber": "4133",
@@ -7618,7 +8638,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ נגבה",
+    "latitude": 31.735573,
+    "longitude": 34.733096
   },
   {
     "fileNumber": "4134",
@@ -7647,7 +8670,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. ורדון",
+    "latitude": 31.678557,
+    "longitude": 34.818999
   },
   {
     "fileNumber": "4136",
@@ -7658,7 +8684,7 @@
     "block": "2607",
     "plot": "86 (ח)",
     "status": "בתהליך חידוש",
-    "businessArea": "מושב כפר הרי\"\"ף",
+    "businessArea": "מושב כפר הרי\"ף",
     "phone": "86763873",
     "mobile": "502040847",
     "totalArea": "178",
@@ -7676,7 +8702,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "מושב כפר הרי\"ף",
+    "latitude": 31.73633,
+    "longitude": 34.85572
   },
   {
     "fileNumber": "4140",
@@ -7705,7 +8734,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.694422,
+    "longitude": 34.811295
   },
   {
     "fileNumber": "4147",
@@ -7716,7 +8748,7 @@
     "block": "2199",
     "plot": "75",
     "status": "בטיפול",
-    "businessArea": "מועצה אזורית  מתחם יבולים",
+    "businessArea": "מועצה אזורית מתחם יבולים",
     "phone": "722410402",
     "mobile": "522547250",
     "totalArea": "6754.32",
@@ -7734,7 +8766,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "מועצה אזורית מתחם יבולים",
+    "latitude": 31.665451,
+    "longitude": 34.83833
   },
   {
     "fileNumber": "04147ב",
@@ -7745,7 +8780,7 @@
     "block": "2199",
     "plot": "4",
     "status": "תיק פיקוח",
-    "businessArea": "מועצה אזורית  מתחם יבולים",
+    "businessArea": "מועצה אזורית מתחם יבולים",
     "phone": "722410402",
     "mobile": "522547250",
     "totalArea": "1483",
@@ -7763,7 +8798,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "מועצה אזורית מתחם יבולים",
+    "latitude": 31.666663,
+    "longitude": 34.839822
   },
   {
     "fileNumber": "04147ד",
@@ -7774,7 +8812,7 @@
     "block": "2199",
     "plot": "4",
     "status": "תיק פיקוח",
-    "businessArea": "מועצה אזורית  מתחם יבולים",
+    "businessArea": "מועצה אזורית מתחם יבולים",
     "phone": "722410402",
     "mobile": "522547250",
     "totalArea": "1483",
@@ -7792,7 +8830,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "מועצה אזורית מתחם יבולים",
+    "latitude": 31.66846,
+    "longitude": 34.842034
   },
   {
     "fileNumber": "04147ה",
@@ -7803,7 +8844,7 @@
     "block": "2199",
     "plot": "4",
     "status": "תיק פיקוח",
-    "businessArea": "מועצה אזורית  מתחם יבולים",
+    "businessArea": "מועצה אזורית מתחם יבולים",
     "phone": "722410402",
     "mobile": "522547250",
     "totalArea": "1483",
@@ -7821,7 +8862,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "מועצה אזורית מתחם יבולים",
+    "latitude": 31.661344,
+    "longitude": 34.833276
   },
   {
     "fileNumber": "4148",
@@ -7850,7 +8894,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. ורדון",
+    "latitude": 31.684426,
+    "longitude": 34.826223
   },
   {
     "fileNumber": "04148א",
@@ -7879,7 +8926,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. ורדון",
+    "latitude": 31.686708,
+    "longitude": 34.829019
   },
   {
     "fileNumber": "4150",
@@ -7908,7 +8958,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. רבדים",
+    "latitude": 31.738038,
+    "longitude": 34.800117
   },
   {
     "fileNumber": "4156",
@@ -7937,7 +8990,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ רבדים",
+    "latitude": 31.738054,
+    "longitude": 34.800137
   },
   {
     "fileNumber": "4162",
@@ -7966,7 +9022,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. ורדון",
+    "latitude": 31.680524,
+    "longitude": 34.821408
   },
   {
     "fileNumber": "04162א",
@@ -7995,7 +9054,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. ורדון",
+    "latitude": 31.682216,
+    "longitude": 34.82349
   },
   {
     "fileNumber": "04162ב",
@@ -8024,7 +9086,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. ורדון",
+    "latitude": 31.680152,
+    "longitude": 34.82095
   },
   {
     "fileNumber": "04162ג",
@@ -8053,7 +9118,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. ורדון",
+    "latitude": 31.686387,
+    "longitude": 34.828636
   },
   {
     "fileNumber": "4163",
@@ -8082,7 +9150,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "0",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. רבדים",
+    "latitude": 31.737529,
+    "longitude": 34.799491
   },
   {
     "fileNumber": "04163א",
@@ -8111,7 +9182,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "0",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. רבדים",
+    "latitude": 31.739566,
+    "longitude": 34.802011
   },
   {
     "fileNumber": "04163ח",
@@ -8140,7 +9214,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "0",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. רבדים",
+    "latitude": 31.74583,
+    "longitude": 34.809708
   },
   {
     "fileNumber": "04163ט",
@@ -8169,7 +9246,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "0",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. רבדים",
+    "latitude": 31.73829,
+    "longitude": 34.800428
   },
   {
     "fileNumber": "04163י",
@@ -8198,7 +9278,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "0",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. רבדים",
+    "latitude": 31.74025,
+    "longitude": 34.802852
   },
   {
     "fileNumber": "04163ך",
@@ -8227,7 +9310,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "0",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. רבדים",
+    "latitude": 31.735785,
+    "longitude": 34.797345
   },
   {
     "fileNumber": "04163כ",
@@ -8256,7 +9342,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "0",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. רבדים",
+    "latitude": 31.736799,
+    "longitude": 34.798593
   },
   {
     "fileNumber": "04163ל",
@@ -8285,7 +9374,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "0",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. רבדים",
+    "latitude": 31.737295,
+    "longitude": 34.799215
   },
   {
     "fileNumber": "04163ם",
@@ -8314,7 +9406,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "0",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. רבדים",
+    "latitude": 31.73874,
+    "longitude": 34.800981
   },
   {
     "fileNumber": "4165",
@@ -8343,7 +9438,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "מועצה אזורית מתחם סיביי הדרום",
+    "latitude": 31.671321,
+    "longitude": 34.845543
   },
   {
     "fileNumber": "4166",
@@ -8372,7 +9470,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ כפר מנחם",
+    "latitude": 31.731239,
+    "longitude": 34.84107
   },
   {
     "fileNumber": "4170",
@@ -8401,7 +9502,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": "איתמר מוסטקי"
+    "inspector": "איתמר מוסטקי",
+    "address": "קיבוץ גת",
+    "latitude": 31.612191,
+    "longitude": 34.764844
   },
   {
     "fileNumber": "4171",
@@ -8430,7 +9534,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": "איתמר מוסטקי"
+    "inspector": "איתמר מוסטקי",
+    "address": "קיבוץ רבדים",
+    "latitude": 31.743167,
+    "longitude": 34.806442
   },
   {
     "fileNumber": "4172",
@@ -8459,7 +9566,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": "איתמר מוסטקי"
+    "inspector": "איתמר מוסטקי",
+    "address": "קיבוץ גלאון",
+    "latitude": 31.666678,
+    "longitude": 34.750059
   },
   {
     "fileNumber": "4173",
@@ -8488,7 +9598,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": "איתמר מוסטקי"
+    "inspector": "איתמר מוסטקי",
+    "address": "קיבוץ כפר מנחם",
+    "latitude": 31.731271,
+    "longitude": 34.841096
   },
   {
     "fileNumber": "4176",
@@ -8517,7 +9630,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": "איתמר מוסטקי"
+    "inspector": "איתמר מוסטקי",
+    "address": "א.ת. בית גוברין",
+    "latitude": 31.620324,
+    "longitude": 34.891931
   },
   {
     "fileNumber": "4177",
@@ -8546,7 +9662,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ שדה יואב",
+    "latitude": 31.69403,
+    "longitude": 34.776043
   },
   {
     "fileNumber": "4178",
@@ -8575,7 +9694,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "שינוי בעלים",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "שטח כללי מועצה אזורית",
+    "latitude": 31.700731,
+    "longitude": 34.81906
   },
   {
     "fileNumber": "4179",
@@ -8604,7 +9726,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.689466,
+    "longitude": 34.805182
   },
   {
     "fileNumber": "4180",
@@ -8633,7 +9758,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ גלאון",
+    "latitude": 31.67004,
+    "longitude": 34.754209
   },
   {
     "fileNumber": "4182",
@@ -8662,7 +9790,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "עסק חדש",
     "isCompany": "0",
-    "inspector": ""
+    "inspector": "",
+    "address": "מושב סגולה",
+    "latitude": 31.689105,
+    "longitude": 34.778751
   },
   {
     "fileNumber": "5011",
@@ -8691,7 +9822,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. כפר מנחם",
+    "latitude": 31.736531,
+    "longitude": 34.847583
   },
   {
     "fileNumber": "05011ב",
@@ -8720,7 +9854,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. כפר מנחם",
+    "latitude": 31.733491,
+    "longitude": 34.843842
   },
   {
     "fileNumber": "05011ג",
@@ -8749,7 +9886,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. כפר מנחם",
+    "latitude": 31.726129,
+    "longitude": 34.83478
   },
   {
     "fileNumber": "6001",
@@ -8778,7 +9918,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.696868,
+    "longitude": 34.814292
   },
   {
     "fileNumber": "6024",
@@ -8807,7 +9950,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. רבדים",
+    "latitude": 31.736663,
+    "longitude": 34.798438
   },
   {
     "fileNumber": "6026",
@@ -8836,7 +9982,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. פגש - גת",
+    "latitude": 31.620968,
+    "longitude": 34.77566
   },
   {
     "fileNumber": "6027",
@@ -8865,7 +10014,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "0",
-    "inspector": ""
+    "inspector": "",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.693242,
+    "longitude": 34.809843
   },
   {
     "fileNumber": "6028",
@@ -8894,7 +10046,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.692544,
+    "longitude": 34.808983
   },
   {
     "fileNumber": "6031",
@@ -8923,7 +10078,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. רבדים",
+    "latitude": 31.744862,
+    "longitude": 34.808516
   },
   {
     "fileNumber": "6033",
@@ -8952,7 +10110,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "0",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. ורדון",
+    "latitude": 31.676587,
+    "longitude": 34.816575
   },
   {
     "fileNumber": "06036ב",
@@ -8981,7 +10142,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.698048,
+    "longitude": 34.815745
   },
   {
     "fileNumber": "06036ג",
@@ -9010,7 +10174,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.700635,
+    "longitude": 34.818929
   },
   {
     "fileNumber": "06036ד",
@@ -9039,7 +10206,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.689853,
+    "longitude": 34.805659
   },
   {
     "fileNumber": "6038",
@@ -9050,7 +10220,7 @@
     "block": "2199",
     "plot": "4",
     "status": "רישוין תקופתי",
-    "businessArea": "מועצה אזורית  מתחם יבולים",
+    "businessArea": "מועצה אזורית מתחם יבולים",
     "phone": "89277735",
     "mobile": "523605257",
     "totalArea": "9207",
@@ -9068,7 +10238,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "מועצה אזורית מתחם יבולים",
+    "latitude": 31.67154,
+    "longitude": 34.845813
   },
   {
     "fileNumber": "6040",
@@ -9097,7 +10270,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ כפר מנחם",
+    "latitude": 31.730041,
+    "longitude": 34.839596
   },
   {
     "fileNumber": "06040א",
@@ -9126,7 +10302,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ כפר מנחם",
+    "latitude": 31.737887,
+    "longitude": 34.849252
   },
   {
     "fileNumber": "06043א",
@@ -9155,7 +10334,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": "איתמר מוסטקי"
+    "inspector": "איתמר מוסטקי",
+    "address": "א.ת. בית גוברין",
+    "latitude": 31.617194,
+    "longitude": 34.888091
   },
   {
     "fileNumber": "6045",
@@ -9184,7 +10366,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "מועצה אזורית מתחם סיביי הדרום",
+    "latitude": 31.670253,
+    "longitude": 34.844241
   },
   {
     "fileNumber": "6046",
@@ -9213,7 +10398,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": "פבל רזודלוב"
+    "inspector": "פבל רזודלוב",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.690657,
+    "longitude": 34.806661
   },
   {
     "fileNumber": "06046א",
@@ -9242,7 +10430,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": "איתמר מוסטקי"
+    "inspector": "איתמר מוסטקי",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.697628,
+    "longitude": 34.815228
   },
   {
     "fileNumber": "6049",
@@ -9271,7 +10462,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "מועצה אזורית מתחם סיביי הדרום",
+    "latitude": 31.666584,
+    "longitude": 34.839712
   },
   {
     "fileNumber": "6050",
@@ -9300,7 +10494,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "מושב סגולה",
+    "latitude": 31.698415,
+    "longitude": 34.790197
   },
   {
     "fileNumber": "6051",
@@ -9311,7 +10508,7 @@
     "block": "34589",
     "plot": "39",
     "status": "רישיון זמני",
-    "businessArea": "קיבץ בית גוברין",
+    "businessArea": "קיבוץ בית גוברין",
     "phone": "",
     "mobile": "054-2406652",
     "totalArea": "30",
@@ -9329,7 +10526,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ בית גוברין",
+    "latitude": 31.623591,
+    "longitude": 34.895965
   },
   {
     "fileNumber": "06051א",
@@ -9340,7 +10540,7 @@
     "block": "34589",
     "plot": "39",
     "status": "רישיון זמני",
-    "businessArea": "קיבץ בית גוברין",
+    "businessArea": "קיבוץ בית גוברין",
     "phone": "",
     "mobile": "054-2406652",
     "totalArea": "30",
@@ -9358,7 +10558,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ בית גוברין",
+    "latitude": 31.625363,
+    "longitude": 34.898133
   },
   {
     "fileNumber": "6054",
@@ -9387,7 +10590,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.689919,
+    "longitude": 34.805741
   },
   {
     "fileNumber": "06055א",
@@ -9416,7 +10622,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "עסק חדש",
     "isCompany": "",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. ורדון",
+    "latitude": 31.685869,
+    "longitude": 34.827998
   },
   {
     "fileNumber": "6056",
@@ -9445,7 +10654,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. פגש - גת",
+    "latitude": 31.614319,
+    "longitude": 34.767463
   },
   {
     "fileNumber": "6057",
@@ -9474,7 +10686,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "מועצה אזורית מתחם סיביי הדרום",
+    "latitude": 31.663384,
+    "longitude": 34.835787
   },
   {
     "fileNumber": "6058",
@@ -9503,7 +10718,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "",
-    "inspector": "פבל רזודלוב"
+    "inspector": "פבל רזודלוב",
+    "address": "א.ת. ורדון",
+    "latitude": 31.678373,
+    "longitude": 34.818773
   },
   {
     "fileNumber": "6060",
@@ -9532,7 +10750,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "מועצה אזורית מתחם Y פארק",
+    "latitude": 31.671335,
+    "longitude": 34.845573
   },
   {
     "fileNumber": "06060א",
@@ -9561,7 +10782,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "מועצה אזורית מתחם Y פארק",
+    "latitude": 31.669537,
+    "longitude": 34.843347
   },
   {
     "fileNumber": "6063",
@@ -9590,7 +10814,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": "פבל רזודלוב"
+    "inspector": "פבל רזודלוב",
+    "address": "קיבוץ נגבה",
+    "latitude": 31.742749,
+    "longitude": 34.741928
   },
   {
     "fileNumber": "6064",
@@ -9601,7 +10828,7 @@
     "block": "",
     "plot": "",
     "status": "בתהליך חידוש",
-    "businessArea": "מושב כפר הרי\"\"ף",
+    "businessArea": "מושב כפר הרי\"ף",
     "phone": "",
     "mobile": "527073178",
     "totalArea": "25",
@@ -9619,7 +10846,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "0",
-    "inspector": ""
+    "inspector": "",
+    "address": "מושב כפר הרי\"ף",
+    "latitude": 31.741227,
+    "longitude": 34.861735
   },
   {
     "fileNumber": "6065",
@@ -9648,7 +10878,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "עסק חדש",
     "isCompany": "0",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ רבדים",
+    "latitude": 31.737783,
+    "longitude": 34.799816
   },
   {
     "fileNumber": "6066",
@@ -9677,7 +10910,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "מועצה אזורית מתחם סיביי הדרום",
+    "latitude": 31.667732,
+    "longitude": 34.841125
   },
   {
     "fileNumber": "6068",
@@ -9706,7 +10942,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. רבדים",
+    "latitude": 31.746859,
+    "longitude": 34.810975
   },
   {
     "fileNumber": "6069",
@@ -9735,7 +10974,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "מועצה אזורית מתחם Y פארק",
+    "latitude": 31.659565,
+    "longitude": 34.831086
   },
   {
     "fileNumber": "6070",
@@ -9764,7 +11006,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. רבדים",
+    "latitude": 31.741509,
+    "longitude": 34.804401
   },
   {
     "fileNumber": "6071",
@@ -9793,7 +11038,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. רבדים",
+    "latitude": 31.738227,
+    "longitude": 34.80035
   },
   {
     "fileNumber": "6072",
@@ -9822,7 +11070,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "מועצה אזורית מתחם Y פארק",
+    "latitude": 31.662414,
+    "longitude": 34.834581
   },
   {
     "fileNumber": "07/243",
@@ -9851,7 +11102,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "מושב נחלה",
+    "latitude": 31.689044,
+    "longitude": 34.795202
   },
   {
     "fileNumber": "7001",
@@ -9880,7 +11134,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ נגבה",
+    "latitude": 31.745687,
+    "longitude": 34.745532
   },
   {
     "fileNumber": "07001א",
@@ -9909,7 +11166,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ נגבה",
+    "latitude": 31.747968,
+    "longitude": 34.748339
   },
   {
     "fileNumber": "7004",
@@ -9938,7 +11198,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ כפר מנחם",
+    "latitude": 31.73737,
+    "longitude": 34.848603
   },
   {
     "fileNumber": "7012",
@@ -9967,7 +11230,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ שדה יואב",
+    "latitude": 31.700391,
+    "longitude": 34.78386
   },
   {
     "fileNumber": "7014",
@@ -9978,7 +11244,7 @@
     "block": "34202",
     "plot": "3",
     "status": "בתהליך חידוש",
-    "businessArea": "קיבץ בית גוברין",
+    "businessArea": "קיבוץ בית גוברין",
     "phone": "86874828",
     "mobile": "527773411",
     "totalArea": "4575.2",
@@ -9996,7 +11262,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "0",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ בית גוברין",
+    "latitude": 31.615704,
+    "longitude": 34.886257
   },
   {
     "fileNumber": "07014א",
@@ -10007,7 +11276,7 @@
     "block": "34202",
     "plot": "3",
     "status": "בתהליך חידוש",
-    "businessArea": "קיבץ בית גוברין",
+    "businessArea": "קיבוץ בית גוברין",
     "phone": "86874828",
     "mobile": "527773411",
     "totalArea": "4575",
@@ -10025,7 +11294,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "0",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ בית גוברין",
+    "latitude": 31.624502,
+    "longitude": 34.897074
   },
   {
     "fileNumber": "7016",
@@ -10054,7 +11326,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ גלאון",
+    "latitude": 31.670636,
+    "longitude": 34.75493
   },
   {
     "fileNumber": "7030",
@@ -10083,7 +11358,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ גת",
+    "latitude": 31.614665,
+    "longitude": 34.767902
   },
   {
     "fileNumber": "07030א",
@@ -10112,7 +11390,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ גת",
+    "latitude": 31.621094,
+    "longitude": 34.775802
   },
   {
     "fileNumber": "7062",
@@ -10141,7 +11422,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ רבדים",
+    "latitude": 31.748239,
+    "longitude": 34.812673
   },
   {
     "fileNumber": "07062א",
@@ -10170,7 +11454,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ רבדים",
+    "latitude": 31.741684,
+    "longitude": 34.804617
   },
   {
     "fileNumber": "7077",
@@ -10199,7 +11486,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.68986,
+    "longitude": 34.805681
   },
   {
     "fileNumber": "7080",
@@ -10228,7 +11518,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ כפר מנחם",
+    "latitude": 31.72842,
+    "longitude": 34.8376
   },
   {
     "fileNumber": "7100",
@@ -10257,7 +11550,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "0",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ בית ניר",
+    "latitude": 31.668886,
+    "longitude": 34.839468
   },
   {
     "fileNumber": "07100א",
@@ -10286,7 +11582,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "0",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ בית ניר",
+    "latitude": 31.676154,
+    "longitude": 34.848426
   },
   {
     "fileNumber": "7127",
@@ -10315,7 +11614,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "מושב סגולה",
+    "latitude": 31.689137,
+    "longitude": 34.778791
   },
   {
     "fileNumber": "07127א",
@@ -10344,7 +11646,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "מושב סגולה",
+    "latitude": 31.698633,
+    "longitude": 34.790477
   },
   {
     "fileNumber": "7173",
@@ -10373,7 +11678,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ שדה יואב",
+    "latitude": 31.691944,
+    "longitude": 34.773476
   },
   {
     "fileNumber": "7240",
@@ -10402,7 +11710,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ שדה יואב",
+    "latitude": 31.697926,
+    "longitude": 34.780838
   },
   {
     "fileNumber": "07240ב",
@@ -10431,7 +11742,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ שדה יואב",
+    "latitude": 31.694675,
+    "longitude": 34.776825
   },
   {
     "fileNumber": "07240ג",
@@ -10460,7 +11774,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ שדה יואב",
+    "latitude": 31.699566,
+    "longitude": 34.782856
   },
   {
     "fileNumber": "07240ד",
@@ -10489,7 +11806,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ שדה יואב",
+    "latitude": 31.700178,
+    "longitude": 34.783597
   },
   {
     "fileNumber": "7247",
@@ -10518,7 +11838,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ גלאון",
+    "latitude": 31.664206,
+    "longitude": 34.747017
   },
   {
     "fileNumber": "07247א",
@@ -10547,7 +11870,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ גלאון",
+    "latitude": 31.670333,
+    "longitude": 34.75457
   },
   {
     "fileNumber": "07247ב",
@@ -10576,7 +11902,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ גלאון",
+    "latitude": 31.670245,
+    "longitude": 34.754462
   },
   {
     "fileNumber": "7256",
@@ -10605,7 +11934,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ כפר מנחם",
+    "latitude": 31.736092,
+    "longitude": 34.84703
   },
   {
     "fileNumber": "07256א",
@@ -10634,7 +11966,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ כפר מנחם",
+    "latitude": 31.726914,
+    "longitude": 34.835734
   },
   {
     "fileNumber": "7260",
@@ -10663,7 +11998,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ רבדים",
+    "latitude": 31.737389,
+    "longitude": 34.799331
   },
   {
     "fileNumber": "07260א",
@@ -10692,7 +12030,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ רבדים",
+    "latitude": 31.740934,
+    "longitude": 34.803694
   },
   {
     "fileNumber": "07260ב",
@@ -10721,7 +12062,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ רבדים",
+    "latitude": 31.745703,
+    "longitude": 34.809551
   },
   {
     "fileNumber": "7261",
@@ -10750,7 +12094,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ נגבה",
+    "latitude": 31.739467,
+    "longitude": 34.737888
   },
   {
     "fileNumber": "07261א",
@@ -10779,7 +12126,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ נגבה",
+    "latitude": 31.740365,
+    "longitude": 34.738982
   },
   {
     "fileNumber": "07261ב",
@@ -10808,7 +12158,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ נגבה",
+    "latitude": 31.74741,
+    "longitude": 34.747664
   },
   {
     "fileNumber": "7262",
@@ -10819,7 +12172,7 @@
     "block": "34202",
     "plot": "2",
     "status": "היתר זמני",
-    "businessArea": "קיבץ בית גוברין",
+    "businessArea": "קיבוץ בית גוברין",
     "phone": "",
     "mobile": "502706227",
     "totalArea": "1650",
@@ -10837,7 +12190,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ בית גוברין",
+    "latitude": 31.617962,
+    "longitude": 34.889036
   },
   {
     "fileNumber": "7264",
@@ -10866,7 +12222,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ גת",
+    "latitude": 31.618911,
+    "longitude": 34.773127
   },
   {
     "fileNumber": "07264א",
@@ -10895,7 +12254,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ גת",
+    "latitude": 31.616957,
+    "longitude": 34.77071
   },
   {
     "fileNumber": "07264ב",
@@ -10924,7 +12286,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ גת",
+    "latitude": 31.619505,
+    "longitude": 34.773846
   },
   {
     "fileNumber": "7266",
@@ -10953,7 +12318,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ שדה יואב",
+    "latitude": 31.687544,
+    "longitude": 34.76806
   },
   {
     "fileNumber": "07266א",
@@ -10982,7 +12350,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ שדה יואב",
+    "latitude": 31.697981,
+    "longitude": 34.780894
   },
   {
     "fileNumber": "07266ב",
@@ -11011,7 +12382,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ שדה יואב",
+    "latitude": 31.697724,
+    "longitude": 34.780577
   },
   {
     "fileNumber": "7267",
@@ -11040,7 +12414,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.690555,
+    "longitude": 34.806523
   },
   {
     "fileNumber": "7269",
@@ -11069,7 +12446,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ בית ניר",
+    "latitude": 31.681068,
+    "longitude": 34.854474
   },
   {
     "fileNumber": "7271",
@@ -11098,7 +12478,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ כפר מנחם",
+    "latitude": 31.731148,
+    "longitude": 34.840945
   },
   {
     "fileNumber": "7277",
@@ -11127,7 +12510,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "איזור א",
+    "latitude": 31.689882,
+    "longitude": 34.805695
   },
   {
     "fileNumber": "8001",
@@ -11156,7 +12542,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "0",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. ורדון",
+    "latitude": 31.682904,
+    "longitude": 34.824337
   },
   {
     "fileNumber": "8008",
@@ -11185,7 +12574,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "שינוי בעלים",
     "isCompany": "0",
-    "inspector": ""
+    "inspector": "",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.698615,
+    "longitude": 34.816443
   },
   {
     "fileNumber": "8014",
@@ -11214,7 +12606,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. נגבה",
+    "latitude": 31.746642,
+    "longitude": 34.746707
   },
   {
     "fileNumber": "8015",
@@ -11243,7 +12638,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": "פבל רזודלוב"
+    "inspector": "פבל רזודלוב",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.689787,
+    "longitude": 34.805578
   },
   {
     "fileNumber": "8027",
@@ -11272,7 +12670,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "שטח כללי מועצה אזורית",
+    "latitude": 31.688965,
+    "longitude": 34.804567
   },
   {
     "fileNumber": "8028",
@@ -11301,7 +12702,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "0",
-    "inspector": ""
+    "inspector": "",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.697808,
+    "longitude": 34.815462
   },
   {
     "fileNumber": "8029",
@@ -11330,7 +12734,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "מנחת קדמה",
+    "latitude": 31.655192,
+    "longitude": 34.879461
   },
   {
     "fileNumber": "08029ב",
@@ -11359,7 +12766,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "מנחת קדמה",
+    "latitude": 31.652,
+    "longitude": 34.875544
   },
   {
     "fileNumber": "8034",
@@ -11388,7 +12798,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. כפר מנחם",
+    "latitude": 31.737848,
+    "longitude": 34.849192
   },
   {
     "fileNumber": "08034א",
@@ -11417,7 +12830,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. כפר מנחם",
+    "latitude": 31.727149,
+    "longitude": 34.836036
   },
   {
     "fileNumber": "9001",
@@ -11428,7 +12844,7 @@
     "block": "2607",
     "plot": "18",
     "status": "בתהליך חידוש",
-    "businessArea": "מושב כפר הרי\"\"ף",
+    "businessArea": "מושב כפר הרי\"ף",
     "phone": "88505666",
     "mobile": "544255528",
     "totalArea": "83",
@@ -11446,7 +12862,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "0",
-    "inspector": ""
+    "inspector": "",
+    "address": "מושב כפר הרי\"ף",
+    "latitude": 31.744141,
+    "longitude": 34.865321
   },
   {
     "fileNumber": "10/009",
@@ -11475,7 +12894,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. רבדים",
+    "latitude": 31.746145,
+    "longitude": 34.810108
   },
   {
     "fileNumber": "10002",
@@ -11504,7 +12926,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. בית גוברין",
+    "latitude": 31.615672,
+    "longitude": 34.886206
   },
   {
     "fileNumber": "10002א",
@@ -11533,7 +12958,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. בית גוברין",
+    "latitude": 31.626638,
+    "longitude": 34.899714
   },
   {
     "fileNumber": "10002ב",
@@ -11562,7 +12990,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. בית גוברין",
+    "latitude": 31.627231,
+    "longitude": 34.900432
   },
   {
     "fileNumber": "10002ג",
@@ -11591,7 +13022,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. בית גוברין",
+    "latitude": 31.622315,
+    "longitude": 34.894394
   },
   {
     "fileNumber": "10008",
@@ -11620,7 +13054,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. נגבה",
+    "latitude": 31.745695,
+    "longitude": 34.745554
   },
   {
     "fileNumber": "10008א",
@@ -11649,7 +13086,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. נגבה",
+    "latitude": 31.74042,
+    "longitude": 34.739062
   },
   {
     "fileNumber": "10008ב",
@@ -11678,7 +13118,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. נגבה",
+    "latitude": 31.740802,
+    "longitude": 34.739532
   },
   {
     "fileNumber": "10008ג",
@@ -11707,7 +13150,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. נגבה",
+    "latitude": 31.739195,
+    "longitude": 34.737554
   },
   {
     "fileNumber": "10008ד",
@@ -11736,7 +13182,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. נגבה",
+    "latitude": 31.748121,
+    "longitude": 34.748527
   },
   {
     "fileNumber": "10008ה",
@@ -11765,7 +13214,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. נגבה",
+    "latitude": 31.742958,
+    "longitude": 34.742185
   },
   {
     "fileNumber": "10008ו",
@@ -11794,7 +13246,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. נגבה",
+    "latitude": 31.74423,
+    "longitude": 34.743751
   },
   {
     "fileNumber": "10008ז",
@@ -11823,7 +13278,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. נגבה",
+    "latitude": 31.741696,
+    "longitude": 34.740619
   },
   {
     "fileNumber": "10018",
@@ -11852,7 +13310,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "מועצה אזורית מתחם סיביי הדרום",
+    "latitude": 31.662299,
+    "longitude": 34.834439
   },
   {
     "fileNumber": "10034",
@@ -11881,7 +13342,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. כפר מנחם",
+    "latitude": 31.73638,
+    "longitude": 34.847396
   },
   {
     "fileNumber": "10034א",
@@ -11910,7 +13374,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. כפר מנחם",
+    "latitude": 31.734664,
+    "longitude": 34.845272
   },
   {
     "fileNumber": "10035",
@@ -11939,7 +13406,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.693642,
+    "longitude": 34.810322
   },
   {
     "fileNumber": "10037",
@@ -11968,7 +13438,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. כפר מנחם",
+    "latitude": 31.733769,
+    "longitude": 34.844171
   },
   {
     "fileNumber": "10037א",
@@ -11997,7 +13470,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. כפר מנחם",
+    "latitude": 31.72631,
+    "longitude": 34.835004
   },
   {
     "fileNumber": "10039",
@@ -12026,7 +13502,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. פגש - גת",
+    "latitude": 31.617216,
+    "longitude": 34.771029
   },
   {
     "fileNumber": "10039א",
@@ -12055,7 +13534,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. פגש - גת",
+    "latitude": 31.614093,
+    "longitude": 34.767198
   },
   {
     "fileNumber": "10040",
@@ -12084,7 +13566,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "הארכה - חרבות ברזל",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. ורדון",
+    "latitude": 31.678528,
+    "longitude": 34.818951
   },
   {
     "fileNumber": "10040א",
@@ -12113,7 +13598,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "הארכה - חרבות ברזל",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. ורדון",
+    "latitude": 31.679791,
+    "longitude": 34.820506
   },
   {
     "fileNumber": "10040ב",
@@ -12142,7 +13630,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "הארכה - חרבות ברזל",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. ורדון",
+    "latitude": 31.674696,
+    "longitude": 34.814236
   },
   {
     "fileNumber": "10041",
@@ -12171,7 +13662,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "מושב נחלה",
+    "latitude": 31.687402,
+    "longitude": 34.793181
   },
   {
     "fileNumber": "10042",
@@ -12200,7 +13694,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. נחלה",
+    "latitude": 31.688556,
+    "longitude": 34.794614
   },
   {
     "fileNumber": "10042א",
@@ -12229,7 +13726,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. נחלה",
+    "latitude": 31.681604,
+    "longitude": 34.786045
   },
   {
     "fileNumber": "10043",
@@ -12258,7 +13758,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": "פבל רזודלוב"
+    "inspector": "פבל רזודלוב",
+    "address": "א.ת. ורדון",
+    "latitude": 31.675083,
+    "longitude": 34.814712
   },
   {
     "fileNumber": "10045",
@@ -12287,7 +13790,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. גלאון",
+    "latitude": 31.659719,
+    "longitude": 34.741494
   },
   {
     "fileNumber": "10046",
@@ -12316,7 +13822,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": "איתמר מוסטקי"
+    "inspector": "איתמר מוסטקי",
+    "address": "א.ת. ורדון",
+    "latitude": 31.683789,
+    "longitude": 34.825426
   },
   {
     "fileNumber": "10046א",
@@ -12345,7 +13854,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": "איתמר מוסטקי"
+    "inspector": "איתמר מוסטקי",
+    "address": "א.ת. ורדון",
+    "latitude": 31.677372,
+    "longitude": 34.817528
   },
   {
     "fileNumber": "10047",
@@ -12374,7 +13886,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": "פבל רזודלוב"
+    "inspector": "פבל רזודלוב",
+    "address": "א.ת. ורדון",
+    "latitude": 31.685123,
+    "longitude": 34.827068
   },
   {
     "fileNumber": "10047א",
@@ -12403,7 +13918,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": "איתמר מוסטקי"
+    "inspector": "איתמר מוסטקי",
+    "address": "א.ת. ורדון",
+    "latitude": 31.683929,
+    "longitude": 34.825611
   },
   {
     "fileNumber": "10050",
@@ -12432,7 +13950,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.696948,
+    "longitude": 34.814391
   },
   {
     "fileNumber": "10050א",
@@ -12461,7 +13982,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.692995,
+    "longitude": 34.809538
   },
   {
     "fileNumber": "10054",
@@ -12490,7 +14014,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. ורדון",
+    "latitude": 31.681186,
+    "longitude": 34.822235
   },
   {
     "fileNumber": "10055",
@@ -12519,7 +14046,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "מועצה אזורית מתחם סיביי הדרום",
+    "latitude": 31.670062,
+    "longitude": 34.844006
   },
   {
     "fileNumber": "10056",
@@ -12548,7 +14078,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.694298,
+    "longitude": 34.81113
   },
   {
     "fileNumber": "10056א",
@@ -12577,7 +14110,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "סובב מועצה אזורית",
+    "latitude": 31.692619,
+    "longitude": 34.809064
   },
   {
     "fileNumber": "10057",
@@ -12606,7 +14142,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. רבדים",
+    "latitude": 31.739608,
+    "longitude": 34.80205
   },
   {
     "fileNumber": "10057א",
@@ -12635,7 +14174,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. רבדים",
+    "latitude": 31.73916,
+    "longitude": 34.801511
   },
   {
     "fileNumber": "10058",
@@ -12664,7 +14206,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": "פבל רזודלוב"
+    "inspector": "פבל רזודלוב",
+    "address": "א.ת. ורדון",
+    "latitude": 31.685595,
+    "longitude": 34.827661
   },
   {
     "fileNumber": "10059",
@@ -12693,7 +14238,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "מועצה אזורית מתחם סיביי הדרום",
+    "latitude": 31.660754,
+    "longitude": 34.832537
   },
   {
     "fileNumber": "10060",
@@ -12704,7 +14252,7 @@
     "block": "34589",
     "plot": "15",
     "status": "בטיפול",
-    "businessArea": "קיבץ בית גוברין",
+    "businessArea": "קיבוץ בית גוברין",
     "phone": "",
     "mobile": "54636600",
     "totalArea": "525.9",
@@ -12722,7 +14270,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "קיבוץ בית גוברין",
+    "latitude": 31.617055,
+    "longitude": 34.887907
   },
   {
     "fileNumber": "10061",
@@ -12751,7 +14302,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "מועצה אזורית מתחם סיביי הדרום",
+    "latitude": 31.663542,
+    "longitude": 34.835981
   },
   {
     "fileNumber": "10061א",
@@ -12780,7 +14334,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "עסק חדש",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "מועצה אזורית מתחם סיביי הדרום",
+    "latitude": 31.667128,
+    "longitude": 34.840395
   },
   {
     "fileNumber": "10062",
@@ -12809,7 +14366,10 @@
     "suitableForShortTrack": "0",
     "submissionReason": "עסק חדש",
     "isCompany": "",
-    "inspector": ""
+    "inspector": "",
+    "address": "א.ת. ורדון",
+    "latitude": 31.678681,
+    "longitude": 34.819152
   },
   {
     "fileNumber": "א",
@@ -12838,7 +14398,10 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "מועצה אזורית מתחם סיביי הדרום",
+    "latitude": 31.669512,
+    "longitude": 34.843316
   },
   {
     "fileNumber": "א\u0001\u0001",
@@ -12867,6 +14430,9 @@
     "suitableForShortTrack": "1",
     "submissionReason": "חידוש רשיון עסק",
     "isCompany": "1",
-    "inspector": ""
+    "inspector": "",
+    "address": "מועצה אזורית מתחם סיביי הדרום",
+    "latitude": 31.659702,
+    "longitude": 34.831242
   }
 ]
