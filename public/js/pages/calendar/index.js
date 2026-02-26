@@ -1,6 +1,7 @@
 import { requireAuth, renderUserName } from '../../core/auth.js';
 import { apiFetch } from '../../core/api.js';
 import { bindLogout, renderAdminLink } from '../../core/nav.js';
+import { initThemeToggle } from '../../core/theme.js';
 
 // ===== Calendar Page =====
 // Authenticated calendar view backed by ICS feed synchronization.
@@ -84,6 +85,7 @@ function initCalendarPage() {
   requireAuth();
 
   const user = renderUserName('user-name');
+  initThemeToggle(user);
   renderAdminLink(user, 'admin-link-placeholder');
   bindLogout('logout-button');
 

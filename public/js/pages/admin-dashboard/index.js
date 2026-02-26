@@ -1,6 +1,7 @@
 import { getCurrentUser, requireAuth, renderUserName } from '../../core/auth.js';
 import { apiFetch } from '../../core/api.js';
 import { bindLogout } from '../../core/nav.js';
+import { initThemeToggle } from '../../core/theme.js';
 
 // ===== Admin Approvals Page =====
 // Handles pending user approvals and denials for admin users.
@@ -160,6 +161,7 @@ function initPage() {
   }
 
   renderUserName('user-name');
+  initThemeToggle(user);
   bindLogout('logout-button');
   bindTableActions();
   fetchPendingUsers();

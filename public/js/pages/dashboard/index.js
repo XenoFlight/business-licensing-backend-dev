@@ -2,6 +2,7 @@ import { requireAuth, renderUserName } from '../../core/auth.js';
 import { apiFetch } from '../../core/api.js';
 import { bindLogout, renderAdminLink } from '../../core/nav.js';
 import { getStatusLabel, isActiveStatus, isPendingStatus, normalizeStatus } from '../../core/status.js';
+import { initThemeToggle } from '../../core/theme.js';
 
 let businessStatusChartInstance;
 let reportStatusChartInstance;
@@ -176,6 +177,7 @@ function initDashboard() {
   requireAuth();
 
   const user = renderUserName('user-name');
+  initThemeToggle(user);
   renderAdminLink(user, 'admin-link-placeholder');
   bindLogout('logout-button');
 

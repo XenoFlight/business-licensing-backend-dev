@@ -10,6 +10,21 @@
     
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="theme.css">
+    <script>
+        (function () {
+            try {
+                var savedTheme = localStorage.getItem('theme:last') || 'light';
+                document.documentElement.setAttribute('data-theme', savedTheme);
+                if (savedTheme === 'dark') {
+                    document.documentElement.classList.add('dark');
+                }
+            } catch (error) {
+                console.error('Theme preload failed:', error);
+            }
+        })();
+    </script>
     
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -79,7 +94,7 @@
 
                 <!-- Center: Navigation -->
                 <nav class="hidden md:flex space-x-reverse space-x-2">
-                    <a href="dashboard.html" class="px-3 py-2 rounded-lg text-sm font-medium bg-brand-50 text-brand-700 transition-colors flex items-center gap-2">
+                    <a href="dashboard.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors flex items-center gap-2">
                         <i class="fa-solid fa-chart-pie"></i> לוח בקרה
                     </a>
                     <a href="businesses.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors flex items-center gap-2">
@@ -87,6 +102,12 @@
                     </a>
                     <a href="inspection.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors flex items-center gap-2">
                         <i class="fa-solid fa-clipboard-check"></i> ביקורת חדשה
+                    </a>
+                    <a href="map.html" class="px-3 py-2 rounded-lg text-sm font-medium bg-brand-50 text-brand-700 transition-colors flex items-center gap-2">
+                        <i class="fa-solid fa-map-location-dot"></i> מפת עסקים
+                    </a>
+                    <a href="calendar.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors flex items-center gap-2">
+                        <i class="fa-solid fa-calendar-days"></i> יומן
                     </a>
                     <span id="admin-link-placeholder"></span>
                 </nav>

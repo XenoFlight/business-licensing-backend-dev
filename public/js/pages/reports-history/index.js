@@ -1,9 +1,42 @@
 import { requireAuth, renderUserName } from '../../core/auth.js';
 import { apiFetch } from '../../core/api.js';
 import { bindLogout, renderAdminLink } from '../../core/nav.js';
+import { initThemeToggle } from '../../core/theme.js';
 
 // ===== Reports History Page =====
 // Loads and renders inspection history for a selected business.
+let cachedReports = [];
+
+function openEditModal(report) {
+  const modal = document.getElementById('edit-report-modal');
+  const reportIdInput = document.getElementById('edit-report-id');
+  const statusInput = document.getElementById('edit-report-status');
+  const findingsInput = document.getElementById('edit-report-findings');
+
+  if (!modal || !reportIdInput || !statusInput || !findingsInput) {
+    return;
+  }
+
+  reportIdInput.value = String(report.id || '');
+  statusInput.value = report.status || 'pass';
+  findingsInput.value = report.findings || '';
+
+  modal.classList.remove('hidden');
+  modal.classList.add('flex');
+}
+
+function closeEditModal() {
+  const modal = document.getElementById('edit-report-modal');
+  const form = document.getElementById('edit-report-form');
+
+  if (!modal || !form) {
+    return;
+  }
+
+  form.reset();
+  modal.classList.add('hidden');
+  modal.classList.remove('flex');
+}
 
 // ===== Query and Status Helpers =====
 function getBusinessId() {
@@ -28,7 +61,7 @@ function renderErrorRow(message) {
     return;
   }
 
-  tbody.innerHTML = `<tr><td colspan="5" class="px-6 py-8 text-center text-red-500">${message}</td></tr>`;
+  tbody.innerHTML = `<tr><td colspan="6" class="px-6 py-8 text-center text-red-500">${message}</td></tr>`;
 }
 
 function renderEmptyRow() {
@@ -37,7 +70,7 @@ function renderEmptyRow() {
     return;
   }
 
-  tbody.innerHTML = '<tr><td colspan="5" class="px-6 py-8 text-center text-slate-500">לא נמצאו ביקורות קודמות לעסק זה.</td></tr>';
+  tbody.innerHTML = '<tr><td colspan="6" class="px-6 py-8 text-center text-slate-500">לא נמצאו ביקורות קודמות לעסק זה.</td></tr>';
 }
 
 // ===== Table Rows Rendering =====
@@ -47,6 +80,7 @@ function renderReportsRows(reports) {
     return;
   }
 
+  cachedReports = reports;
   tbody.innerHTML = '';
 
   reports.forEach((report) => {
@@ -68,6 +102,9 @@ function renderReportsRows(reports) {
       <td class="px-6 py-4 ${statusInfo.className}">${statusInfo.text}</td>
       <td class="px-6 py-4 text-slate-600">${findingsPreview || '-'}</td>
       <td class="px-6 py-4">${report.pdfPath ? `<a href="${report.pdfPath}" target="_blank" rel="noopener noreferrer" class="text-brand-600 hover:underline">צפה בדו"ח</a>` : '-'}</td>
+      <td class="px-6 py-4">
+        <button type="button" data-report-id="${report.id}" class="edit-report-button text-brand-600 hover:text-brand-700 hover:underline font-medium">עריכה</button>
+      </td>
     `;
 
     tbody.appendChild(row);
@@ -113,11 +150,104 @@ async function loadReports(businessId) {
   }
 }
 
+async function updateReport(reportId, payload) {
+  const updateResponse = await apiFetch(`/api/reports/${reportId}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(payload)
+  });
+
+  if (!updateResponse.ok) {
+    throw new Error('Failed to update report');
+  }
+
+  return updateResponse.json();
+}
+
+function bindEditActions(businessId) {
+  const tbody = document.querySelector('#reports-table tbody');
+  const closeButton = document.getElementById('edit-modal-close');
+  const cancelButton = document.getElementById('edit-modal-cancel');
+  const modal = document.getElementById('edit-report-modal');
+  const form = document.getElementById('edit-report-form');
+  const saveButton = document.getElementById('edit-modal-save');
+
+  if (tbody) {
+    tbody.addEventListener('click', (event) => {
+      const targetButton = event.target.closest('.edit-report-button');
+      if (!targetButton) {
+        return;
+      }
+
+      const reportId = Number(targetButton.getAttribute('data-report-id'));
+      const selectedReport = cachedReports.find((report) => Number(report.id) === reportId);
+      if (!selectedReport) {
+        return;
+      }
+
+      openEditModal(selectedReport);
+    });
+  }
+
+  [closeButton, cancelButton].forEach((button) => {
+    if (!button) {
+      return;
+    }
+
+    button.addEventListener('click', closeEditModal);
+  });
+
+  if (modal) {
+    modal.addEventListener('click', (event) => {
+      if (event.target === modal) {
+        closeEditModal();
+      }
+    });
+  }
+
+  if (!form || !saveButton) {
+    return;
+  }
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const reportId = document.getElementById('edit-report-id')?.value;
+    const status = document.getElementById('edit-report-status')?.value;
+    const findings = document.getElementById('edit-report-findings')?.value?.trim();
+
+    if (!reportId || !status || !findings) {
+      alert('יש למלא את כל השדות לפני שמירה.');
+      return;
+    }
+
+    const originalLabel = saveButton.textContent;
+    saveButton.disabled = true;
+    saveButton.textContent = 'שומר...';
+
+    try {
+      await updateReport(reportId, { status, findings });
+      closeEditModal();
+      await loadReports(businessId);
+      alert('הדו"ח עודכן בהצלחה.');
+    } catch (error) {
+      console.error('Failed to update report:', error);
+      alert('שמירת הדו"ח נכשלה. נסה שוב.');
+    } finally {
+      saveButton.disabled = false;
+      saveButton.textContent = originalLabel;
+    }
+  });
+}
+
 // ===== Page Bootstrap =====
 function initPage() {
   requireAuth();
 
   const user = renderUserName('user-name');
+  initThemeToggle(user);
   renderAdminLink(user, 'admin-link-placeholder');
   bindLogout('logout-button');
 
@@ -128,6 +258,7 @@ function initPage() {
     return;
   }
 
+  bindEditActions(businessId);
   loadReports(businessId);
 }
 

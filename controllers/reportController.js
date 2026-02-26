@@ -8,9 +8,24 @@ const fs = require('fs');
 
 // ===== Optional AI Client Initialization =====
 // AI integration is enabled only when GEMINI_API_KEY is configured.
-const genAI = process.env.GEMINI_API_KEY 
-  ? new GoogleGenerativeAI(process.env.GEMINI_API_KEY) 
+const geminiApiKey = (process.env.GEMINI_API_KEY || '').trim();
+const isPlaceholderGeminiKey = !geminiApiKey || geminiApiKey === 'your_google_gemini_api_key';
+const genAI = !isPlaceholderGeminiKey
+  ? new GoogleGenerativeAI(geminiApiKey)
   : null;
+
+const runWithTimeout = async (promise, timeoutMs, timeoutMessage) => {
+  let timeoutId;
+  const timeoutPromise = new Promise((_, reject) => {
+    timeoutId = setTimeout(() => reject(new Error(timeoutMessage)), timeoutMs);
+  });
+
+  try {
+    return await Promise.race([promise, timeoutPromise]);
+  } finally {
+    clearTimeout(timeoutId);
+  }
+};
 
 // ===== Report Endpoints =====
 // @desc    Create new inspection report + optional AI analysis + optional PDF generation
@@ -52,7 +67,7 @@ exports.createReport = async (req, res) => {
     // Optionally enrich report with AI risk assessment.
     if (findings && genAI) {
       try {
-        const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+        const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
         
         const prompt = `
           Act as an Israeli municipal safety inspector. 
@@ -63,7 +78,11 @@ exports.createReport = async (req, res) => {
           - "recommendations": An array of strings (recommendations in Hebrew).
         `;
 
-        const result = await model.generateContent(prompt);
+        const result = await runWithTimeout(
+          model.generateContent(prompt),
+          15000,
+          'AI analysis timeout'
+        );
         const response = await result.response;
         const text = response.text();
         
@@ -92,11 +111,15 @@ exports.createReport = async (req, res) => {
       });
 
       if (fullReport) {
-        const pdfBuffer = await generateReportPDF({
-          report: fullReport,
-          business: fullReport.Business,
-          inspector: fullReport.inspector
-        });
+        const pdfBuffer = await runWithTimeout(
+          generateReportPDF({
+            report: fullReport,
+            business: fullReport.Business,
+            inspector: fullReport.inspector
+          }),
+          25000,
+          'PDF generation timeout'
+        );
 
         // Save generated file locally under public/reports.
         const fileName = `report_${report.id}_${Date.now()}.pdf`;

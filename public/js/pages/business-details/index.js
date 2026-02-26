@@ -2,6 +2,7 @@ import { requireAuth, renderUserName } from '../../core/auth.js';
 import { apiFetch } from '../../core/api.js';
 import { bindLogout, renderAdminLink } from '../../core/nav.js';
 import { BUSINESS_STATUS_OPTIONS, getStatusLabel, normalizeStatus } from '../../core/status.js';
+import { initThemeToggle } from '../../core/theme.js';
 
 // ===== Business Details Page State =====
 let activeBusinessId = null;
@@ -242,6 +243,12 @@ function renderBusinessHeader(record) {
   document.getElementById('biz-owner').textContent = record.ownerName || record.businessOwner || '-';
   document.getElementById('biz-address').textContent = getAddressText(record);
 
+  const reportsHistoryButton = document.getElementById('open-reports-history-btn');
+  if (reportsHistoryButton && activeBusinessId) {
+    reportsHistoryButton.href = `reports-history.html?businessId=${encodeURIComponent(activeBusinessId)}`;
+    reportsHistoryButton.classList.remove('hidden');
+  }
+
   initLocationMap(record);
 }
 
@@ -295,6 +302,7 @@ function initBusinessDetailsPage() {
   requireAuth();
 
   const user = renderUserName('user-name');
+  initThemeToggle(user);
   renderAdminLink(user, 'admin-link-placeholder');
   bindLogout('logout-button');
 

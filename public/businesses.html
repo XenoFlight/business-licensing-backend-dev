@@ -7,22 +7,36 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="theme.css">
+        <script>
+            (function () {
+                try {
+                    var savedTheme = localStorage.getItem('theme:last') || 'light';
+                    document.documentElement.setAttribute('data-theme', savedTheme);
+                    if (savedTheme === 'dark') {
+                        document.documentElement.classList.add('dark');
+                    }
+                } catch (error) {
+                    console.error('Theme preload failed:', error);
+                }
+            })();
+        </script>
 
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: [''-apple-system'', ''BlinkMacSystemFont'', ''Segoe UI'', ''Roboto'', ''Helvetica'', ''Arial'', ''sans-serif''],
+                        sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
                     },
                     colors: {
                         brand: {
-                            50: ''#f0f9ff'',
-                            100: ''#e0f2fe'',
-                            500: ''#0ea5e9'',
-                            600: ''#0284c7'',
-                            700: ''#0369a1'',
-                            900: ''#0c4a6e'',
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            900: '#0c4a6e',
                         }
                     }
                 }
@@ -61,6 +75,12 @@
                     </a>
                     <a href="inspection.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors flex items-center gap-2">
                         <i class="fa-solid fa-clipboard-check"></i> ביקורת חדשה
+                    </a>
+                    <a href="map.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors flex items-center gap-2">
+                        <i class="fa-solid fa-map-location-dot"></i> מפת עסקים
+                    </a>
+                    <a href="calendar.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors flex items-center gap-2">
+                        <i class="fa-solid fa-calendar-days"></i> יומן
                     </a>
                     <span id="admin-link-placeholder"></span>
                 </nav>

@@ -1,22 +1,29 @@
 import { requireAuth, renderUserName } from '../../core/auth.js';
 import { apiFetch } from '../../core/api.js';
 import { bindLogout, renderAdminLink } from '../../core/nav.js';
+import { initThemeToggle } from '../../core/theme.js';
 
 // ===== Inspection Page =====
 // Supports inspections for existing businesses or ad-hoc new business creation.
 
 const token = requireAuth();
 const user = renderUserName('user-name');
+initThemeToggle(user);
 renderAdminLink(user, 'admin-link-placeholder');
 bindLogout('logout-button');
 
 // ===== URL and Initial Screen Mode =====
 const urlParams = new URLSearchParams(window.location.search);
 const businessId = urlParams.get('businessId');
+const reportsHistoryButton = document.getElementById('open-reports-history-btn');
 
 if (businessId) {
   document.getElementById('businessId').value = businessId;
   document.getElementById('business-info').style.display = 'block';
+  if (reportsHistoryButton) {
+    reportsHistoryButton.href = `reports-history.html?businessId=${encodeURIComponent(businessId)}`;
+    reportsHistoryButton.classList.remove('hidden');
+  }
 } else {
   document.getElementById('new-business-form').style.display = 'grid';
   document.querySelector('title').textContent = 'ביקורת לעסק חדש | מערכת רישוי עסקים';

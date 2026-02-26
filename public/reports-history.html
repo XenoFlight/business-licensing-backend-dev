@@ -10,6 +10,21 @@
     
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="theme.css">
+    <script>
+        (function () {
+            try {
+                var savedTheme = localStorage.getItem('theme:last') || 'light';
+                document.documentElement.setAttribute('data-theme', savedTheme);
+                if (savedTheme === 'dark') {
+                    document.documentElement.classList.add('dark');
+                }
+            } catch (error) {
+                console.error('Theme preload failed:', error);
+            }
+        })();
+    </script>
     
     <!-- Custom Config for Tailwind -->
     <script>
@@ -69,6 +84,12 @@
                     <a href="inspection.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors flex items-center gap-2">
                         <i class="fa-solid fa-clipboard-check"></i> ביקורת חדשה
                     </a>
+                    <a href="map.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors flex items-center gap-2">
+                        <i class="fa-solid fa-map-location-dot"></i> מפת עסקים
+                    </a>
+                    <a href="calendar.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors flex items-center gap-2">
+                        <i class="fa-solid fa-calendar-days"></i> יומן
+                    </a>
                     <span id="admin-link-placeholder"></span>
                 </nav>
 
@@ -107,15 +128,48 @@
                             <th class="px-6 py-3">תוצאה</th>
                             <th class="px-6 py-3">ממצאים (תקציר)</th>
                             <th class="px-6 py-3">דו"ח PDF</th>
+                            <th class="px-6 py-3">פעולות</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-slate-100">
-                        <tr><td colspan="5" class="px-6 py-8 text-center text-slate-500">טוען נתונים...</td></tr>
+                        <tr><td colspan="6" class="px-6 py-8 text-center text-slate-500">טוען נתונים...</td></tr>
                     </tbody>
                 </table>
             </div>
         </div>
     </main>
+
+    <div id="edit-report-modal" class="fixed inset-0 bg-slate-900/40 hidden items-center justify-center z-[60] p-4">
+        <div class="bg-white w-full max-w-2xl rounded-2xl shadow-lg border border-slate-200 overflow-hidden">
+            <div class="px-6 py-4 border-b border-slate-200 flex items-center justify-between">
+                <h3 class="text-lg font-bold text-slate-900">עריכת דו"ח ביקורת</h3>
+                <button id="edit-modal-close" class="text-slate-500 hover:text-slate-700 text-xl leading-none">&times;</button>
+            </div>
+
+            <form id="edit-report-form" class="p-6 space-y-4">
+                <input type="hidden" id="edit-report-id">
+
+                <div>
+                    <label for="edit-report-status" class="block mb-2 text-sm font-medium text-slate-700">תוצאת ביקורת</label>
+                    <select id="edit-report-status" class="w-full rounded-lg border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-500">
+                        <option value="pass">עבר</option>
+                        <option value="fail">נכשל</option>
+                        <option value="conditional_pass">עבר בתנאי</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="edit-report-findings" class="block mb-2 text-sm font-medium text-slate-700">ממצאים</label>
+                    <textarea id="edit-report-findings" rows="7" class="w-full rounded-lg border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-500" placeholder="הזן ממצאים מעודכנים..."></textarea>
+                </div>
+
+                <div class="flex items-center justify-end gap-3 pt-2">
+                    <button type="button" id="edit-modal-cancel" class="px-4 py-2 rounded-lg border border-slate-300 text-slate-700 hover:bg-slate-50">ביטול</button>
+                    <button type="submit" id="edit-modal-save" class="px-4 py-2 rounded-lg bg-brand-600 text-white hover:bg-brand-700">שמירת שינויים</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-white border-t border-slate-200 py-6 mt-auto">

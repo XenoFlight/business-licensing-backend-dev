@@ -11,6 +11,21 @@
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <link rel="stylesheet" href="theme.css">
+    <script>
+        (function () {
+            try {
+                var savedTheme = localStorage.getItem('theme:last') || 'light';
+                document.documentElement.setAttribute('data-theme', savedTheme);
+                if (savedTheme === 'dark') {
+                    document.documentElement.classList.add('dark');
+                }
+            } catch (error) {
+                console.error('Theme preload failed:', error);
+            }
+        })();
+    </script>
+
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
@@ -79,6 +94,12 @@
                     <a href="inspection.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors flex items-center gap-2">
                         <i class="fa-solid fa-clipboard-check"></i> ביקורת חדשה
                     </a>
+                    <a href="map.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors flex items-center gap-2">
+                        <i class="fa-solid fa-map-location-dot"></i> מפת עסקים
+                    </a>
+                    <a href="calendar.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors flex items-center gap-2">
+                        <i class="fa-solid fa-calendar-days"></i> יומן
+                    </a>
                     <span id="admin-link-placeholder"></span>
                 </nav>
 
@@ -100,22 +121,6 @@
 
     <!-- Main Content Area -->
     <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
-        <section class="relative overflow-hidden rounded-3xl bg-slate-900 text-white p-8 md:p-10 mb-8">
-            <div class="absolute -left-20 -top-20 w-56 h-56 rounded-full bg-brand-500/30 blur-3xl"></div>
-            <div class="absolute -right-20 -bottom-20 w-56 h-56 rounded-full bg-sky-300/20 blur-3xl"></div>
-            <div class="relative z-10 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-                <div>
-                    <p class="text-brand-100 text-sm font-medium mb-2">לוח בקרה מרכזי</p>
-                    <h1 class="text-3xl md:text-4xl font-bold tracking-tight">תמונת מצב לרישוי עסקים</h1>
-                    <p class="text-slate-200 mt-3 text-sm md:text-base">גישה מהירה לביקורות, עסקים, מפה ויומן — עם מדדי סטטוס עדכניים בזמן אמת.</p>
-                </div>
-                <div class="flex items-center gap-3">
-                    <a href="businesses.html" class="px-4 py-2.5 rounded-xl bg-white text-slate-900 font-semibold text-sm hover:bg-slate-100 transition-colors">לרשימת העסקים</a>
-                    <a href="inspection.html" class="px-4 py-2.5 rounded-xl bg-brand-500 text-white font-semibold text-sm hover:bg-brand-600 transition-colors">ביקורת חדשה</a>
-                </div>
-            </div>
-        </section>
-
         <section class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
             <article class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 stat-card">
                 <div class="flex items-center justify-between">
@@ -212,39 +217,6 @@
             </article>
         </section>
 
-        <section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
-            <a href="inspection.html" class="group bg-white rounded-2xl border border-slate-200 hover:border-brand-300 shadow-sm p-5 transition-all">
-                <div class="w-10 h-10 rounded-lg bg-brand-100 text-brand-700 flex items-center justify-center mb-4 group-hover:bg-brand-200">
-                    <i class="fa-solid fa-clipboard-check"></i>
-                </div>
-                <h3 class="font-bold text-slate-900">ביצוע ביקורת</h3>
-                <p class="text-sm text-slate-500 mt-1">פתיחת טופס ביקורת לעסק קיים או חדש</p>
-            </a>
-
-            <a href="businesses.html" class="group bg-white rounded-2xl border border-slate-200 hover:border-brand-300 shadow-sm p-5 transition-all">
-                <div class="w-10 h-10 rounded-lg bg-slate-100 text-slate-700 flex items-center justify-center mb-4 group-hover:bg-slate-200">
-                    <i class="fa-solid fa-table-list"></i>
-                </div>
-                <h3 class="font-bold text-slate-900">ניהול עסקים</h3>
-                <p class="text-sm text-slate-500 mt-1">חיפוש, סינון וצפייה בפרטי תיקים</p>
-            </a>
-
-            <a href="map.html" class="group bg-white rounded-2xl border border-slate-200 hover:border-brand-300 shadow-sm p-5 transition-all">
-                <div class="w-10 h-10 rounded-lg bg-slate-100 text-slate-700 flex items-center justify-center mb-4 group-hover:bg-slate-200">
-                    <i class="fa-solid fa-map-location-dot"></i>
-                </div>
-                <h3 class="font-bold text-slate-900">מפת עסקים</h3>
-                <p class="text-sm text-slate-500 mt-1">תצוגה גיאוגרפית ועדכון מיקום</p>
-            </a>
-
-            <a href="calendar.html" class="group bg-white rounded-2xl border border-slate-200 hover:border-brand-300 shadow-sm p-5 transition-all">
-                <div class="w-10 h-10 rounded-lg bg-slate-100 text-slate-700 flex items-center justify-center mb-4 group-hover:bg-slate-200">
-                    <i class="fa-solid fa-calendar-days"></i>
-                </div>
-                <h3 class="font-bold text-slate-900">יומן ביקורות</h3>
-                <p class="text-sm text-slate-500 mt-1">מעקב אירועים וסנכרון iCal</p>
-            </a>
-        </section>
     </main>
 
     <!-- Footer -->
