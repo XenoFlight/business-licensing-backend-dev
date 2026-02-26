@@ -4,6 +4,85 @@ import { bindLogout, renderAdminLink } from '../../core/nav.js';
 import { initThemeToggle } from '../../core/theme.js';
 
 let activeUser = null;
+let allUpcomingRecords = [];
+
+function getQueryParams() {
+  return new URLSearchParams(window.location.search);
+}
+
+function updateResultsLabel(visible, total) {
+  const label = document.getElementById('upcoming-results-label');
+  if (!label) {
+    return;
+  }
+
+  label.textContent = `מציג ${visible} מתוך ${total}`;
+}
+
+function updateActiveFilterIndicator(isActive) {
+  const indicator = document.getElementById('upcoming-active-filter-indicator');
+  if (!indicator) {
+    return;
+  }
+
+  indicator.classList.toggle('hidden', !isActive);
+}
+
+function getUpcomingFilterState() {
+  return {
+    source: (document.getElementById('upcoming-source-filter')?.value || 'all').trim(),
+    range: (document.getElementById('upcoming-range-filter')?.value || 'all').trim(),
+    query: (document.getElementById('upcoming-search')?.value || '').trim().toLowerCase(),
+  };
+}
+
+function syncUpcomingFiltersToQuery() {
+  const params = getQueryParams();
+  const state = getUpcomingFilterState();
+
+  params.delete('source');
+  params.delete('range');
+  params.delete('q');
+
+  if (state.source && state.source !== 'all') {
+    params.set('source', state.source);
+  }
+
+  if (state.range && state.range !== 'all') {
+    params.set('range', state.range);
+  }
+
+  if (state.query) {
+    params.set('q', state.query);
+  }
+
+  const query = params.toString();
+  const nextUrl = `${window.location.pathname}${query ? `?${query}` : ''}`;
+  window.history.replaceState(null, '', nextUrl);
+}
+
+function applyUpcomingFiltersFromQuery() {
+  const params = getQueryParams();
+  const source = (params.get('source') || '').trim();
+  const range = (params.get('range') || '').trim();
+  const query = (params.get('q') || '').trim();
+
+  const sourceInput = document.getElementById('upcoming-source-filter');
+  const rangeInput = document.getElementById('upcoming-range-filter');
+  const queryInput = document.getElementById('upcoming-search');
+
+  if (source && sourceInput && Array.from(sourceInput.options).some((option) => option.value === source)) {
+    sourceInput.value = source;
+  }
+
+  if (range && rangeInput && Array.from(rangeInput.options).some((option) => option.value === range)) {
+    rangeInput.value = range;
+  }
+
+  if (query && queryInput) {
+    queryInput.value = query;
+  }
+}
 
 function setFeedback(message, tone = 'info') {
   const el = document.getElementById('upcoming-feedback');
@@ -100,6 +179,77 @@ function categorizeUpcoming(events) {
   in30.sort(byDateAsc);
 
   return { overdue, in7, in30 };
+}
+
+function getRangeBucket(event, now = new Date()) {
+  const dayMs = 24 * 60 * 60 * 1000;
+  const diffMs = event.startDate.getTime() - now.getTime();
+
+  if (diffMs < 0) {
+    return 'overdue';
+  }
+
+  const diffDays = diffMs / dayMs;
+  if (diffDays <= 7) {
+    return '7';
+  }
+
+  if (diffDays <= 30) {
+    return '30';
+  }
+
+  return 'out';
+}
+
+function applyUpcomingFiltersAndRender() {
+  const state = getUpcomingFilterState();
+  const hasActiveFilter = state.source !== 'all' || state.range !== 'all' || Boolean(state.query);
+
+  const filtered = allUpcomingRecords.filter((event) => {
+    const matchesSource = state.source === 'all' || event.source === state.source;
+    const matchesSearch = !state.query || String(event.title || '').toLowerCase().includes(state.query);
+
+    const bucket = getRangeBucket(event);
+    const matchesRange = state.range === 'all'
+      ? bucket !== 'out'
+      : bucket === state.range;
+
+    return matchesSource && matchesSearch && matchesRange;
+  });
+
+  const categorized = categorizeUpcoming(filtered);
+  renderUpcomingRows('overdue-body', categorized.overdue, { markOverdue: true });
+  renderUpcomingRows('upcoming-7days-body', categorized.in7);
+  renderUpcomingRows('upcoming-30days-body', categorized.in30);
+
+  updateResultsLabel(filtered.length, allUpcomingRecords.length);
+  updateActiveFilterIndicator(hasActiveFilter);
+  syncUpcomingFiltersToQuery();
+}
+
+function bindUpcomingFilters() {
+  const sourceInput = document.getElementById('upcoming-source-filter');
+  const rangeInput = document.getElementById('upcoming-range-filter');
+  const queryInput = document.getElementById('upcoming-search');
+  const clearButton = document.getElementById('upcoming-clear-filters');
+
+  sourceInput?.addEventListener('change', applyUpcomingFiltersAndRender);
+  rangeInput?.addEventListener('change', applyUpcomingFiltersAndRender);
+  queryInput?.addEventListener('input', applyUpcomingFiltersAndRender);
+
+  clearButton?.addEventListener('click', () => {
+    if (sourceInput) {
+      sourceInput.value = 'all';
+    }
+    if (rangeInput) {
+      rangeInput.value = 'all';
+    }
+    if (queryInput) {
+      queryInput.value = '';
+    }
+
+    applyUpcomingFiltersAndRender();
+  });
 }
 
 function renderUpcomingRows(targetBodyId, rows, options = {}) {
@@ -247,12 +397,10 @@ async function loadUpcomingInspections(user) {
     console.warn('Failed loading synced calendar for upcoming inspections', error);
   }
 
-  const categorized = categorizeUpcoming([...localEvents, ...syncedEvents]);
-  renderUpcomingRows('overdue-body', categorized.overdue, { markOverdue: true });
-  renderUpcomingRows('upcoming-7days-body', categorized.in7);
-  renderUpcomingRows('upcoming-30days-body', categorized.in30);
+  allUpcomingRecords = [...localEvents, ...syncedEvents];
+  applyUpcomingFiltersAndRender();
 
-  const total = categorized.overdue.length + categorized.in7.length + categorized.in30.length;
+  const total = allUpcomingRecords.filter((event) => getRangeBucket(event) !== 'out').length;
   setFeedback(`נמצאו ${total} ביקורות רלוונטיות (באיחור + עד 30 ימים).`, 'success');
 }
 
@@ -265,6 +413,8 @@ function initPage() {
   renderAdminLink(user, 'admin-link-placeholder');
   bindLogout('logout-button');
 
+  applyUpcomingFiltersFromQuery();
+  bindUpcomingFilters();
   bindUpcomingActions();
   loadUpcomingInspections(user);
 }

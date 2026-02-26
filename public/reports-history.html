@@ -119,6 +119,40 @@
                     <i class="fa-solid fa-arrow-right"></i> חזרה ללוח הבקרה
                 </a>
             </div>
+            <div class="px-6 py-4 border-b border-slate-200 bg-slate-50/70 space-y-3">
+                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-3 items-end">
+                    <div>
+                        <label for="reports-status-filter" class="block text-xs text-slate-600 mb-1">תוצאה</label>
+                        <select id="reports-status-filter" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+                            <option value="">כל התוצאות</option>
+                            <option value="pass">עבר</option>
+                            <option value="fail">נכשל</option>
+                            <option value="conditional_pass">עבר בתנאי</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="reports-date-from" class="block text-xs text-slate-600 mb-1">מתאריך</label>
+                        <input type="date" id="reports-date-from" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+                    </div>
+                    <div>
+                        <label for="reports-date-to" class="block text-xs text-slate-600 mb-1">עד תאריך</label>
+                        <input type="date" id="reports-date-to" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+                    </div>
+                    <div class="xl:col-span-2">
+                        <label for="reports-search" class="block text-xs text-slate-600 mb-1">חיפוש בטקסט</label>
+                        <input type="text" id="reports-search" placeholder="ממצאים / שם מפקח..." class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+                    </div>
+                </div>
+                <div class="flex items-center justify-between gap-3 flex-wrap">
+                    <button id="reports-clear-filters" type="button" class="px-3 py-2 rounded-lg text-sm border border-slate-300 text-slate-600 hover:bg-slate-100 transition-colors">
+                        <i class="fa-solid fa-rotate-left ml-1"></i> איפוס סינון
+                    </button>
+                    <div class="flex items-center gap-2">
+                        <span id="reports-active-filter-indicator" class="hidden inline-flex items-center gap-1 px-2 py-1 rounded-md bg-amber-50 text-amber-700 border border-amber-200 text-xs font-medium">סינון פעיל</span>
+                        <div id="reports-results-label" class="text-sm text-slate-500">מציג 0 מתוך 0</div>
+                    </div>
+                </div>
+            </div>
             <div class="overflow-x-auto table-scroll-shell table-scroll-shell--reports">
                 <table id="reports-table" class="w-full text-sm text-right wide-data-table">
                     <thead class="bg-slate-50 text-slate-600 font-medium border-b border-slate-200">

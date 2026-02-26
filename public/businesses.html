@@ -100,15 +100,46 @@
         </div>
     </header>
 
-    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full space-y-6">
+        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
+                <div class="text-xs text-slate-500">סה"כ תיקים</div>
+                <div id="total-businesses-count" class="text-2xl font-bold text-slate-900 mt-1">0</div>
+            </div>
+            <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
+                <div class="text-xs text-slate-500">תוצאות בסינון</div>
+                <div id="visible-businesses-count" class="text-2xl font-bold text-brand-700 mt-1">0</div>
+            </div>
+            <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
+                <div class="text-xs text-slate-500">סטטוס סגור</div>
+                <div id="closed-businesses-count" class="text-2xl font-bold text-slate-900 mt-1">0</div>
+            </div>
+            <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
+                <div class="text-xs text-slate-500">עסקים עם פחים</div>
+                <div id="trash-businesses-count" class="text-2xl font-bold text-slate-900 mt-1">0</div>
+            </div>
+        </section>
+
         <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
-            <div class="px-6 py-4 border-b border-slate-100 flex justify-between items-center bg-slate-50/50 flex-wrap gap-4">
-                <h2 class="font-bold text-slate-800 text-lg">ניהול תיקי עסקים</h2>
-                <div class="flex gap-3 items-center flex-wrap">
-                    <button id="add-business-btn" class="bg-brand-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-brand-700 transition-colors flex items-center gap-2">
-                        <i class="fa-solid fa-plus"></i> תיק עסק חדש
-                    </button>
-                    <input type="text" id="search-input" class="px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 w-64" placeholder="חפש לפי שם עסק, כתובת או בעלים...">
+            <div class="px-6 py-5 border-b border-slate-200 bg-slate-50/70 space-y-4">
+                <div class="flex justify-between items-start gap-4 flex-wrap">
+                    <div>
+                        <h2 class="font-bold text-slate-900 text-xl">ניהול תיקי עסקים</h2>
+                        <p class="text-sm text-slate-500 mt-1">ניהול מרוכז של סטטוס, פרטי קשר ותפעול לכל עסק</p>
+                    </div>
+                    <div class="flex items-center gap-2 flex-wrap">
+                        <button id="clear-filters-btn" class="px-3 py-2 rounded-lg text-sm border border-slate-300 text-slate-600 hover:bg-slate-100 transition-colors flex items-center gap-2">
+                            <i class="fa-solid fa-rotate-left"></i>
+                            איפוס סינון
+                        </button>
+                        <button id="add-business-btn" class="bg-brand-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-brand-700 transition-colors flex items-center gap-2 shadow-sm">
+                            <i class="fa-solid fa-plus"></i> תיק עסק חדש
+                        </button>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-3 items-center">
+                    <input type="text" id="search-input" class="px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 xl:col-span-2" placeholder="חפש לפי שם עסק, כתובת או בעלים...">
                     <select id="status-filter" class="px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
                         <option value="">כל הסטטוסים</option>
                     </select>
@@ -123,15 +154,28 @@
                         <option value="business">בעל העסק</option>
                         <option value="shared">משותף</option>
                     </select>
+                </div>
+
+                <div class="flex items-center justify-between gap-3 flex-wrap">
                     <label class="flex items-center gap-2 text-sm text-slate-600 cursor-pointer select-none">
                         <input type="checkbox" id="show-closed-checkbox" class="w-4 h-4 text-brand-600 rounded border-slate-300 focus:ring-brand-500">
-                        הצג סגורים
+                        הצג סטטוס סגור
                     </label>
+                    <div class="flex items-center gap-2">
+                        <span id="businesses-active-filter-indicator" class="hidden inline-flex items-center gap-1 px-2 py-1 rounded-md bg-amber-50 text-amber-700 border border-amber-200 text-xs font-medium">סינון פעיל</span>
+                        <div id="results-label" class="text-sm text-slate-500">מציג 0 מתוך 0</div>
+                    </div>
                 </div>
             </div>
+
+            <div id="filter-empty-state" class="hidden px-6 py-6 border-b border-slate-200 bg-amber-50 text-amber-800 text-sm">
+                <i class="fa-solid fa-filter-circle-xmark ml-2"></i>
+                לא נמצאו תוצאות לפי הסינון שנבחר. נסה לאפס את הסינון.
+            </div>
+
             <div class="overflow-x-auto table-scroll-shell table-scroll-shell--businesses">
                 <table id="business-table" class="w-full text-sm text-right wide-data-table">
-                    <thead class="bg-slate-50 text-slate-600 font-medium border-b border-slate-200">
+                    <thead class="bg-slate-100 text-slate-700 font-semibold border-b border-slate-200">
                         <tr>
                             <th class="px-6 py-3">מזהה תיק</th>
                             <th class="px-6 py-3">שם העסק</th>

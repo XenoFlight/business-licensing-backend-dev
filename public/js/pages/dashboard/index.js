@@ -1,11 +1,21 @@
 import { requireAuth, renderUserName } from '../../core/auth.js';
 import { apiFetch } from '../../core/api.js';
 import { bindLogout, renderAdminLink } from '../../core/nav.js';
-import { getStatusLabel, isActiveStatus, isPendingStatus, normalizeStatus } from '../../core/status.js';
+import { getStatusLabel, isActiveStatus, normalizeStatus } from '../../core/status.js';
 import { initThemeToggle } from '../../core/theme.js';
 
 let businessStatusChartInstance;
 let reportStatusChartInstance;
+let lastBusinesses = [];
+let lastReports = [];
+
+function isDarkThemeActive() {
+  return document.documentElement.getAttribute('data-theme') === 'dark';
+}
+
+function getChartLegendColor() {
+  return isDarkThemeActive() ? '#cbd5e1' : '#334155';
+}
 
 function getStorageUserKey(user) {
   return user?.id || user?.email || user?.fullName || 'anonymous';
@@ -102,6 +112,9 @@ function updateKpiCards(businesses, reports) {
   const totalBusinessesElement = document.getElementById('total-businesses');
   const activeBusinessesElement = document.getElementById('active-businesses');
   const pendingBusinessesElement = document.getElementById('pending-businesses');
+  const shortLicenseBusinessesElement = document.getElementById('short-license-businesses');
+  const renewingBusinessesElement = document.getElementById('renewing-businesses');
+  const deniedBusinessesElement = document.getElementById('denied-businesses');
   const totalReportsElement = document.getElementById('total-reports');
   const reportPassRateElement = document.getElementById('report-pass-rate');
   const mappedBusinessesElement = document.getElementById('mapped-businesses');
@@ -112,8 +125,23 @@ function updateKpiCards(businesses, reports) {
   const activeCount = businesses.filter((business) => isActiveStatus(business.status)).length;
   activeBusinessesElement.textContent = activeCount;
 
-  const pendingCount = businesses.filter((business) => isPendingStatus(business.status)).length;
+  const shortLicenseCount = businesses.filter((business) => normalizeStatus(business.status) === 'temporarily_permitted').length;
+  const renewingCount = businesses.filter((business) => normalizeStatus(business.status) === 'renewal_in_progress').length;
+  const deniedCount = businesses.filter((business) => normalizeStatus(business.status) === 'rejected').length;
+  const pendingCount = shortLicenseCount + renewingCount + deniedCount;
   pendingBusinessesElement.textContent = pendingCount;
+
+  if (shortLicenseBusinessesElement) {
+    shortLicenseBusinessesElement.textContent = shortLicenseCount;
+  }
+
+  if (renewingBusinessesElement) {
+    renewingBusinessesElement.textContent = renewingCount;
+  }
+
+  if (deniedBusinessesElement) {
+    deniedBusinessesElement.textContent = deniedCount;
+  }
 
   totalReportsElement.textContent = reports.length;
 
@@ -160,7 +188,7 @@ function createPieChart(canvasId, labels, data, colors, chartInstanceRefSetter) 
           labels: {
             usePointStyle: true,
             boxWidth: 8,
-            color: '#334155',
+            color: getChartLegendColor(),
             font: {
               family: 'Arial',
             },
@@ -181,17 +209,41 @@ function renderBusinessStatusChart(businesses) {
     if (normalizedStatus === 'closed') {
       return;
     }
+
     distribution.set(normalizedStatus, (distribution.get(normalizedStatus) || 0) + 1);
   });
 
-  const labels = Array.from(distribution.keys()).map((statusCode) => getStatusLabel(statusCode));
-  const values = Array.from(distribution.values());
+  const statusOrder = [
+    'temporarily_permitted',
+    'renewal_in_progress',
+    'rejected',
+    'application_submitted',
+    'pending_review',
+    'approved',
+  ];
+
+  const statusColors = {
+    temporarily_permitted: '#0ea5e9',
+    renewal_in_progress: '#f59e0b',
+    rejected: '#ef4444',
+    application_submitted: '#64748b',
+    pending_review: '#7c3aed',
+    approved: '#10b981',
+  };
+
+  const orderedStatuses = statusOrder.filter((statusCode) => (distribution.get(statusCode) || 0) > 0);
+  const adHocStatuses = Array.from(distribution.keys()).filter((statusCode) => !statusOrder.includes(statusCode));
+  const statusesForChart = [...orderedStatuses, ...adHocStatuses];
+
+  const labels = statusesForChart.map((statusCode) => getStatusLabel(statusCode));
+  const values = statusesForChart.map((statusCode) => distribution.get(statusCode) || 0);
+  const colors = statusesForChart.map((statusCode) => statusColors[statusCode] || '#0f766e');
 
   createPieChart(
     'business-status-chart',
     labels,
     values,
-    ['#0284c7', '#10b981', '#f59e0b', '#ef4444', '#64748b', '#7c3aed', '#0f766e'],
+    colors,
     (instance) => { businessStatusChartInstance = instance; },
   );
 }
@@ -248,6 +300,9 @@ async function fetchDashboardData() {
       ? await reportsResponse.json().then((payload) => (Array.isArray(payload) ? payload : []))
       : [];
 
+    lastBusinesses = businesses;
+    lastReports = reports;
+
     updateKpiCards(businesses, reports);
     renderBusinessStatusChart(businesses);
     renderReportsStatusChart(reports);
@@ -256,10 +311,35 @@ async function fetchDashboardData() {
     document.getElementById('total-businesses').textContent = '—';
     document.getElementById('active-businesses').textContent = '—';
     document.getElementById('pending-businesses').textContent = '—';
+    const shortLicenseBusinessesElement = document.getElementById('short-license-businesses');
+    const renewingBusinessesElement = document.getElementById('renewing-businesses');
+    const deniedBusinessesElement = document.getElementById('denied-businesses');
+
+    if (shortLicenseBusinessesElement) {
+      shortLicenseBusinessesElement.textContent = '—';
+    }
+
+    if (renewingBusinessesElement) {
+      renewingBusinessesElement.textContent = '—';
+    }
+
+    if (deniedBusinessesElement) {
+      deniedBusinessesElement.textContent = '—';
+    }
+
     document.getElementById('total-reports').textContent = '—';
     document.getElementById('report-pass-rate').textContent = '—';
     document.getElementById('mapped-businesses').textContent = '—';
   }
+}
+
+function rerenderChartsForTheme() {
+  if (!lastBusinesses.length && !lastReports.length) {
+    return;
+  }
+
+  renderBusinessStatusChart(lastBusinesses);
+  renderReportsStatusChart(lastReports);
 }
 
 // ===== Page Bootstrap =====
@@ -273,6 +353,11 @@ function initDashboard() {
 
   fetchDashboardData();
   loadUpcomingCounts(user);
+
+  const themeToggleButton = document.getElementById('theme-toggle-button');
+  themeToggleButton?.addEventListener('click', () => {
+    window.setTimeout(rerenderChartsForTheme, 0);
+  });
 }
 
 initDashboard();

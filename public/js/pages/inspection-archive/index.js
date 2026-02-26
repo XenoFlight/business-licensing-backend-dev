@@ -5,6 +5,66 @@ import { initThemeToggle } from '../../core/theme.js';
 
 let allReports = [];
 
+function getQueryParams() {
+  return new URLSearchParams(window.location.search);
+}
+
+function syncFiltersToQuery() {
+  const params = getQueryParams();
+  const query = (document.getElementById('archive-search')?.value || '').trim();
+  const status = (document.getElementById('archive-status-filter')?.value || '').trim();
+
+  params.delete('q');
+  params.delete('status');
+
+  if (query) {
+    params.set('q', query);
+  }
+
+  if (status) {
+    params.set('status', status);
+  }
+
+  const nextQuery = params.toString();
+  const nextUrl = `${window.location.pathname}${nextQuery ? `?${nextQuery}` : ''}`;
+  window.history.replaceState(null, '', nextUrl);
+}
+
+function applyFiltersFromQuery() {
+  const params = getQueryParams();
+  const query = (params.get('q') || '').trim();
+  const status = (params.get('status') || '').trim();
+
+  const searchInput = document.getElementById('archive-search');
+  const statusInput = document.getElementById('archive-status-filter');
+
+  if (query && searchInput) {
+    searchInput.value = query;
+  }
+
+  if (status && statusInput && Array.from(statusInput.options).some((option) => option.value === status)) {
+    statusInput.value = status;
+  }
+}
+
+function updateResultsLabel(visibleCount, totalCount) {
+  const label = document.getElementById('archive-results-label');
+  if (!label) {
+    return;
+  }
+
+  label.textContent = `מציג ${visibleCount} מתוך ${totalCount}`;
+}
+
+function updateActiveFilterIndicator(isActive) {
+  const indicator = document.getElementById('archive-active-filter-indicator');
+  if (!indicator) {
+    return;
+  }
+
+  indicator.classList.toggle('hidden', !isActive);
+}
+
 function getStatusInfo(status) {
   const statusMap = {
     pass: { text: 'עבר', className: 'text-green-600 font-bold' },
@@ -45,7 +105,15 @@ function renderRows() {
     return;
   }
 
+  const query = (document.getElementById('archive-search')?.value || '').trim();
+  const statusFilter = (document.getElementById('archive-status-filter')?.value || '').trim();
+  const hasActiveFilter = Boolean(query || statusFilter);
+
   const reports = getFilteredReports();
+  updateResultsLabel(reports.length, allReports.length);
+  updateActiveFilterIndicator(hasActiveFilter);
+  syncFiltersToQuery();
+
   if (reports.length === 0) {
     tbody.innerHTML = '<tr><td colspan="7" class="px-6 py-8 text-center text-slate-500">לא נמצאו דו"חות.</td></tr>';
     return;
@@ -97,6 +165,22 @@ async function loadReports() {
 function bindFilters() {
   document.getElementById('archive-search')?.addEventListener('input', renderRows);
   document.getElementById('archive-status-filter')?.addEventListener('change', renderRows);
+
+  const clearButton = document.getElementById('archive-clear-filters');
+  clearButton?.addEventListener('click', () => {
+    const searchInput = document.getElementById('archive-search');
+    const statusInput = document.getElementById('archive-status-filter');
+
+    if (searchInput) {
+      searchInput.value = '';
+    }
+
+    if (statusInput) {
+      statusInput.value = '';
+    }
+
+    renderRows();
+  });
 }
 
 function initPage() {
@@ -107,6 +191,7 @@ function initPage() {
   renderAdminLink(user, 'admin-link-placeholder');
   bindLogout('logout-button');
 
+  applyFiltersFromQuery();
   bindFilters();
   loadReports();
 }
